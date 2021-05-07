@@ -1,8 +1,8 @@
 //
-//  UIView+Glow.m
+//  ViewController.swift
+//  YoYoPinXiaoLe
 //
-//  Created by Jon Manning on 29/05/12.
-//  Copyright (c) 2012 Secret Lab. All rights reserved.
+//  Created by gozap on 2021/4/25.
 //
 
 #import "UIView+Glow.h"

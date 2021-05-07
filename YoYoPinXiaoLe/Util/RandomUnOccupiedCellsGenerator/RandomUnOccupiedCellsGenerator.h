@@ -1,9 +1,8 @@
 //
 //  RandomUnOccupiedCellsGenerator.h
-//  Connect5
+//  YoYoPinXiaoLe
 //
-//  Created by Mohammed Eldehairy on 6/22/13.
-//  Copyright (c) 2013 Mohammed Eldehairy. All rights reserved.
+//  Created by gozap on 2021/4/25.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,8 @@
 //
 //  ScoreEntity.m
-//  Connect5
+//  YoYoPinXiaoLe
 //
-//  Created by Mohammed Eldehairy on 10/20/13.
-//  Copyright (c) 2013 Mohammed Eldehairy. All rights reserved.
+//  Created by gozap on 2021/4/25.
 //
 
 #import "ScoreEntity.h"

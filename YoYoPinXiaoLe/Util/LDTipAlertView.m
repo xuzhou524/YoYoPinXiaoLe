@@ -1,8 +1,8 @@
 //
 //  LDTipAlertView.m
-//  QiuQiu
+//  YoYoPinXiaoLe
 //
-//  Created by xuzhou on 2021/3/16.
+//  Created by gozap on 2021/4/25.
 //
 
 #import "LDTipAlertView.h"

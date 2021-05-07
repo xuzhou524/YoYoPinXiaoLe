@@ -1,9 +1,8 @@
 //
 //  MSize.m
-//  DavinciCode
+//  YoYoPinXiaoLe
 //
-//  Created by Mohammed Eldehairy on 12/28/12.
-//  Copyright (c) 2012 Mohammed Eldehairy. All rights reserved.
+//  Created by gozap on 2021/4/25.
 //
 
 #import "MSize.h"
