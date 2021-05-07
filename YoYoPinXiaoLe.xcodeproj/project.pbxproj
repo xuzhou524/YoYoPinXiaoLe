@@ -67,8 +67,6 @@
 		5335B2F126357321006F9378 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F026357320006F9378 /* UIView+Glow.m */; };
 		5335B2F526357330006F9378 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F426357330006F9378 /* CellView.m */; };
 		5335B2F92635733A006F9378 /* MatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F82635733A006F9378 /* MatrixView.m */; };
-		5335B33B26357535006F9378 /* Connect5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B33926357535006F9378 /* Connect5ViewController.m */; };
-		5335B33E2635756A006F9378 /* Connect5ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5335B33D2635756A006F9378 /* Connect5ViewController_iPhone.xib */; };
 		5335B34A26357817006F9378 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34926357817006F9378 /* GameKit.framework */; };
 		5335B34C26357825006F9378 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34B26357825006F9378 /* CoreGraphics.framework */; };
 		53567BA22644D7A700687883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA12644D7A700687883 /* Foundation.framework */; };
@@ -172,9 +170,6 @@
 		5335B2F426357330006F9378 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
 		5335B2F72635733A006F9378 /* MatrixView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixView.h; sourceTree = "<group>"; };
 		5335B2F82635733A006F9378 /* MatrixView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixView.m; sourceTree = "<group>"; };
-		5335B33926357535006F9378 /* Connect5ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connect5ViewController.m; sourceTree = "<group>"; };
-		5335B33A26357535006F9378 /* Connect5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connect5ViewController.h; sourceTree = "<group>"; };
-		5335B33D2635756A006F9378 /* Connect5ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Connect5ViewController_iPhone.xib; sourceTree = "<group>"; };
 		5335B34926357817006F9378 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		5335B34B26357825006F9378 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		53567BA12644D7A700687883 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -377,9 +372,6 @@
 			children = (
 				53332BC62644CB0400535838 /* HomeViewController.swift */,
 				53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */,
-				5335B33A26357535006F9378 /* Connect5ViewController.h */,
-				5335B33926357535006F9378 /* Connect5ViewController.m */,
-				5335B33D2635756A006F9378 /* Connect5ViewController_iPhone.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,7 +614,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5335B33E2635756A006F9378 /* Connect5ViewController_iPhone.xib in Resources */,
 				5335B27326356BD5006F9378 /* LaunchScreen.storyboard in Resources */,
 				5335B2E42635730C006F9378 /* TSMessagesDefaultDesign.json in Resources */,
 				5335B2DE2635730C006F9378 /* NotificationBackgroundError@2x.png in Resources */,
@@ -694,7 +685,6 @@
 				53332C002644CE3B00535838 /* LevelGauge.m in Sources */,
 				53332BE42644CC8A00535838 /* LDTipAlertView.m in Sources */,
 				5335B2ED26357317006F9378 /* MYIntroductionView.m in Sources */,
-				5335B33B26357535006F9378 /* Connect5ViewController.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,

@@ -82,13 +82,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func newGameClick() {
-        let gameVC = Connect5ViewController()
-        gameVC.isResumedGame = false
-        self.navigationController?.pushViewController(gameVC, animated: true)
+        self.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
     }
     
     @objc func rankListClick() {
-        self.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
     }
     
     @objc func helpClick() {

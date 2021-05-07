@@ -741,18 +741,13 @@
         
     };*/
 }
--(void)UpdateScore
-{
-    
-
+-(void)UpdateScore{
     [levelProvider ReportScore:currentGame.score.score];
     [self SetScoreInScoreBoard:currentGame.score.score];
-    if([_delegate respondsToSelector:@selector(setProgress:withLevelNumber:)])
-    {
+    if([_delegate respondsToSelector:@selector(setProgress:withLevelNumber:)]){
         CGFloat Mod = currentGame.score.score % (int)(LEVEL_RANGE);
         CGFloat progress = (CGFloat)(Mod/LEVEL_RANGE);
-        if([levelProvider isFinalLevel])
-        {
+        if([levelProvider isFinalLevel]){
             progress = 1.0f;
         }
         [_delegate setProgress:progress withLevelNumber:[levelProvider GetCurrentLevel].LevelIndex];
