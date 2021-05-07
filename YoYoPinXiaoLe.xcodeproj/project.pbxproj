@@ -62,8 +62,6 @@
 		5335B2E42635730C006F9378 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 5335B2CD2635730C006F9378 /* TSMessagesDefaultDesign.json */; };
 		5335B2E52635730C006F9378 /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2CF2635730C006F9378 /* TSMessageView.m */; };
 		5335B2E62635730C006F9378 /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2D02635730C006F9378 /* TSBlurView.m */; };
-		5335B2EC26357317006F9378 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2E926357317006F9378 /* MYIntroductionPanel.m */; };
-		5335B2ED26357317006F9378 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2EB26357317006F9378 /* MYIntroductionView.m */; };
 		5335B2F126357321006F9378 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F026357320006F9378 /* UIView+Glow.m */; };
 		5335B2F526357330006F9378 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F426357330006F9378 /* CellView.m */; };
 		5335B2F92635733A006F9378 /* MatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F82635733A006F9378 /* MatrixView.m */; };
@@ -160,10 +158,6 @@
 		5335B2D02635730C006F9378 /* TSBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBlurView.m; sourceTree = "<group>"; };
 		5335B2D12635730C006F9378 /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		5335B2D22635730C006F9378 /* TSBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSBlurView.h; sourceTree = "<group>"; };
-		5335B2E826357317006F9378 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
-		5335B2E926357317006F9378 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
-		5335B2EA26357317006F9378 /* MYIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionView.h; sourceTree = "<group>"; };
-		5335B2EB26357317006F9378 /* MYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionView.m; sourceTree = "<group>"; };
 		5335B2EF26357320006F9378 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		5335B2F026357320006F9378 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		5335B2F326357330006F9378 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
@@ -359,7 +353,6 @@
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
 				5335B2A5263572A6006F9378 /* Matrix View */,
 				5335B2A42635729E006F9378 /* Matrix Cell View */,
-				5335B2A326357290006F9378 /* IntroductionView */,
 				5335B2A226357285006F9378 /* Notification View */,
 				5335B2A12635726D006F9378 /* SIAlertView */,
 				5335B29F26357255006F9378 /* PieProgressView */,
@@ -432,17 +425,6 @@
 				5335B2B72635730C006F9378 /* TSMessages */,
 			);
 			path = "Notification View";
-			sourceTree = "<group>";
-		};
-		5335B2A326357290006F9378 /* IntroductionView */ = {
-			isa = PBXGroup;
-			children = (
-				5335B2E826357317006F9378 /* MYIntroductionPanel.h */,
-				5335B2E926357317006F9378 /* MYIntroductionPanel.m */,
-				5335B2EA26357317006F9378 /* MYIntroductionView.h */,
-				5335B2EB26357317006F9378 /* MYIntroductionView.m */,
-			);
-			path = IntroductionView;
 			sourceTree = "<group>";
 		};
 		5335B2A42635729E006F9378 /* Matrix Cell View */ = {
@@ -684,12 +666,10 @@
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
 				53332C002644CE3B00535838 /* LevelGauge.m in Sources */,
 				53332BE42644CC8A00535838 /* LDTipAlertView.m in Sources */,
-				5335B2ED26357317006F9378 /* MYIntroductionView.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
 				53567BBD26451F0400687883 /* DoActionSheet.m in Sources */,
-				5335B2EC26357317006F9378 /* MYIntroductionPanel.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,
 				5335B28C2635717D006F9378 /* ScoreEntity.m in Sources */,
 				5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */,
