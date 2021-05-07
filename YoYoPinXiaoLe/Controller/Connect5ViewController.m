@@ -13,71 +13,53 @@
 @end
 
 @implementation Connect5ViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(floorf([[UIDevice currentDevice] systemVersion].floatValue)>= 7)
-    {
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    }
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     [self.navigationController setNavigationBarHidden:YES];
-	ScoreBoard.layer.cornerRadius = 10;
-    UIView *gameContainerView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 600, 400)];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    {
-        gameContainerView.frame = CGRectMake(20, 20, self.view.frame.size.width, 400);
-       gameContainerView.center = CGPointMake(self.view.bounds.size.width/2, 280);
-    }else
-    {
-        gameContainerView.frame = CGRectMake(20, 20, 700, 600);
-        gameContainerView.center = CGPointMake(self.view.bounds.size.width/2, 450);
-    }
     
+	ScoreBoard.layer.cornerRadius = 10;
+    
+    UIView *gameContainerView = [[UIView alloc] initWithFrame:CGRectMake(20, 120, 600, 400)];
+    gameContainerView.frame = CGRectMake(20, 20, self.view.frame.size.width, 400);
+    gameContainerView.center = CGPointMake(self.view.bounds.size.width/2, 280);
+    gameContainerView.backgroundColor = UIColor.orangeColor;
     gameContainerView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:gameContainerView];
     
     
-    if(_IsResumedGame)
-    {
+    if(_IsResumedGame){
         _matrix = [[MatrixView alloc] initWithFrame:CGRectZero withGame:self.ResumedGame gameReumed:YES];
-    }else
-    {
+    }else{
         _matrix = [[MatrixView alloc] initWithFrame:CGRectZero] ;
     }
     _matrix.autoresizingMask = UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     _matrix.delegate = self;
     _matrix.ScoreBoard = ScoreBoard;
     
-    int y = 480;
-    int xOffset = 80;
+    int y = 0;
+    int xOffset = -15;
     int padding = 2;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    {
-        y = 0;
-        xOffset = -15;
-    }
     int cellSize = 32;
     
-    for(int i = 0;i<MAX_NUMBER_OF_ADDED_CELLS;i++)
-    {
+    for(int i = 0;i<MAX_NUMBER_OF_ADDED_CELLS;i++){
         CellView *cell = [[CellView alloc] initWithFrame:CGRectMake(20+i*(cellSize+padding)+xOffset, y , cellSize, cellSize)];
         cell.tag = 4000+i;
         [gameContainerView addSubview:cell];
     }
     
-    
     _matrix.UndoBtn = UndoBtn;
-    
+
     [gameContainerView addSubview:_matrix];
-    
+
     [CancelBtn addTarget:_matrix action:@selector(CancelAction:) forControlEvents:UIControlEventTouchUpInside];
     CancelBtn.enabled = NO;
     okBtn.enabled = NO;
     [okBtn addTarget:_matrix action:@selector(OKAction:) forControlEvents:UIControlEventTouchUpInside];
     //_matrix.CancelBtn = CancelBtn;
     //_matrix.OKBtn = okBtn;
-    
-    
 
     progressView.pieFillColor = [UIColor colorWithRed:(37.0f/255.0f) green:(37.0f/255.0f) blue:(37.0f/255.0f) alpha:1.0];
     progressView.pieBorderColor = [UIColor whiteColor];
@@ -87,42 +69,35 @@
     //LevelLbl.text = @"Level 1";
     
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)MatrixViewQuit:(MatrixView *)matrixView
-{
+
+-(void)MatrixViewQuit:(MatrixView *)matrixView{
     [self.navigationController popViewControllerAnimated:YES];
 }
--(void)AddNextCellsWithGraphCells:(NSArray *)GCells
-{
-    
-    
-    
-    for(int i =0 ;i<MAX_NUMBER_OF_ADDED_CELLS;i++)
-    {
+
+-(void)AddNextCellsWithGraphCells:(NSArray *)GCells{
+    for(int i =0 ;i<MAX_NUMBER_OF_ADDED_CELLS;i++){
         CellView *cell = ((CellView*)[self.view viewWithTag:4000+i]);
-        if(i<GCells.count)
-        {
+        if(i<GCells.count){
             [cell SetStatusWithGraphCell:[GCells objectAtIndex:i] Animatation:CellAnimationTypeNone];
-        }else
-        {
+        }else{
             GraphCell *emptyCell = [[GraphCell alloc] init];
             emptyCell.color = unOccupied;
             [cell SetStatusWithGraphCell:emptyCell Animatation:CellAnimationTypeNone];
         }
     }
-    
 }
--(void)setProgress:(CGFloat)progress withLevelNumber:(int)levelNo
-{
+
+-(void)setProgress:(CGFloat)progress withLevelNumber:(int)levelNo{
     [progressView setProgress:progress];
     LevelLbl.text = [NSString stringWithFormat:@"Level %d",levelNo];
 }
--(IBAction)QuitAction:(id)sender
-{
+
+-(IBAction)QuitAction:(id)sender{
+    
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Pause" andMessage:@""];
    
     [alertView addButtonWithTitle:@"Quit"
@@ -149,93 +124,83 @@
     [alertView show];
     
 }
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
         case 0:
-            
             break;
         case 1:
             [self Quit];
             break;
-        default:
-        {
+        default:{
             [self ResetNextCells];
             [_matrix ReloadNewGame];
         }
-            break;
+        break;
     }
 }
--(void)ResetNextAddedCells
-{
+
+-(void)ResetNextAddedCells{
     [self ResetNextCells];
 }
--(void)ResetNextCells
-{
+
+-(void)ResetNextCells{
     GraphCell *emptyCell = [[GraphCell alloc] init];
     emptyCell.color = unOccupied;
-    for(int i =0 ;i<MAX_NUMBER_OF_ADDED_CELLS;i++)
-    {
+    for(int i =0 ;i<MAX_NUMBER_OF_ADDED_CELLS;i++){
         CellView *cell = ((CellView*)[self.view viewWithTag:4000+i]);
         [cell SetStatusWithGraphCell:emptyCell Animatation:CellAnimationTypeNone];
     }
-    
 }
--(void)Quit
-{
+
+-(void)Quit{
     [self saveGame];
     [self.navigationController popViewControllerAnimated:YES];
 }
--(void)saveGame
-{
+
+-(void)saveGame{
     [_matrix saveGame];
 }
--(void)reloadGame:(GameEntity *)game
-{
-    
+
+-(void)reloadGame:(GameEntity *)game{
     [_matrix ReloadGame:game];
 }
--(void)viewWillAppear:(BOOL)animated
-{
+
+-(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if(_matrix)
-    {
+    if(_matrix){
         [_matrix ResetUndo];
     }
-    
 }
--(void)ResetProgressAndLevel
-{
+
+-(void)ResetProgressAndLevel{
     [self setProgress:0.0f withLevelNumber:1];
 }
--(void)ReloadNewGame
-{
+
+-(void)ReloadNewGame{
     [self ResetProgressAndLevel];
     [self ResetNextCells];
     [_matrix ResetUndo];
     [_matrix ReloadNewGame];
-    
 }
--(void)dealloc
-{
-    
+
+-(void)dealloc{
 }
--(void)UndoAction:(id)sender
-{
+
+-(void)UndoAction:(id)sender{
     [_matrix undoLastMove];
 }
--(void)RedoAction:(id)sender
-{
+
+-(void)RedoAction:(id)sender{
     
 }
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    {
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         return toInterfaceOrientation==UIInterfaceOrientationPortrait;
-    }else
-    {
+    }else{
         return YES;
     }
 }
+
 @end

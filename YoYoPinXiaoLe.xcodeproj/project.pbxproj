@@ -29,7 +29,6 @@
 		53332C222644CE9500535838 /* ConnectedCellsDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1E2644CE9400535838 /* ConnectedCellsDetector.m */; };
 		53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C282644D63D00535838 /* MJDijkstra.m */; };
 		5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26626356BD2006F9378 /* AppDelegate.swift */; };
-		5335B26926356BD2006F9378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26826356BD2006F9378 /* SceneDelegate.swift */; };
 		5335B26B26356BD2006F9378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26A26356BD2006F9378 /* ViewController.swift */; };
 		5335B26E26356BD2006F9378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5335B26C26356BD2006F9378 /* Main.storyboard */; };
 		5335B27026356BD5006F9378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5335B26F26356BD5006F9378 /* Assets.xcassets */; };
@@ -75,6 +74,7 @@
 		53567BA22644D7A700687883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA12644D7A700687883 /* Foundation.framework */; };
 		53567BA42644D7B000687883 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA32644D7B000687883 /* UIKit.framework */; };
 		53567BA82644DAA100687883 /* PlayYoQiuGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */; };
+		53567BBD26451F0400687883 /* DoActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 53567BBB26451F0400687883 /* DoActionSheet.m */; };
 		B46854EAE205DEE308500041 /* libPods-YoYoPinXiaoLe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +116,6 @@
 		53332C292644D63D00535838 /* MJDijkstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDijkstra.h; sourceTree = "<group>"; };
 		5335B26326356BD2006F9378 /* YoYoPinXiaoLe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYoPinXiaoLe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5335B26626356BD2006F9378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5335B26826356BD2006F9378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5335B26A26356BD2006F9378 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5335B26D26356BD2006F9378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5335B26F26356BD5006F9378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +180,8 @@
 		53567BA12644D7A700687883 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53567BA32644D7B000687883 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayYoQiuGameViewController.swift; sourceTree = "<group>"; };
+		53567BBB26451F0400687883 /* DoActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoActionSheet.m; sourceTree = "<group>"; };
+		53567BBC26451F0400687883 /* DoActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoActionSheet.h; sourceTree = "<group>"; };
 		672B30C3B4D7666F8E29E6EC /* Pods-YoYoPinXiaoLe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.release.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.release.xcconfig"; sourceTree = "<group>"; };
 		ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YoYoPinXiaoLe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2FE8C3C75B2D41280CC20A /* Pods-YoYoPinXiaoLe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.debug.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 		53332BD02644CC8A00535838 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				53567BBA26451F0400687883 /* DoActionSheet */,
 				53332BF52644CE0700535838 /* ConnectedCellsDetector */,
 				53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
@@ -333,7 +335,6 @@
 				5335B28426357136006F9378 /* View */,
 				5335B28526357136006F9378 /* Controller */,
 				5335B26626356BD2006F9378 /* AppDelegate.swift */,
-				5335B26826356BD2006F9378 /* SceneDelegate.swift */,
 				5335B26A26356BD2006F9378 /* ViewController.swift */,
 				5335B26C26356BD2006F9378 /* Main.storyboard */,
 				5335B26F26356BD5006F9378 /* Assets.xcassets */,
@@ -532,6 +533,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		53567BBA26451F0400687883 /* DoActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				53567BBC26451F0400687883 /* DoActionSheet.h */,
+				53567BBB26451F0400687883 /* DoActionSheet.m */,
+			);
+			path = DoActionSheet;
+			sourceTree = "<group>";
+		};
 		C80971A95841F700760C0130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,12 +698,12 @@
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
+				53567BBD26451F0400687883 /* DoActionSheet.m in Sources */,
 				5335B2EC26357317006F9378 /* MYIntroductionPanel.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,
 				5335B28C2635717D006F9378 /* ScoreEntity.m in Sources */,
 				5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */,
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
-				5335B26926356BD2006F9378 /* SceneDelegate.swift in Sources */,
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
 				5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */,
 				53332C222644CE9500535838 /* ConnectedCellsDetector.m in Sources */,

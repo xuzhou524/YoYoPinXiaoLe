@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func rankListClick() {
-
+        self.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
     }
     
     @objc func helpClick() {

@@ -58,8 +58,8 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
 -(void)ReloadGame:(GameEntity*)game;
 
 -(void)saveGame;
-
-
+-(void)CancelAction:(UIButton *)sender;
+-(void)OKAction:(UIButton *)sender;
 -(void)undoLastMove;
 -(void)ResetUndo;
 @end
