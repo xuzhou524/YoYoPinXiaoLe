@@ -125,7 +125,6 @@ class PlayYoQiuGameViewController: UIViewController {
         }
 //        self.cancelBtn.addTarget(self.matrix, action: #selector(matrix.cancelAction(_:)), for: .touchUpInside)
 //        self.okBtn.addTarget(self.matrix, action: #selector(matrix.okAction(_:)), for: .touchUpInside)
-        
         self.cancelBtn.addTarget(self, action: #selector(quit), for: .touchUpInside)
         self.okBtn.addTarget(self, action: #selector(undo), for: .touchUpInside)
         
