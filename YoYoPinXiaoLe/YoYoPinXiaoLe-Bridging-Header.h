@@ -3,5 +3,4 @@
 //
 
 #import "UIColor+HZXColor.h"
-#import "MainMenuViewController.h"
 #import "Connect5ViewController.h"

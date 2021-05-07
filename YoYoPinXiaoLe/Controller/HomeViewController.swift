@@ -82,27 +82,13 @@ class HomeViewController: UIViewController {
     }
     
     @objc func newGameClick() {
-//        if(!GameView)
-//        {
-//            GameView = [[Connect5ViewController alloc] initWithNibName:@"Connect5ViewController_iPhone" bundle:nil];
-//            GameView.IsResumedGame = NO;
-//            [self.navigationController pushViewController:GameView animated:YES];
-//        }
-//        else
-//        {
-//            GameView.IsResumedGame = NO;
-//            [self.navigationController pushViewController:GameView animated:YES];
-//            [GameView ReloadNewGame];
-//        }
         let gameVC = Connect5ViewController()
         gameVC.isResumedGame = false
         self.navigationController?.pushViewController(gameVC, animated: true)
-        
-        
     }
     
     @objc func rankListClick() {
-        
+
     }
     
     @objc func helpClick() {
