@@ -1,0 +1,6 @@
+module Pods_YoYoPinXiaoLe {
+  umbrella header "Pods-YoYoPinXiaoLe-umbrella.h"
+
+  export *
+  module * { export * }
+}
