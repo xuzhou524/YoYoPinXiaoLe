@@ -494,7 +494,4 @@
     preCell.backgroundColor = [UIColor whiteColor];
 }
 
--(void)dealloc{
-    
-}
 @end
