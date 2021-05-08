@@ -141,9 +141,7 @@ class PlayYoQiuGameViewController: UIViewController {
             make.center.equalToSuperview()
         }
     }
-    
 }
-
 
 extension PlayYoQiuGameViewController: MatrixViewDelegate {
     func matrixViewQuit(_ matrixView: MatrixView!) {
@@ -181,7 +179,6 @@ extension PlayYoQiuGameViewController: MatrixViewDelegate {
             cell.setStatusWith(emptyCell, animatation: CellAnimationType.init(rawValue: 2))
         }
     }
-    
 }
 
 extension PlayYoQiuGameViewController {

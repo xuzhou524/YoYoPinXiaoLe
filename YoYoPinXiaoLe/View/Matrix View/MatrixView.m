@@ -280,7 +280,7 @@
 }
 
 -(void)ReportScoreToGameCenter{
-    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"YouQueMainLeaderboard"];
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"XZGame_YoYoPinXiaoLe"];
     scoreReporter.value = currentGame.score.score;
     scoreReporter.context = 0;
     [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
