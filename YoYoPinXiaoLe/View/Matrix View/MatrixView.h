@@ -38,12 +38,11 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
     LevelProvider *levelProvider;
     
     UndoManager *_UndoManager;
-    GameEntity *currentGame;
 }
 //UI Controls
 @property(nonatomic,retain)UIButton *UndoBtn;
 @property(nonatomic,retain)UILabel *ScoreBoard;
-
+@property(nonatomic,strong)GameEntity *currentGame;
 
 //Status Variables
 @property(nonatomic,assign)id<MatrixViewDelegate> delegate;

@@ -188,6 +188,7 @@ extension PlayYoQiuGameViewController {
                                    cancel: "取消",
                                    buttons: ["Quit","New Game"]) { (nResult) in
             if nResult == 0 {
+                XZGameCenterService.saveHighScore(score: NSInteger(self.matrix.currentGame.score.score))
                 self.navigationController?.popViewController(animated: true)
             }else if nResult == 1 {
                 self.resetNextCells()
