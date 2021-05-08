@@ -89,16 +89,6 @@
     }
 }
 
--(void)willMoveToSuperview:(UIView *)newSuperview{
-    if(newSuperview){
-        if(IsGameResumed){
-            [self ReloadGame:_currentGame];
-        }else{
-            [self ReloadNewGame];
-        }
-    }
-}
-
 -(void)ReloadNewGame{
     if([_delegate respondsToSelector:@selector(ResetNextAddedCells)]){
         [_delegate ResetNextAddedCells];
@@ -171,8 +161,8 @@
         [self AddNextCellsToSuperView];
     }
 }
-
-- (void) showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title{
+//顶部提示
+- (void)showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title{
     [TSMessage showNotificationWithTitle:title
                                 subtitle:msg
                                     type:TSMessageNotificationTypeError];
@@ -444,39 +434,6 @@
 
 -(CellView*)getCellViewWithIndex:(int)index{
     return ((CellView*)[self viewWithTag:index+1000]);
-}
-
-//*********************CELL PATH ANIMATION ********************************************************
--(void)AnimatePath:(NSArray*)path withColor:(UIColor*)color withCompletionBlock:(AnimationCompletionBlock)block{
-    for (int i =0;i<path.count;i++) {
-        CellView *PreCell = nil;
-        if (i>0) {
-            PreCell = (CellView*)[self viewWithTag:((NSNumber*)[path objectAtIndex:i-1]).intValue+1000];
-        }
-        CellView *cell = (CellView*)[self viewWithTag:((NSNumber*)[path objectAtIndex:i]).intValue+1000];
-        NSArray *cells = [NSArray arrayWithObjects:cell,[NSNumber numberWithBool:i==path.count-1],PreCell, nil];
-        
-        NSArray *objectArr = [NSArray arrayWithObjects:cells,color, nil];
-        [self performSelector:@selector(CellBackGroundToYellow:) withObject:objectArr afterDelay:i*0.06];
-    }
-}
-
--(void)CellBackGroundToYellow:(NSArray*)objectArray{
-    NSArray *cells = [objectArray objectAtIndex:0];
-    
-    UIColor *color = [objectArray objectAtIndex:1];
-    
-    CellView *currentCell = [cells objectAtIndex:0];
-    if(cells.count==3){
-        CellView *PreCell = [cells objectAtIndex:2];
-        [self performSelector:@selector(SetBackToWhite:) withObject:PreCell afterDelay:0.06];
-    }
-    if(!((NSNumber*)[cells objectAtIndex:1]).boolValue)
-        currentCell.backgroundColor = color;
-}
-
--(void)SetBackToWhite:(CellView*)preCell{
-    preCell.backgroundColor = [UIColor whiteColor];
 }
 
 @end
