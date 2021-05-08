@@ -206,28 +206,6 @@
     for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
         GraphCell *CopyGCell = [[GraphCell alloc] init];
         [addedCells addObject:CopyGCell];
-       /* int randomIndex = arc4random_uniform(5);
-        
-        if(randomIndex==0)
-        {
-            CopyGCell.color = blue;
-            
-        }else if (randomIndex==1)
-        {
-            CopyGCell.color = green;
-            
-        }else if (randomIndex==2)
-        {
-            CopyGCell.color = red;
-            
-        }else if (randomIndex==3)
-        {
-            CopyGCell.color = yellow;
-            
-        }else if (randomIndex==4)
-        {
-            CopyGCell.color = orange;
-        }*/
         CopyGCell.color = [self getRandomColor];
     }
     
@@ -251,8 +229,8 @@
     [RandomUnOccupiedCellsGenerator GenerateRandomUnOccupiedCellsIndexes:[levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
         NSMutableArray *AddedCells = [NSMutableArray array];
         for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
-            GraphCell *AddedGCell = [_currentGame.nextCellsToAdd objectAtIndex:i];
-            GraphCell *LocalGCell = [_currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
+            GraphCell *AddedGCell = [self.currentGame.nextCellsToAdd objectAtIndex:i];
+            GraphCell *LocalGCell = [self.currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             LocalGCell.color = AddedGCell.color;
             CellView *LocalCell = [self getCellViewWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             [AddedCells addObject:LocalGCell];
@@ -261,7 +239,7 @@
                 if(i==numberOfAddedCells-1) {
                     [self DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
                         [self setUserInteractionEnabled:YES];
-                        NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
+                        NSArray *unoccupiedCells = [self.currentGame.graph getUnOccupiedCells];
                         if(unoccupiedCells.count==0){
                             [self GameOver];
                             
@@ -276,8 +254,8 @@
     }];
 }
 
--(void)SetScoreInScoreBoard:(int)score{
-    _ScoreBoard.text = [NSString stringWithFormat:@"%d",score];
+-(void)SetScoreInScoreBoard:(NSInteger)score{
+    _ScoreBoard.text = [NSString stringWithFormat:@"%ld",(long)score];
 }
 
 -(void)ReportScoreToGameCenter{
@@ -303,7 +281,7 @@
         }
         [_SelectedPath removeAllObjects];
         
-        GraphCell *LastSelectedGcell = [_currentGame.graph getGraphCellWithIndex:touchedCell.tag-1000];
+        GraphCell *LastSelectedGcell = [self.currentGame.graph getGraphCellWithIndex:touchedCell.tag-1000];
         [touchedCell cellTouchedWithStatus:LastSelectedGcell.color];
         self.startCellIndex = [NSNumber numberWithInt:touchedCell.tag-1000] ;
         LastSelectedGcell.temporarilyUnoccupied = YES;
@@ -423,39 +401,31 @@
     [PersistentStore persistGame:nil];
     [self ReportScoreToGameCenter];
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Game Over" andMessage:@"nice job !"];
-    
     [alertView addButtonWithTitle:@"Quit"
                              type:SIAlertViewButtonTypeDestructive
                           handler:^(SIAlertView *alert) {
-                              
-                              if([_delegate respondsToSelector:@selector(MatrixViewQuit:)])
-                              {
-                                  [_delegate MatrixViewQuit:self];
+                              if([self.delegate respondsToSelector:@selector(MatrixViewQuit:)]){
+                                  [self.delegate MatrixViewQuit:self];
                               }
                           }];
-    
     [alertView addButtonWithTitle:@"New Game"
                              type:SIAlertViewButtonTypeDefault
                           handler:^(SIAlertView *alert) {
-                              
                               [self ReloadNewGame];
-                              
                           }];
     
     alertView.transitionStyle = SIAlertViewTransitionStyleFade;
-    
     [alertView performSelector:@selector(show) withObject:nil afterDelay:0.5];
-    
 }
 
 -(void)DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{
     // get detected rows from the ConnectedCellsDetector helper class
      [ConnectedCellRowsDetector getConnectedCellsWithGraph:_currentGame.graph withVertices:vertices withCompletionBlock:^(NSArray *result){
          // iterate on detected cells and remove them
-         int numberOfCellsDetected = result.count;
+         NSInteger numberOfCellsDetected = result.count;
          [self RemoveCells:result];
          //Update Score
-         [_currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
+         [self.currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
          
          [self UpdateScore];
          
@@ -472,37 +442,6 @@
         CellView *cellView = [self getCellViewWithIndex:index];
         [cellView SetStatusWithGraphCell:GCell Animatation:CellAnimationTypeRemoval];
     }
-}
-
--(void)SaveUndoAction{
-   /* undoBlock = ^(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex){
-        
-        //Remove Added Cells
-        for(NSNumber *addedCell in lastAddedCells)
-        {
-            GraphCell *GCell = [self.graph getGraphCellWithIndex:addedCell.intValue];
-            
-            CellView *LocalCell = [self getCellViewWithIndex:addedCell.intValue];
-            
-            GCell.color = unOccupied;
-            GCell.temporarilyUnoccupied = NO;
-            
-            [LocalCell SetStatusWithGraphCell:GCell];
-        }
-        
-        // Add Removed Cells
-        for(GraphCell *removedCell in lastRemovedCells)
-        {
-            [self.graph UpdateGraphCellAtIndex:removedCell.index WithCell:removedCell];
-            [[self getCellViewWithIndex:removedCell.index] SetStatusWithGraphCell:removedCell];
-        }
-        [FastestPathFinder findFastestPathWithOccupiedCells:[self.graph getOcuupiedCells] withSize:self.size withStart:lastEndCellIndex WithEnd:lastStartCellIndex WithCompletionBlock:^(NSArray *path){
-            
-            [self MoveOccupiedCellFromIndex:lastEndCellIndex.intValue toIndex:lastStartCellIndex.intValue WithPath:path];
-            
-        }];
-        
-    };*/
 }
 
 -(void)UpdateScore{

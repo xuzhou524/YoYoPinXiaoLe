@@ -33,24 +33,18 @@
     [aCoder encodeObject:[NSNumber numberWithInt:self.score] forKey:@"scoreInt"];
     [aCoder encodeObject:[NSNumber numberWithInt:self.numberOfConsecutiveRowCollection] forKey:@"numberOfConsecutiveRowCollection"];
 }
--(void)ReportScoreWithNumberOfDetectedCells:(int)numberOfDetectedCells
+-(void)ReportScoreWithNumberOfDetectedCells:(NSInteger)numberOfDetectedCells
 {
     _score += 2 * numberOfDetectedCells;
     
-    if(numberOfDetectedCells == 0)
-    {
+    if(numberOfDetectedCells == 0){
         _numberOfConsecutiveRowCollection = 0;
-        
-    }else
-    {
+    }else{
         _score += 3 * _numberOfConsecutiveRowCollection ;
         _numberOfConsecutiveRowCollection++;
     }
-    
-    
 }
--(void)ResetScore
-{
+-(void)ResetScore{
     _numberOfConsecutiveRowCollection = 0;
     _score = 0;
 }

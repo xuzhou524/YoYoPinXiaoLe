@@ -12,11 +12,10 @@
 @property(nonatomic,retain)NSArray *Levels;
 @end
 @implementation LevelProvider
--(id)initWithNumberOfLevels:(int)noOfLevels
-{
+
+-(id)initWithNumberOfLevels:(NSInteger)noOfLevels{
     self = [super init];
-    if(self)
-    {
+    if(self){
         NSMutableArray *levels = [NSMutableArray array];
         for (int i =0; i< noOfLevels; i++) {
             LevelEntity *level = [[LevelEntity alloc] init];
@@ -25,11 +24,9 @@
             level.MaxScore--;
             level.MinScore = (i)*LEVEL_RANGE;
             level.numberOfAddedCells = 3+i;
-            if(i==noOfLevels-1)
-            {
+            if(i==noOfLevels-1){
                 level.MaxScore = -1;
             }
-            
             [levels addObject:level];
         }
         _Levels = [NSArray arrayWithArray:levels];
@@ -37,36 +34,32 @@
     }
     return self;
 }
--(void)ResetLevel
-{
+
+-(void)ResetLevel{
     _currentLevel = [_Levels objectAtIndex:0];
 }
--(void)ReportScore:(int)score
-{
+
+-(void)ReportScore:(NSInteger)score{
     LevelEntity *newLevel ;
-    for(LevelEntity *level in _Levels)
-    {
-        if(score>= level.MinScore && score<= level.MaxScore)
-        {
+    for(LevelEntity *level in _Levels){
+        if(score>= level.MinScore && score<= level.MaxScore){
             newLevel = level;
-        }else if(level.MaxScore==-1 && score>= level.MinScore)
-        {
+        }else if(level.MaxScore==-1 && score>= level.MinScore){
             newLevel = level;
         }
     }
-    
-    if(newLevel!=_currentLevel && [_delegate respondsToSelector:@selector(levelProvider:LevelChanged:)])
-    {
+    if(newLevel!=_currentLevel && [_delegate respondsToSelector:@selector(levelProvider:LevelChanged:)]){
         [_delegate levelProvider:self LevelChanged:newLevel];
     }
     _currentLevel = newLevel;
 }
--(LevelEntity*)GetCurrentLevel
-{
+
+-(LevelEntity*)GetCurrentLevel{
     return _currentLevel;
 }
--(BOOL)isFinalLevel
-{
+
+-(BOOL)isFinalLevel{
     return _currentLevel.MaxScore == -1;
 }
+
 @end

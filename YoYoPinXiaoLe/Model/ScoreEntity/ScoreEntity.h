@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ScoreEntity : NSObject<NSCoding,NSCopying>
-@property(nonatomic)int score;
-@property(nonatomic)int numberOfConsecutiveRowCollection;
--(void)ReportScoreWithNumberOfDetectedCells:(int)numberOfDetectedCells;
+@property(nonatomic)NSInteger score;
+@property(nonatomic)NSInteger numberOfConsecutiveRowCollection;
+-(void)ReportScoreWithNumberOfDetectedCells:(NSInteger)numberOfDetectedCells;
 -(void)ResetScore;
 @end

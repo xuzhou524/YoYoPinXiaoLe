@@ -11,17 +11,16 @@
 @protocol LevelProviderDelegate;
 @interface LevelProvider : NSObject
 
-
 @property(nonatomic,weak)id<LevelProviderDelegate> delegate;
 
+-(id)initWithNumberOfLevels:(NSInteger)noOfLevels;
 
--(id)initWithNumberOfLevels:(int)noOfLevels;
-
--(void)ReportScore:(int)score;
+-(void)ReportScore:(NSInteger)score;
 
 -(LevelEntity*)GetCurrentLevel;
 -(void)ResetLevel;
 -(BOOL)isFinalLevel;
+
 @end
 
 
