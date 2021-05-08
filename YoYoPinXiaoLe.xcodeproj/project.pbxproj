@@ -11,7 +11,6 @@
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
 		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
 		53332BE22644CC8A00535838 /* UIColor+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD52644CC8A00535838 /* UIColor+Create.swift */; };
-		53332BE42644CC8A00535838 /* LDTipAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD92644CC8A00535838 /* LDTipAlertView.m */; };
 		53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */; };
 		53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */; };
 		53332BE82644CC8A00535838 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDD2644CC8A00535838 /* Client.swift */; };
@@ -79,11 +78,9 @@
 		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
 		53332BD42644CC8A00535838 /* UIColor+HZXColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HZXColor.h"; sourceTree = "<group>"; };
 		53332BD52644CC8A00535838 /* UIColor+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Create.swift"; sourceTree = "<group>"; };
-		53332BD92644CC8A00535838 /* LDTipAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTipAlertView.m; sourceTree = "<group>"; };
 		53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUserInfoConfig.swift; sourceTree = "<group>"; };
 		53332BDD2644CC8A00535838 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		53332BDE2644CC8A00535838 /* LDTipAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTipAlertView.h; sourceTree = "<group>"; };
 		53332BDF2644CC8A00535838 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		53332BF62644CE2500535838 /* LevelProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelProvider.h; sourceTree = "<group>"; };
 		53332BF72644CE2500535838 /* LevelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelProvider.m; sourceTree = "<group>"; };
@@ -203,8 +200,6 @@
 				53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */,
 				53D37AC326462A1600A4061E /* XZGameCenterService.swift */,
 				53332BDD2644CC8A00535838 /* Client.swift */,
-				53332BDE2644CC8A00535838 /* LDTipAlertView.h */,
-				53332BD92644CC8A00535838 /* LDTipAlertView.m */,
 				53332BCA2644CBBD00535838 /* XZNavigationController.swift */,
 				53332BDF2644CC8A00535838 /* UITableView+Extension.swift */,
 			);
@@ -657,7 +652,6 @@
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
-				53332BE42644CC8A00535838 /* LDTipAlertView.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
