@@ -18,7 +18,6 @@
 		53332BE92644CC8A00535838 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDF2644CC8A00535838 /* UITableView+Extension.swift */; };
 		53332BF82644CE2500535838 /* LevelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BF72644CE2500535838 /* LevelProvider.m */; };
 		53332BFC2644CE3100535838 /* LevelEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BFA2644CE3100535838 /* LevelEntity.m */; };
-		53332C002644CE3B00535838 /* LevelGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BFF2644CE3B00535838 /* LevelGauge.m */; };
 		53332C042644CE4B00535838 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C022644CE4B00535838 /* UndoManager.m */; };
 		53332C082644CE5700535838 /* PersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C072644CE5700535838 /* PersistentStore.m */; };
 		53332C0C2644CE6400535838 /* FastestPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C0B2644CE6400535838 /* FastestPathFinder.m */; };
@@ -26,7 +25,6 @@
 		53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C132644CE7A00535838 /* MJPriorityQueue.mm */; };
 		53332C1B2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */; };
 		53332C212644CE9500535838 /* ConnectedCellRowsDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */; };
-		53332C222644CE9500535838 /* ConnectedCellsDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1E2644CE9400535838 /* ConnectedCellsDetector.m */; };
 		53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C282644D63D00535838 /* MJDijkstra.m */; };
 		5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26626356BD2006F9378 /* AppDelegate.swift */; };
 		5335B26B26356BD2006F9378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26A26356BD2006F9378 /* ViewController.swift */; };
@@ -91,8 +89,6 @@
 		53332BF72644CE2500535838 /* LevelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelProvider.m; sourceTree = "<group>"; };
 		53332BFA2644CE3100535838 /* LevelEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelEntity.m; sourceTree = "<group>"; };
 		53332BFB2644CE3100535838 /* LevelEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelEntity.h; sourceTree = "<group>"; };
-		53332BFE2644CE3B00535838 /* LevelGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGauge.h; sourceTree = "<group>"; };
-		53332BFF2644CE3B00535838 /* LevelGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGauge.m; sourceTree = "<group>"; };
 		53332C022644CE4B00535838 /* UndoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
 		53332C032644CE4B00535838 /* UndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
 		53332C062644CE5700535838 /* PersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStore.h; sourceTree = "<group>"; };
@@ -106,9 +102,7 @@
 		53332C192644CE8900535838 /* RandomUnOccupiedCellsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomUnOccupiedCellsGenerator.h; sourceTree = "<group>"; };
 		53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomUnOccupiedCellsGenerator.m; sourceTree = "<group>"; };
 		53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedCellRowsDetector.m; sourceTree = "<group>"; };
-		53332C1E2644CE9400535838 /* ConnectedCellsDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedCellsDetector.m; sourceTree = "<group>"; };
 		53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedCellRowsDetector.h; sourceTree = "<group>"; };
-		53332C202644CE9500535838 /* ConnectedCellsDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedCellsDetector.h; sourceTree = "<group>"; };
 		53332C282644D63D00535838 /* MJDijkstra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDijkstra.m; sourceTree = "<group>"; };
 		53332C292644D63D00535838 /* MJDijkstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDijkstra.h; sourceTree = "<group>"; };
 		5335B26326356BD2006F9378 /* YoYoPinXiaoLe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYoPinXiaoLe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,8 +224,6 @@
 		53332BF02644CDBB00535838 /* LevelProvider */ = {
 			isa = PBXGroup;
 			children = (
-				53332BFE2644CE3B00535838 /* LevelGauge.h */,
-				53332BFF2644CE3B00535838 /* LevelGauge.m */,
 				53332BFB2644CE3100535838 /* LevelEntity.h */,
 				53332BFA2644CE3100535838 /* LevelEntity.m */,
 				53332BF62644CE2500535838 /* LevelProvider.h */,
@@ -282,8 +274,6 @@
 			children = (
 				53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */,
 				53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */,
-				53332C202644CE9500535838 /* ConnectedCellsDetector.h */,
-				53332C1E2644CE9400535838 /* ConnectedCellsDetector.m */,
 			);
 			path = ConnectedCellsDetector;
 			sourceTree = "<group>";
@@ -667,7 +657,6 @@
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
-				53332C002644CE3B00535838 /* LevelGauge.m in Sources */,
 				53332BE42644CC8A00535838 /* LDTipAlertView.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
@@ -679,7 +668,6 @@
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
 				5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */,
-				53332C222644CE9500535838 /* ConnectedCellsDetector.m in Sources */,
 				53332C042644CE4B00535838 /* UndoManager.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,

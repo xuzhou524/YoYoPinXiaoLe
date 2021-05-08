@@ -11,7 +11,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FastestPathFinder.h"
 #import "Graph.h"
-#import "ConnectedCellsDetector.h"
 #import "RandomUnOccupiedCellsGenerator.h"
 #import <GameKit/GameKit.h>
 #import "GameEntity.h"

@@ -419,7 +419,6 @@
 }
 
 -(void)DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{
-    // get detected rows from the ConnectedCellsDetector helper class
      [ConnectedCellRowsDetector getConnectedCellsWithGraph:_currentGame.graph withVertices:vertices withCompletionBlock:^(NSArray *result){
          // iterate on detected cells and remove them
          NSInteger numberOfCellsDetected = result.count;

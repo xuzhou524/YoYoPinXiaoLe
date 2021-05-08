@@ -82,30 +82,6 @@ static char* GLOWVIEW_KEY = "GLOWVIEW";
     [self setGlowView:glowView];
 }
 
-- (void) glowOnceAtLocation:(CGPoint)point inView:(UIView*)view {
-    [self startGlowingWithColor:[UIColor whiteColor] fromIntensity:0 toIntensity:0.6 repeat:NO];
-    
-    [self glowView].center = point;
-    [view addSubview:[self glowView]];
-    
-    int64_t delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self stopGlowing];
-    });
-}
-
-- (void)glowOnce {
-    [self startGlowing];
-    
-    int64_t delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self stopGlowing];
-    });
-    
-}
-
 // Create a pulsing, glowing view based on this one.
 - (void) startGlowing {
     [self startGlowingWithColor:[UIColor whiteColor] intensity:0.6];
