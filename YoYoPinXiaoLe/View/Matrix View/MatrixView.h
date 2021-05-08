@@ -20,22 +20,15 @@
 #import "TSMessage.h"
 #import "UndoManager.h"
 #import "LevelProvider.h"
-#define NUMBER_OF_ADDED_CELLS 3
+
 @protocol MatrixViewDelegate;
 typedef void (^CompletionBlock)(NSArray* detectedCells);
-typedef void (^AnimationCompletionBlock)();
+typedef void (^AnimationCompletionBlock)(void);
 typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
-@interface MatrixView : UIView<CellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>
-{
-    
-    UIImageView *BackView;
-    
+@interface MatrixView : UIView<CellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
     UndoBlock undoBlock;
-    
     BOOL IsGameResumed;
-    
     LevelProvider *levelProvider;
-    
     UndoManager *_UndoManager;
 }
 //UI Controls
@@ -53,12 +46,9 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
 
 -(void)ReloadNewGame;
 -(void)ReloadGame:(GameEntity*)game;
-
 -(void)saveGame;
--(void)CancelAction:(UIButton *)sender;
--(void)OKAction:(UIButton *)sender;
 -(void)undoLastMove;
--(void)ResetUndo;
+
 @end
 @protocol MatrixViewDelegate <NSObject>
 

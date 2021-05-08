@@ -89,13 +89,6 @@
     }
 }
 
--(void)ResetUndo{
-   if(_UndoManager){
-       [_UndoManager ResetManager];
-       _UndoBtn.enabled = NO;
-   }
-}
-
 -(void)willMoveToSuperview:(UIView *)newSuperview{
     if(newSuperview){
         if(IsGameResumed){
@@ -302,7 +295,6 @@
             if(self.SelectedPath.count==0){
                 [self showBannerWithMessage:@"Can't go there !" withTitle:@"Sorry"];
             }
-           // _OKBtn.enabled = self.SelectedPath.count>0;
             [self OKAction:nil];
         }];
     }
@@ -357,12 +349,6 @@
     _startCellIndex = nil;
     
     [fromCell cellUnTouched];
-    //_OKBtn.enabled = NO;
-    //_CancelBtn.enabled = NO;
-}
-
--(void)CancelAction:(UIButton *)sender{
-    
 }
 
 -(void)MoveOccupiedCellFromIndex:(int)Fromindex toIndex:(int)toIndex WithPath:(NSArray*)path{
