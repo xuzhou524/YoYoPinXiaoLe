@@ -89,6 +89,16 @@
     }
 }
 
+-(void)willMoveToSuperview:(UIView *)newSuperview{
+    if(newSuperview){
+        if(IsGameResumed){
+            [self ReloadGame:_currentGame];
+        }else{
+            [self ReloadNewGame];
+        }
+    }
+}
+
 -(void)ReloadNewGame{
     if([_delegate respondsToSelector:@selector(ResetNextAddedCells)]){
         [_delegate ResetNextAddedCells];
