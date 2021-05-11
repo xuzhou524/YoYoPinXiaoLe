@@ -313,8 +313,10 @@
 			children = (
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
-				5335B2A5263572A6006F9378 /* Matrix View */,
-				5335B2A42635729E006F9378 /* Matrix Cell View */,
+				5335B2F326357330006F9378 /* CellView.h */,
+				5335B2F426357330006F9378 /* CellView.m */,
+				5335B2F72635733A006F9378 /* MatrixView.h */,
+				5335B2F82635733A006F9378 /* MatrixView.m */,
 				5335B2A12635726D006F9378 /* SIAlertView */,
 				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
 			);
@@ -367,24 +369,6 @@
 				5335B2AF263572CE006F9378 /* SIAlertView.m */,
 			);
 			path = SIAlertView;
-			sourceTree = "<group>";
-		};
-		5335B2A42635729E006F9378 /* Matrix Cell View */ = {
-			isa = PBXGroup;
-			children = (
-				5335B2F326357330006F9378 /* CellView.h */,
-				5335B2F426357330006F9378 /* CellView.m */,
-			);
-			path = "Matrix Cell View";
-			sourceTree = "<group>";
-		};
-		5335B2A5263572A6006F9378 /* Matrix View */ = {
-			isa = PBXGroup;
-			children = (
-				5335B2F72635733A006F9378 /* MatrixView.h */,
-				5335B2F82635733A006F9378 /* MatrixView.m */,
-			);
-			path = "Matrix View";
 			sourceTree = "<group>";
 		};
 		53567BBA26451F0400687883 /* DoActionSheet */ = {

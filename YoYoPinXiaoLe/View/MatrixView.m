@@ -171,6 +171,7 @@
         [self AddNextCellsToSuperView];
     }
 }
+
 //顶部提示
 - (void)showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title{
     TopPromptView * view = [TopPromptView new];
