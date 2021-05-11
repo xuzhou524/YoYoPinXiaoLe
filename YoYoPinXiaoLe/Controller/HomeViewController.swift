@@ -10,6 +10,15 @@ import GameKit
 import GameplayKit
 
 class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
+    
+    let nameLabel:UILabel = {
+        let label = UILabel()
+        label.font = blodFontWithSize(35)
+        label.textColor = UIColor(named: "color_title_black")
+        label.text = "YoYo拼消乐"
+        label.alpha = 0.8
+        return label
+    }()
 
     let tipButton:UIButton = {
         let button = UIButton()
@@ -19,6 +28,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
+        button.alpha = 0.8
         return button
     }()
     
@@ -30,6 +40,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
+        button.alpha = 0.8
         return button
     }()
     
@@ -41,6 +52,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
+        button.alpha = 0.8
         return button
     }()
     
@@ -55,27 +67,33 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "color_theme")
         
+        self.view.addSubview(self.nameLabel)
+        nameLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(150)
+        }
+        
         self.view.addSubview(self.tipButton1)
         tipButton1.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-50)
-            make.height.equalTo(48)
+            make.height.equalTo(45)
             make.width.equalTo(200)
         }
 
         self.view.addSubview(self.tipButton)
         tipButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(tipButton1.snp.top).offset(-50)
-            make.height.equalTo(48)
+            make.bottom.equalTo(tipButton1.snp.top).offset(-30)
+            make.height.equalTo(45)
             make.width.equalTo(200)
         }
 
         self.view.addSubview(self.tipButton2)
         tipButton2.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(tipButton1.snp.bottom).offset(50)
-            make.height.equalTo(48)
+            make.top.equalTo(tipButton1.snp.bottom).offset(30)
+            make.height.equalTo(45)
             make.width.equalTo(200)
         }
         
