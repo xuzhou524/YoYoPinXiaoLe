@@ -11,6 +11,7 @@
 		5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B5264A5BEE00F75D44 /* GWProgressView.m */; };
 		5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */; };
 		5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5CA264A70C800F75D44 /* TopPromptView.swift */; };
+		5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5F3264A889300F75D44 /* XZAlertView.swift */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
 		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
@@ -39,8 +40,6 @@
 		5335B296263571A5006F9378 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B293263571A5006F9378 /* Graph.m */; };
 		5335B297263571A5006F9378 /* GraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B295263571A5006F9378 /* GraphCell.m */; };
 		5335B29B263571B4006F9378 /* MSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B299263571B4006F9378 /* MSize.m */; };
-		5335B2B0263572CE006F9378 /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5335B2AD263572CE006F9378 /* SIAlertView.bundle */; };
-		5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2AF263572CE006F9378 /* SIAlertView.m */; };
 		5335B2F126357321006F9378 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F026357320006F9378 /* UIView+Glow.m */; };
 		5335B2F526357330006F9378 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F426357330006F9378 /* CellView.m */; };
 		5335B2F92635733A006F9378 /* MatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F82635733A006F9378 /* MatrixView.m */; };
@@ -61,6 +60,7 @@
 		5314F5B5264A5BEE00F75D44 /* GWProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWProgressView.m; sourceTree = "<group>"; };
 		5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		5314F5CA264A70C800F75D44 /* TopPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPromptView.swift; sourceTree = "<group>"; };
+		5314F5F3264A889300F75D44 /* XZAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAlertView.swift; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
 		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
@@ -108,9 +108,6 @@
 		5335B295263571A5006F9378 /* GraphCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphCell.m; sourceTree = "<group>"; };
 		5335B299263571B4006F9378 /* MSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSize.m; sourceTree = "<group>"; };
 		5335B29A263571B4006F9378 /* MSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSize.h; sourceTree = "<group>"; };
-		5335B2AD263572CE006F9378 /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
-		5335B2AE263572CE006F9378 /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
-		5335B2AF263572CE006F9378 /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
 		5335B2EF26357320006F9378 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		5335B2F026357320006F9378 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		5335B2F326357330006F9378 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
@@ -312,13 +309,13 @@
 			isa = PBXGroup;
 			children = (
 				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
+				5314F5F3264A889300F75D44 /* XZAlertView.swift */,
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
 				5335B2F326357330006F9378 /* CellView.h */,
 				5335B2F426357330006F9378 /* CellView.m */,
 				5335B2F72635733A006F9378 /* MatrixView.h */,
 				5335B2F82635733A006F9378 /* MatrixView.m */,
-				5335B2A12635726D006F9378 /* SIAlertView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,16 +356,6 @@
 				5335B295263571A5006F9378 /* GraphCell.m */,
 			);
 			path = "Graph Representation";
-			sourceTree = "<group>";
-		};
-		5335B2A12635726D006F9378 /* SIAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				5335B2AD263572CE006F9378 /* SIAlertView.bundle */,
-				5335B2AE263572CE006F9378 /* SIAlertView.h */,
-				5335B2AF263572CE006F9378 /* SIAlertView.m */,
-			);
-			path = SIAlertView;
 			sourceTree = "<group>";
 		};
 		53567BBA26451F0400687883 /* DoActionSheet */ = {
@@ -462,7 +449,6 @@
 			files = (
 				5335B27326356BD5006F9378 /* LaunchScreen.storyboard in Resources */,
 				5314F5B7264A5BEE00F75D44 /* progressImage.gif in Resources */,
-				5335B2B0263572CE006F9378 /* SIAlertView.bundle in Resources */,
 				5335B27026356BD5006F9378 /* Assets.xcassets in Resources */,
 				5335B26E26356BD2006F9378 /* Main.storyboard in Resources */,
 			);
@@ -505,6 +491,7 @@
 				5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */,
 				5335B296263571A5006F9378 /* Graph.m in Sources */,
 				5335B26B26356BD2006F9378 /* ViewController.swift in Sources */,
+				5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */,
 				5335B2F526357330006F9378 /* CellView.m in Sources */,
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,
@@ -520,7 +507,6 @@
 				5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */,
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
-				5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */,
 				53332C042644CE4B00535838 /* UndoManager.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,

@@ -386,22 +386,17 @@
 -(void)GameOver{
 //    [PersistentStore persistGame:nil];
     [self ReportScoreToGameCenter];
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Game Over" andMessage:@"nice job !"];
-    [alertView addButtonWithTitle:@"Quit"
-                             type:SIAlertViewButtonTypeDestructive
-                          handler:^(SIAlertView *alert) {
-                              if([self.delegate respondsToSelector:@selector(MatrixViewQuit:)]){
-                                  [self.delegate MatrixViewQuit:self];
-                              }
-                          }];
-    [alertView addButtonWithTitle:@"New Game"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alert) {
-                              [self ReloadNewGame];
-                          }];
-    
-    alertView.transitionStyle = SIAlertViewTransitionStyleFade;
-    [alertView performSelector:@selector(show) withObject:nil afterDelay:0.5];
+    XZAlertView * view = [[XZAlertView alloc] init];
+    view.completion = ^{
+        if([self.delegate respondsToSelector:@selector(MatrixViewQuit:)]){
+            [self.delegate MatrixViewQuit:self];
+        }
+    };
+    view.gameCompletion = ^{
+        [self ReloadNewGame];
+    };
+
+    [view show];
 }
 
 -(void)DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{

@@ -16,7 +16,6 @@
 #import "GameEntity.h"
 #import "PersistentStore.h"
 #import "ConnectedCellRowsDetector.h"
-#import "SIAlertView.h"
 #import "UndoManager.h"
 #import "LevelProvider.h"
 
