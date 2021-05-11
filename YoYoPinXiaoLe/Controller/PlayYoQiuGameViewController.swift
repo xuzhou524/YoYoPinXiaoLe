@@ -33,26 +33,32 @@ class PlayYoQiuGameViewController: UIViewController {
         return button
     }()
     
-    let cancelBtn:UIButton = {
+    let suspendView:UIButton = {
         let button = UIButton()
-        button.setTitle("暂停", for: .normal)
-        button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(12)
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
+        button.alpha = 0.3
         return button
     }()
+    let suspendImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "suspendImage")
+        return imageView
+    }()
     
-    let okBtn:UIButton = {
+    let reductionView:UIButton = {
         let button = UIButton()
-        button.setTitle("撤销", for: .normal)
-        button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(12)
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
+        button.alpha = 0.3
         return button
+    }()
+    let reductionImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "reductionImage")
+        return imageView
     }()
     
     let progressView:SSPieProgressView = {
@@ -98,7 +104,8 @@ class PlayYoQiuGameViewController: UIViewController {
         gameContainerView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-40)
-            make.width.height.equalTo(320)
+            make.width.equalTo(320)
+            make.height.equalTo(350)
         }
 
         matrix.delegate = self
@@ -118,23 +125,36 @@ class PlayYoQiuGameViewController: UIViewController {
         matrix.undoBtn = undoBtn
         gameContainerView.addSubview(matrix)
         
-        self.view.addSubview(self.cancelBtn)
-        cancelBtn.snp.makeConstraints { (make) in
+        self.view.addSubview(self.suspendView)
+        suspendView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.bottom.equalTo(self.scoreBoardLabel)
-            make.height.equalTo(35)
-            make.width.equalTo(35)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
         }
-        self.view.addSubview(self.okBtn)
-        okBtn.snp.makeConstraints { (make) in
+        self.view.addSubview(suspendImageView)
+        suspendImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.suspendView)
+            make.height.equalTo(12)
+            make.width.equalTo(12)
+        }
+        
+        self.view.addSubview(self.reductionView)
+        reductionView.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(self.scoreBoardLabel)
-            make.height.equalTo(35)
-            make.width.equalTo(35)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+        }
+        self.view.addSubview(reductionImageView)
+        reductionImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.reductionView)
+            make.height.equalTo(18)
+            make.width.equalTo(18)
         }
 
-        self.cancelBtn.addTarget(self, action: #selector(quit), for: .touchUpInside)
-        self.okBtn.addTarget(self, action: #selector(undo), for: .touchUpInside)
+        self.suspendView.addTarget(self, action: #selector(quit), for: .touchUpInside)
+        self.reductionView.addTarget(self, action: #selector(undo), for: .touchUpInside)
         
         self.view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
