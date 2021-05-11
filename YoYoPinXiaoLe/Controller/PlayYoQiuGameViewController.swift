@@ -61,11 +61,10 @@ class PlayYoQiuGameViewController: UIViewController {
         return imageView
     }()
     
-    let progressView:SSPieProgressView = {
-        let view = SSPieProgressView()
-        view.pieFillColor = UIColor.red
-        view.pieBorderColor = UIColor.blue
-        view.pieBackgroundColor = UIColor.gray
+    let progressView:GWProgressView = {
+        let view = GWProgressView.init(frame: CGRect(x: 30, y: 0, width: kScreenWidth-60, height: 15))
+        view.trackTintColor = UIColor.lightGray
+        view.progressTintColor = UIColor.green
         return view
     }()
     
@@ -158,15 +157,16 @@ class PlayYoQiuGameViewController: UIViewController {
         
         self.view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(20)
-            make.height.equalTo(60)
-            make.width.equalTo(60)
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(60)
+            make.height.equalTo(15)
         }
         
         progressView.addSubview(LevelLbl)
         LevelLbl.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.progressView.snp.top).offset(-15)
         }
     }
 }

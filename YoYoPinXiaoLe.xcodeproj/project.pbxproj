@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5314F5B7264A5BEE00F75D44 /* progressImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5314F5B4264A5BEE00F75D44 /* progressImage.gif */; };
+		5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B5264A5BEE00F75D44 /* GWProgressView.m */; };
+		5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
 		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
@@ -73,6 +76,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5314F5B2264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GW_AnimatedGIFImageSerialization.h; sourceTree = "<group>"; };
+		5314F5B3264A5BEE00F75D44 /* GWProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWProgressView.h; sourceTree = "<group>"; };
+		5314F5B4264A5BEE00F75D44 /* progressImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = progressImage.gif; sourceTree = "<group>"; };
+		5314F5B5264A5BEE00F75D44 /* GWProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWProgressView.m; sourceTree = "<group>"; };
+		5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
 		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
@@ -185,9 +193,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				5314F5B2264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.h */,
+				5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */,
+				5314F5B3264A5BEE00F75D44 /* GWProgressView.h */,
+				5314F5B5264A5BEE00F75D44 /* GWProgressView.m */,
+				5314F5B4264A5BEE00F75D44 /* progressImage.gif */,
+			);
+			path = GW_ProgressViewKit;
+			sourceTree = "<group>";
+		};
 		53332BD02644CC8A00535838 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */,
 				53567BBA26451F0400687883 /* DoActionSheet */,
 				53332BF52644CE0700535838 /* ConnectedCellsDetector */,
 				53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */,
@@ -587,6 +608,7 @@
 				5335B27326356BD5006F9378 /* LaunchScreen.storyboard in Resources */,
 				5335B2E42635730C006F9378 /* TSMessagesDefaultDesign.json in Resources */,
 				5335B2DE2635730C006F9378 /* NotificationBackgroundError@2x.png in Resources */,
+				5314F5B7264A5BEE00F75D44 /* progressImage.gif in Resources */,
 				5335B2DC2635730C006F9378 /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
 				5335B2B0263572CE006F9378 /* SIAlertView.bundle in Resources */,
 				5335B27026356BD5006F9378 /* Assets.xcassets in Resources */,
@@ -655,10 +677,12 @@
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
+				5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */,
 				53567BBD26451F0400687883 /* DoActionSheet.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,
 				5335B28C2635717D006F9378 /* ScoreEntity.m in Sources */,
 				5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */,
+				5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */,
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
 				5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */,
