@@ -173,9 +173,8 @@
 }
 //顶部提示
 - (void)showBannerWithMessage:(NSString*)msg withTitle:(NSString*)title{
-    [TSMessage showNotificationWithTitle:title
-                                subtitle:msg
-                                    type:TSMessageNotificationTypeError];
+    TopPromptView * view = [TopPromptView new];
+    [view show];
 }
 
 -(GraphCellStatus)getRandomColor{

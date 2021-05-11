@@ -17,7 +17,6 @@
 #import "PersistentStore.h"
 #import "ConnectedCellRowsDetector.h"
 #import "SIAlertView.h"
-#import "TSMessage.h"
 #import "UndoManager.h"
 #import "LevelProvider.h"
 

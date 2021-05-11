@@ -40,23 +40,21 @@ let kScreenHeight = UIScreen.main.bounds.size.height
 
 let kIsFullScreen = (UIApplication.shared.windows[0].safeAreaInsets.bottom > 0 ? true : false)
 
-class FZImageView: UIImageView {
-    var hitTestSlop:UIEdgeInsets = UIEdgeInsets.zero
+
+class Client: NSObject {
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if hitTestSlop == UIEdgeInsets.zero {
-            return super.point(inside: point, with:event)
-        }
-        else{
-            return self.bounds.inset(by: hitTestSlop).contains(point)
+    static let shared = Client()
+    private override init() {
+        super.init()
+    }
+    
+    var mainWindow:UIWindow {
+        get {
+            let array = UIApplication.shared.windows
+            return array.first ?? UIWindow()
         }
     }
 }
-
-class Client: NSObject {
-
-}
-
 
 extension UIView {
     /// 设置阴影
@@ -83,5 +81,18 @@ extension UIView {
         let shape = CAShapeLayer()
         shape.path = rounded.cgPath
         self.layer.mask = shape
+    }
+}
+
+class FZImageView: UIImageView {
+    var hitTestSlop:UIEdgeInsets = UIEdgeInsets.zero
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if hitTestSlop == UIEdgeInsets.zero {
+            return super.point(inside: point, with:event)
+        }
+        else{
+            return self.bounds.inset(by: hitTestSlop).contains(point)
+        }
     }
 }
