@@ -36,6 +36,7 @@ class TopPromptView: UIView {
         }
         
         panel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hide)))
+        self.perform(#selector(self.hide), with: nil, afterDelay: 2.0)
         
     }
     required init?(coder aDecoder: NSCoder) {
