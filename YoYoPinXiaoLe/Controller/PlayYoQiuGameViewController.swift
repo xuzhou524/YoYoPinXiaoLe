@@ -12,7 +12,7 @@ class PlayYoQiuGameViewController: UIViewController {
     //分
     let scoreBoardLabel:UILabel = {
         let label = UILabel()
-        label.font = blodFontWithSize(30)
+        label.font = blodFontWithSize(35)
         label.textColor = UIColor(named: "color_title_black")
         label.text = "0"
         return label
@@ -20,12 +20,11 @@ class PlayYoQiuGameViewController: UIViewController {
     //游戏操作区
     let gameContainerView:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.orange
         return view
     }()
     
     let matrix:MatrixView = {
-        let view = MatrixView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let view = MatrixView.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
         return view
     }()
     
@@ -38,7 +37,7 @@ class PlayYoQiuGameViewController: UIViewController {
         let button = UIButton()
         button.setTitle("暂停", for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(14)
+        button.titleLabel?.font = blodFontWithSize(12)
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
@@ -49,7 +48,7 @@ class PlayYoQiuGameViewController: UIViewController {
         let button = UIButton()
         button.setTitle("撤销", for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(14)
+        button.titleLabel?.font = blodFontWithSize(12)
         button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
@@ -72,9 +71,19 @@ class PlayYoQiuGameViewController: UIViewController {
         return label
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "color_theme")
+        
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        view.backgroundColor = UIColor.white
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: view)
+        
         sebViews()
     }
     
@@ -82,14 +91,14 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(scoreBoardLabel)
         scoreBoardLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(60)
         }
         
         self.view.addSubview(gameContainerView)
         gameContainerView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50)
-            make.height.equalTo(kScreenWidth)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-40)
+            make.width.height.equalTo(320)
         }
 
         matrix.delegate = self
@@ -112,16 +121,16 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(self.cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
-            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(10)
-            make.height.equalTo(48)
-            make.width.equalTo(48)
+            make.bottom.equalTo(self.scoreBoardLabel)
+            make.height.equalTo(35)
+            make.width.equalTo(35)
         }
         self.view.addSubview(self.okBtn)
         okBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)
-            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(10)
-            make.height.equalTo(48)
-            make.width.equalTo(48)
+            make.bottom.equalTo(self.scoreBoardLabel)
+            make.height.equalTo(35)
+            make.width.equalTo(35)
         }
 
         self.cancelBtn.addTarget(self, action: #selector(quit), for: .touchUpInside)
@@ -183,9 +192,9 @@ extension PlayYoQiuGameViewController: MatrixViewDelegate {
 extension PlayYoQiuGameViewController {
     @objc func quit(){
         let classTypeActionSheet = DoActionSheet()
-        classTypeActionSheet.showC("Pause",
+        classTypeActionSheet.showC(" ",
                                    cancel: "取消",
-                                   buttons: ["Quit","New Game"]) { (nResult) in
+                                   buttons: ["返回","新游戏"]) { (nResult) in
             if nResult == 0 {
                 XZGameCenterService.saveHighScore(score: NSInteger(self.matrix.currentGame.score.score))
                 self.navigationController?.popViewController(animated: true)
