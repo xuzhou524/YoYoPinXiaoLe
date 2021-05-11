@@ -77,7 +77,7 @@
 }
 
 -(void)PersistGameToPermenantStore{
-    [PersistentStore persistGame:_currentGame];
+//    [PersistentStore persistGame:_currentGame];
 }
 
 -(void)undoLastMove{
@@ -384,7 +384,7 @@
 }
 
 -(void)GameOver{
-    [PersistentStore persistGame:nil];
+//    [PersistentStore persistGame:nil];
     [self ReportScoreToGameCenter];
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Game Over" andMessage:@"nice job !"];
     [alertView addButtonWithTitle:@"Quit"

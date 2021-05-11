@@ -311,6 +311,7 @@
 		5335B28426357136006F9378 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
 				5335B2F326357330006F9378 /* CellView.h */,
@@ -318,7 +319,6 @@
 				5335B2F72635733A006F9378 /* MatrixView.h */,
 				5335B2F82635733A006F9378 /* MatrixView.m */,
 				5335B2A12635726D006F9378 /* SIAlertView */,
-				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
