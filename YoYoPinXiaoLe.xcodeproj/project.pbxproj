@@ -10,6 +10,7 @@
 		5314F5B7264A5BEE00F75D44 /* progressImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5314F5B4264A5BEE00F75D44 /* progressImage.gif */; };
 		5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B5264A5BEE00F75D44 /* GWProgressView.m */; };
 		5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */; };
+		5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5CA264A70C800F75D44 /* TopPromptView.swift */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
 		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
@@ -38,8 +39,6 @@
 		5335B296263571A5006F9378 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B293263571A5006F9378 /* Graph.m */; };
 		5335B297263571A5006F9378 /* GraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B295263571A5006F9378 /* GraphCell.m */; };
 		5335B29B263571B4006F9378 /* MSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B299263571B4006F9378 /* MSize.m */; };
-		5335B2AA263572B6006F9378 /* SSDrawingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2A7263572B6006F9378 /* SSDrawingUtilities.m */; };
-		5335B2AB263572B6006F9378 /* SSPieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2A9263572B6006F9378 /* SSPieProgressView.m */; };
 		5335B2B0263572CE006F9378 /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5335B2AD263572CE006F9378 /* SIAlertView.bundle */; };
 		5335B2B1263572CE006F9378 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2AF263572CE006F9378 /* SIAlertView.m */; };
 		5335B2D32635730C006F9378 /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2BA2635730C006F9378 /* TSMessage.m */; };
@@ -81,6 +80,7 @@
 		5314F5B4264A5BEE00F75D44 /* progressImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = progressImage.gif; sourceTree = "<group>"; };
 		5314F5B5264A5BEE00F75D44 /* GWProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWProgressView.m; sourceTree = "<group>"; };
 		5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
+		5314F5CA264A70C800F75D44 /* TopPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPromptView.swift; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
 		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
@@ -128,10 +128,6 @@
 		5335B295263571A5006F9378 /* GraphCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphCell.m; sourceTree = "<group>"; };
 		5335B299263571B4006F9378 /* MSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSize.m; sourceTree = "<group>"; };
 		5335B29A263571B4006F9378 /* MSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSize.h; sourceTree = "<group>"; };
-		5335B2A6263572B6006F9378 /* SSDrawingUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawingUtilities.h; sourceTree = "<group>"; };
-		5335B2A7263572B6006F9378 /* SSDrawingUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawingUtilities.m; sourceTree = "<group>"; };
-		5335B2A8263572B6006F9378 /* SSPieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPieProgressView.h; sourceTree = "<group>"; };
-		5335B2A9263572B6006F9378 /* SSPieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPieProgressView.m; sourceTree = "<group>"; };
 		5335B2AD263572CE006F9378 /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
 		5335B2AE263572CE006F9378 /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
 		5335B2AF263572CE006F9378 /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
@@ -364,7 +360,7 @@
 				5335B2A42635729E006F9378 /* Matrix Cell View */,
 				5335B2A226357285006F9378 /* Notification View */,
 				5335B2A12635726D006F9378 /* SIAlertView */,
-				5335B29F26357255006F9378 /* PieProgressView */,
+				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,17 +401,6 @@
 				5335B295263571A5006F9378 /* GraphCell.m */,
 			);
 			path = "Graph Representation";
-			sourceTree = "<group>";
-		};
-		5335B29F26357255006F9378 /* PieProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				5335B2A6263572B6006F9378 /* SSDrawingUtilities.h */,
-				5335B2A7263572B6006F9378 /* SSDrawingUtilities.m */,
-				5335B2A8263572B6006F9378 /* SSPieProgressView.h */,
-				5335B2A9263572B6006F9378 /* SSPieProgressView.m */,
-			);
-			path = PieProgressView;
 			sourceTree = "<group>";
 		};
 		5335B2A12635726D006F9378 /* SIAlertView */ = {
@@ -664,10 +649,9 @@
 			files = (
 				5335B2D32635730C006F9378 /* TSMessage.m in Sources */,
 				5335B2E62635730C006F9378 /* TSBlurView.m in Sources */,
-				5335B2AB263572B6006F9378 /* SSPieProgressView.m in Sources */,
-				5335B2AA263572B6006F9378 /* SSDrawingUtilities.m in Sources */,
 				53332C082644CE5700535838 /* PersistentStore.m in Sources */,
 				53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */,
+				5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */,
 				5335B296263571A5006F9378 /* Graph.m in Sources */,
 				5335B26B26356BD2006F9378 /* ViewController.swift in Sources */,
 				5335B2F526357330006F9378 /* CellView.m in Sources */,
