@@ -8,6 +8,7 @@
 import UIKit
 import GameKit
 import GameplayKit
+import StoreKit
 
 class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
@@ -177,6 +178,10 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.center.equalTo(shareBtn)
             make.width.height.equalTo(22)
         }
+        
+        privacyBtn.addTarget(self, action: #selector(privacyClick), for: .touchUpInside)
+        praiseBtn.addTarget(self, action: #selector(praiseClick), for: .touchUpInside)
+        shareBtn.addTarget(self, action: #selector(shareClick), for: .touchUpInside)
  
     }
     
@@ -196,6 +201,21 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func privacyClick() {
+        let webViewVC = BPYWebViewController.init(url: "https://www.gezhipu.com/shengxiao.pdf", titleStr: "隐私协议")
+        self.navigationController?.pushViewController(webViewVC, animated: true)
+    }
+    @objc func praiseClick() {
+        #if DEBUG
+        #else
+            SKStoreReviewController.requestReview()
+        #endif
+    }
+    @objc func shareClick() {
+        let activityController = UIActivityViewController(activityItems: ["https://apps.apple.com/cn/app/id1563693082" + " (分享来自@YoYo拼消乐) " ], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
     }
     
 }

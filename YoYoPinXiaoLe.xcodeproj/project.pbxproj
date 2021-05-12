@@ -45,6 +45,7 @@
 		5335B2F92635733A006F9378 /* MatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F82635733A006F9378 /* MatrixView.m */; };
 		5335B34A26357817006F9378 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34926357817006F9378 /* GameKit.framework */; };
 		5335B34C26357825006F9378 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34B26357825006F9378 /* CoreGraphics.framework */; };
+		53409F33264BB5AE00E16DFF /* BPYWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53409F32264BB5AE00E16DFF /* BPYWebViewController.swift */; };
 		53567BA22644D7A700687883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA12644D7A700687883 /* Foundation.framework */; };
 		53567BA42644D7B000687883 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA32644D7B000687883 /* UIKit.framework */; };
 		53567BA82644DAA100687883 /* PlayYoQiuGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */; };
@@ -118,6 +119,7 @@
 		5335B2F82635733A006F9378 /* MatrixView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixView.m; sourceTree = "<group>"; };
 		5335B34926357817006F9378 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		5335B34B26357825006F9378 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		53409F32264BB5AE00E16DFF /* BPYWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPYWebViewController.swift; sourceTree = "<group>"; };
 		53567BA12644D7A700687883 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53567BA32644D7B000687883 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayYoQiuGameViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				53332BC62644CB0400535838 /* HomeViewController.swift */,
 				53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */,
 				536CFC64264B760000BEEAF5 /* HelpViewController.swift */,
+				53409F32264BB5AE00E16DFF /* BPYWebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				53332C212644CE9500535838 /* ConnectedCellRowsDetector.m in Sources */,
 				53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */,
 				53332BE82644CC8A00535838 /* Client.swift in Sources */,
+				53409F33264BB5AE00E16DFF /* BPYWebViewController.swift in Sources */,
 				53332C1B2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m in Sources */,
 				53332BFC2644CE3100535838 /* LevelEntity.m in Sources */,
 				53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */,
