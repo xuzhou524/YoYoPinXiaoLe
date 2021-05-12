@@ -56,6 +56,48 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         return button
     }()
     
+    let privacyBtn:UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let privacyImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "privacyImage")
+        return imageView
+    }()
+    
+    let praiseBtn:UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let praiseImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "praiseImage")
+        return imageView
+    }()
+    
+    let shareBtn:UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let shareImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "shareImage")
+        return imageView
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
@@ -67,13 +109,13 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "color_theme")
         
-        self.view.addSubview(self.nameLabel)
+        self.view.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(150)
         }
         
-        self.view.addSubview(self.tipButton1)
+        self.view.addSubview(tipButton1)
         tipButton1.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-50)
@@ -81,7 +123,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.width.equalTo(200)
         }
 
-        self.view.addSubview(self.tipButton)
+        self.view.addSubview(tipButton)
         tipButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(tipButton1.snp.top).offset(-30)
@@ -89,7 +131,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.width.equalTo(200)
         }
 
-        self.view.addSubview(self.tipButton2)
+        self.view.addSubview(tipButton2)
         tipButton2.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(tipButton1.snp.bottom).offset(30)
@@ -100,7 +142,43 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         tipButton.addTarget(self, action: #selector(newGameClick), for: .touchUpInside)
         tipButton1.addTarget(self, action: #selector(rankListClick), for: .touchUpInside)
         tipButton2.addTarget(self, action: #selector(helpClick), for: .touchUpInside)
-
+        
+        self.view.addSubview(privacyBtn)
+        privacyBtn.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.tipButton2.snp.right)
+            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.width.height.equalTo(40)
+        }
+        self.view.addSubview(privacyImageView)
+        privacyImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(privacyBtn)
+            make.width.height.equalTo(25)
+        }
+        
+        self.view.addSubview(praiseBtn)
+        praiseBtn.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.tipButton2)
+            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.width.height.equalTo(40)
+        }
+        self.view.addSubview(praiseImageView)
+        praiseImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(praiseBtn)
+            make.width.height.equalTo(22)
+        }
+        
+        self.view.addSubview(shareBtn)
+        shareBtn.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.tipButton2.snp.left)
+            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.width.height.equalTo(40)
+        }
+        self.view.addSubview(shareImageView)
+        shareImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(shareBtn)
+            make.width.height.equalTo(22)
+        }
+ 
     }
     
     @objc func newGameClick() {
