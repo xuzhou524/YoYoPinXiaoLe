@@ -77,7 +77,7 @@ class XZAlertView: UIView {
         let label = UILabel()
         label.text = "很遗憾"
         label.font = fontWithSize(18)
-        label.textColor = UIColor(hexString: "333333")
+        label.textColor = UIColor(named: "color_black")
         return label
     }()
     

@@ -12,7 +12,7 @@ class TopPromptView: UIView {
     init() {
         super.init(frame: CGRect(x: 20, y: 44, width: kScreenWidth - 40 , height: 80))
         
-        self.backgroundColor = UIColor(hexString: "DD3B41")
+        self.backgroundColor = UIColor(named: "color_red")
         self.layer.cornerRadius = 5;
         self.clipsToBounds = true
         

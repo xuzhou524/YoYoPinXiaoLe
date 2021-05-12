@@ -15,7 +15,6 @@
 		53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53250A97264BC2B300F00AE8 /* SuspendView.swift */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
-		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
 		53332BE22644CC8A00535838 /* UIColor+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD52644CC8A00535838 /* UIColor+Create.swift */; };
 		53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */; };
 		53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */; };
@@ -66,8 +65,6 @@
 		53250A97264BC2B300F00AE8 /* SuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspendView.swift; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
-		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
-		53332BD42644CC8A00535838 /* UIColor+HZXColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HZXColor.h"; sourceTree = "<group>"; };
 		53332BD52644CC8A00535838 /* UIColor+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Create.swift"; sourceTree = "<group>"; };
 		53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUserInfoConfig.swift; sourceTree = "<group>"; };
@@ -163,25 +160,15 @@
 				5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
 				53332BF02644CDBB00535838 /* LevelProvider */,
-				53332BD22644CC8A00535838 /* UIColor */,
 				53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */,
 				53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */,
 				53D37AC326462A1600A4061E /* XZGameCenterService.swift */,
 				53332BDD2644CC8A00535838 /* Client.swift */,
+				53332BD52644CC8A00535838 /* UIColor+Create.swift */,
 				53332BCA2644CBBD00535838 /* XZNavigationController.swift */,
 				53332BDF2644CC8A00535838 /* UITableView+Extension.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		53332BD22644CC8A00535838 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				53332BD32644CC8A00535838 /* UIColor+HZXColor.m */,
-				53332BD42644CC8A00535838 /* UIColor+HZXColor.h */,
-				53332BD52644CC8A00535838 /* UIColor+Create.swift */,
-			);
-			path = UIColor;
 			sourceTree = "<group>";
 		};
 		53332BF02644CDBB00535838 /* LevelProvider */ = {
@@ -424,7 +411,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */,
 				5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */,
 				5335B296263571A5006F9378 /* Graph.m in Sources */,
 				53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */,
