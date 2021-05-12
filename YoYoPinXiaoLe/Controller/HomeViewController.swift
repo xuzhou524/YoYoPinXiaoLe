@@ -11,13 +11,10 @@ import GameplayKit
 
 class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
-    let nameLabel:UILabel = {
-        let label = UILabel()
-        label.font = blodFontWithSize(35)
-        label.textColor = UIColor(named: "color_title_black")
-        label.text = "YoYo拼消乐"
-        label.alpha = 0.8
-        return label
+    let nameImageView:UIView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "YoYoImage")
+        return imageView
     }()
 
     let tipButton:UIButton = {
@@ -109,10 +106,12 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "color_theme")
         
-        self.view.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { (make) in
+        self.view.addSubview(nameImageView)
+        nameImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(150)
+            make.top.equalToSuperview().offset(155)
+            make.width.equalTo(236)
+            make.height.equalTo(50)
         }
         
         self.view.addSubview(tipButton1)
@@ -146,7 +145,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(privacyBtn)
         privacyBtn.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.tipButton2.snp.right)
-            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.top.equalTo(tipButton2.snp.bottom).offset(60)
             make.width.height.equalTo(40)
         }
         self.view.addSubview(privacyImageView)
@@ -158,7 +157,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(praiseBtn)
         praiseBtn.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.tipButton2)
-            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.top.equalTo(tipButton2.snp.bottom).offset(60)
             make.width.height.equalTo(40)
         }
         self.view.addSubview(praiseImageView)
@@ -170,7 +169,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(shareBtn)
         shareBtn.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.tipButton2.snp.left)
-            make.top.equalTo(tipButton2.snp.bottom).offset(50)
+            make.top.equalTo(tipButton2.snp.bottom).offset(60)
             make.width.height.equalTo(40)
         }
         self.view.addSubview(shareImageView)
