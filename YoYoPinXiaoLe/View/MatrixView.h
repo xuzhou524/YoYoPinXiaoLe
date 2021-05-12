@@ -14,7 +14,6 @@
 #import "RandomUnOccupiedCellsGenerator.h"
 #import <GameKit/GameKit.h>
 #import "GameEntity.h"
-#import "PersistentStore.h"
 #import "ConnectedCellRowsDetector.h"
 #import "UndoManager.h"
 #import "LevelProvider.h"

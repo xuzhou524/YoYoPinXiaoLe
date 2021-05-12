@@ -23,7 +23,6 @@
 		53332BE92644CC8A00535838 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDF2644CC8A00535838 /* UITableView+Extension.swift */; };
 		53332BF82644CE2500535838 /* LevelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BF72644CE2500535838 /* LevelProvider.m */; };
 		53332BFC2644CE3100535838 /* LevelEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BFA2644CE3100535838 /* LevelEntity.m */; };
-		53332C082644CE5700535838 /* PersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C072644CE5700535838 /* PersistentStore.m */; };
 		53332C0C2644CE6400535838 /* FastestPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C0B2644CE6400535838 /* FastestPathFinder.m */; };
 		53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C112644CE7A00535838 /* MJPriorityDictionary.mm */; };
 		53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C132644CE7A00535838 /* MJPriorityQueue.mm */; };
@@ -78,8 +77,6 @@
 		53332BF72644CE2500535838 /* LevelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelProvider.m; sourceTree = "<group>"; };
 		53332BFA2644CE3100535838 /* LevelEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelEntity.m; sourceTree = "<group>"; };
 		53332BFB2644CE3100535838 /* LevelEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelEntity.h; sourceTree = "<group>"; };
-		53332C062644CE5700535838 /* PersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStore.h; sourceTree = "<group>"; };
-		53332C072644CE5700535838 /* PersistentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStore.m; sourceTree = "<group>"; };
 		53332C0A2644CE6400535838 /* FastestPathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastestPathFinder.h; sourceTree = "<group>"; };
 		53332C0B2644CE6400535838 /* FastestPathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastestPathFinder.m; sourceTree = "<group>"; };
 		53332C112644CE7A00535838 /* MJPriorityDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MJPriorityDictionary.mm; sourceTree = "<group>"; };
@@ -164,10 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */,
-				53332BF52644CE0700535838 /* ConnectedCellsDetector */,
-				53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
-				53332BF22644CDD300535838 /* PersistentStore */,
 				53332BF02644CDBB00535838 /* LevelProvider */,
 				53332BD22644CC8A00535838 /* UIColor */,
 				53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */,
@@ -201,15 +195,6 @@
 			path = LevelProvider;
 			sourceTree = "<group>";
 		};
-		53332BF22644CDD300535838 /* PersistentStore */ = {
-			isa = PBXGroup;
-			children = (
-				53332C062644CE5700535838 /* PersistentStore.h */,
-				53332C072644CE5700535838 /* PersistentStore.m */,
-			);
-			path = PersistentStore;
-			sourceTree = "<group>";
-		};
 		53332BF32644CDE800535838 /* FastestPathFinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,24 +203,6 @@
 				53332C0B2644CE6400535838 /* FastestPathFinder.m */,
 			);
 			path = FastestPathFinder;
-			sourceTree = "<group>";
-		};
-		53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */ = {
-			isa = PBXGroup;
-			children = (
-				53332C192644CE8900535838 /* RandomUnOccupiedCellsGenerator.h */,
-				53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */,
-			);
-			path = RandomUnOccupiedCellsGenerator;
-			sourceTree = "<group>";
-		};
-		53332BF52644CE0700535838 /* ConnectedCellsDetector */ = {
-			isa = PBXGroup;
-			children = (
-				53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */,
-				53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */,
-			);
-			path = ConnectedCellsDetector;
 			sourceTree = "<group>";
 		};
 		53332C0E2644CE6E00535838 /* implementation */ = {
@@ -290,13 +257,18 @@
 		5335B28326357136006F9378 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53332C192644CE8900535838 /* RandomUnOccupiedCellsGenerator.h */,
+				53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */,
+				53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */,
+				53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */,
 				53F5286A264BCE9500F63419 /* UndoManager.h */,
 				53F5286B264BCE9500F63419 /* UndoManager.m */,
 				5335B29A263571B4006F9378 /* MSize.h */,
 				5335B299263571B4006F9378 /* MSize.m */,
-				5335B28826357168006F9378 /* Graph Representation */,
-				5335B2872635715C006F9378 /* GameEntity */,
-				5335B28626357152006F9378 /* ScoreEntity */,
+				5335B28E26357195006F9378 /* GameEntity.h */,
+				5335B28F26357195006F9378 /* GameEntity.m */,
+				5335B28A2635717D006F9378 /* ScoreEntity.h */,
+				5335B28B2635717D006F9378 /* ScoreEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +286,10 @@
 				5335B2F426357330006F9378 /* CellView.m */,
 				5335B2F72635733A006F9378 /* MatrixView.h */,
 				5335B2F82635733A006F9378 /* MatrixView.m */,
+				5335B292263571A5006F9378 /* Graph.h */,
+				5335B293263571A5006F9378 /* Graph.m */,
+				5335B294263571A5006F9378 /* GraphCell.h */,
+				5335B295263571A5006F9378 /* GraphCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,35 +303,6 @@
 				53409F32264BB5AE00E16DFF /* XZWebViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		5335B28626357152006F9378 /* ScoreEntity */ = {
-			isa = PBXGroup;
-			children = (
-				5335B28A2635717D006F9378 /* ScoreEntity.h */,
-				5335B28B2635717D006F9378 /* ScoreEntity.m */,
-			);
-			path = ScoreEntity;
-			sourceTree = "<group>";
-		};
-		5335B2872635715C006F9378 /* GameEntity */ = {
-			isa = PBXGroup;
-			children = (
-				5335B28E26357195006F9378 /* GameEntity.h */,
-				5335B28F26357195006F9378 /* GameEntity.m */,
-			);
-			path = GameEntity;
-			sourceTree = "<group>";
-		};
-		5335B28826357168006F9378 /* Graph Representation */ = {
-			isa = PBXGroup;
-			children = (
-				5335B292263571A5006F9378 /* Graph.h */,
-				5335B293263571A5006F9378 /* Graph.m */,
-				5335B294263571A5006F9378 /* GraphCell.h */,
-				5335B295263571A5006F9378 /* GraphCell.m */,
-			);
-			path = "Graph Representation";
 			sourceTree = "<group>";
 		};
 		C80971A95841F700760C0130 /* Frameworks */ = {
@@ -477,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53332C082644CE5700535838 /* PersistentStore.m in Sources */,
 				53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */,
 				5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */,
 				5335B296263571A5006F9378 /* Graph.m in Sources */,

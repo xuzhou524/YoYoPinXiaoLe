@@ -77,7 +77,6 @@
 }
 
 -(void)PersistGameToPermenantStore{
-//    [PersistentStore persistGame:_currentGame];
 }
 
 -(void)undoLastMove{
@@ -384,7 +383,6 @@
 }
 
 -(void)GameOver{
-//    [PersistentStore persistGame:nil];
     [self ReportScoreToGameCenter];
     XZAlertView * view = [[XZAlertView alloc] init];
     view.completion = ^{
