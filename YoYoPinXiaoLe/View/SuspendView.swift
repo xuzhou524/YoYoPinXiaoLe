@@ -24,7 +24,7 @@ class SuspendView: UIView {
             make.centerX.equalToSuperview()
             make.top.equalTo(30)
             make.width.equalTo(220)
-            make.height.equalTo(58)
+            make.height.equalTo(83)
         }
         
         self.addSubview(cancelButton)
@@ -78,10 +78,10 @@ class SuspendView: UIView {
     let doneButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("返回首页", for: .normal)
-        btn.backgroundColor = UIColor(hexString: "FFE169")
+        btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
-        btn.setTitleColor(UIColor(hexString: "333333"), for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
     }()
@@ -89,10 +89,10 @@ class SuspendView: UIView {
     let gameButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("新游戏", for: .normal)
-        btn.backgroundColor = UIColor(hexString: "FFE169")
+        btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
-        btn.setTitleColor(UIColor(hexString: "333333"), for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
     }()
@@ -100,7 +100,7 @@ class SuspendView: UIView {
     let cancelButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("取消", for: .normal)
-        btn.setTitleColor(UIColor(hexString: "333333"), for: .normal)
+        btn.setTitleColor(UIColor(named: "color_black"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
     }()

@@ -112,7 +112,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(155)
             make.width.equalTo(236)
-            make.height.equalTo(50)
+            make.height.equalTo(59)
         }
         
         self.view.addSubview(tipButton1)

@@ -84,10 +84,10 @@ class XZAlertView: UIView {
     let doneButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("退出", for: .normal)
-        btn.backgroundColor = UIColor(hexString: "FFE169")
-        btn.layer.cornerRadius = 3
+        btn.backgroundColor = UIColor(named: "color_black")
+        btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
-        btn.setTitleColor(UIColor(hexString: "333333"), for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
     }()
@@ -95,10 +95,10 @@ class XZAlertView: UIView {
     let gameButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("再来一局", for: .normal)
-        btn.backgroundColor = UIColor(hexString: "FFE169")
-        btn.layer.cornerRadius = 3
+        btn.backgroundColor = UIColor(named: "color_black")
+        btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
-        btn.setTitleColor(UIColor(hexString: "333333"), for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
     }()
