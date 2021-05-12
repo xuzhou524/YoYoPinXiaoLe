@@ -1,6 +1,6 @@
 //
-//  BPYWebViewController.swift
-//  QiuQiu
+//  XZWebViewController.swift
+//  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/2/23.
 //
@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class BPYWebViewController: UIViewController {
+class XZWebViewController: UIViewController {
 
     var url:String?
     var titleStr:String?
