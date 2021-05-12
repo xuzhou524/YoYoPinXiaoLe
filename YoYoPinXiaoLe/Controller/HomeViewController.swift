@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  YoYoPinXiaoLe
 //
-//  Created by gozap on 2021/5/7.
+//  Created by xuzhou on 2021/5/7.
 //
 
 import UIKit
@@ -114,14 +114,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     }
     
     @objc func helpClick() {
-        let virtuaew = XZAlertView()
-        virtuaew.gameCompletion = {[weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        }
-        virtuaew.completion = {[weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        }
-        virtuaew.show()
+        self.navigationController?.pushViewController(HelpViewController(), animated: true)
     }
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {

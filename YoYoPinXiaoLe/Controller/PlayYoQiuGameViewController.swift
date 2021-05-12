@@ -2,7 +2,7 @@
 //  PlayYoQiuGameViewController.swift
 //  YoYoPinXiaoLe
 //
-//  Created by gozap on 2021/5/7.
+//  Created by xuzhou on 2021/5/7.
 //
 
 import UIKit

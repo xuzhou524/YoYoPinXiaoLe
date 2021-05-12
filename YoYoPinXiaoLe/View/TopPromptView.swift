@@ -2,7 +2,7 @@
 //  TopPromptView.swift
 //  YoYoPinXiaoLe
 //
-//  Created by gozap on 2021/5/11.
+//  Created by xuzhou on 2021/5/11.
 //
 
 import UIKit

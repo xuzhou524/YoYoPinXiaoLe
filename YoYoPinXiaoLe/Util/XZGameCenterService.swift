@@ -2,7 +2,7 @@
 //  XZGameCenterService.swift
 //  QiuQiu
 //
-//  Created by gozap on 2021/4/19.
+//  Created by xuzhou on 2021/4/19.
 //
 
 import UIKit

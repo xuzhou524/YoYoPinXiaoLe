@@ -2,7 +2,7 @@
 //  UIColor+HZXColor.h
 //  JuWan
 //
-//  Created by gozap on 2021/3/29.
+//  Created by xuzhou on 2021/3/29.
 //
 
 #import <UIKit/UIKit.h>
