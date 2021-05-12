@@ -12,6 +12,7 @@
 		5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */; };
 		5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5CA264A70C800F75D44 /* TopPromptView.swift */; };
 		5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5F3264A889300F75D44 /* XZAlertView.swift */; };
+		53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53250A97264BC2B300F00AE8 /* SuspendView.swift */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
 		53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BD32644CC8A00535838 /* UIColor+HZXColor.m */; };
@@ -49,7 +50,6 @@
 		53567BA22644D7A700687883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA12644D7A700687883 /* Foundation.framework */; };
 		53567BA42644D7B000687883 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53567BA32644D7B000687883 /* UIKit.framework */; };
 		53567BA82644DAA100687883 /* PlayYoQiuGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */; };
-		53567BBD26451F0400687883 /* DoActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 53567BBB26451F0400687883 /* DoActionSheet.m */; };
 		536CFC65264B760000BEEAF5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC64264B760000BEEAF5 /* HelpViewController.swift */; };
 		536CFC68264B761C00BEEAF5 /* WithoutAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */; };
 		53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D37AC326462A1600A4061E /* XZGameCenterService.swift */; };
@@ -64,6 +64,7 @@
 		5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		5314F5CA264A70C800F75D44 /* TopPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPromptView.swift; sourceTree = "<group>"; };
 		5314F5F3264A889300F75D44 /* XZAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAlertView.swift; sourceTree = "<group>"; };
+		53250A97264BC2B300F00AE8 /* SuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspendView.swift; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
 		53332BD32644CC8A00535838 /* UIColor+HZXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZXColor.m"; sourceTree = "<group>"; };
@@ -123,8 +124,6 @@
 		53567BA12644D7A700687883 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53567BA32644D7B000687883 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayYoQiuGameViewController.swift; sourceTree = "<group>"; };
-		53567BBB26451F0400687883 /* DoActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoActionSheet.m; sourceTree = "<group>"; };
-		53567BBC26451F0400687883 /* DoActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoActionSheet.h; sourceTree = "<group>"; };
 		536CFC64264B760000BEEAF5 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithoutAuthorizationView.swift; sourceTree = "<group>"; };
 		53D37AC326462A1600A4061E /* XZGameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZGameCenterService.swift; sourceTree = "<group>"; };
@@ -165,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */,
-				53567BBA26451F0400687883 /* DoActionSheet */,
 				53332BF52644CE0700535838 /* ConnectedCellsDetector */,
 				53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
@@ -316,6 +314,7 @@
 			children = (
 				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
 				5314F5F3264A889300F75D44 /* XZAlertView.swift */,
+				53250A97264BC2B300F00AE8 /* SuspendView.swift */,
 				536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */,
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
@@ -365,15 +364,6 @@
 				5335B295263571A5006F9378 /* GraphCell.m */,
 			);
 			path = "Graph Representation";
-			sourceTree = "<group>";
-		};
-		53567BBA26451F0400687883 /* DoActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				53567BBC26451F0400687883 /* DoActionSheet.h */,
-				53567BBB26451F0400687883 /* DoActionSheet.m */,
-			);
-			path = DoActionSheet;
 			sourceTree = "<group>";
 		};
 		C80971A95841F700760C0130 /* Frameworks */ = {
@@ -499,6 +489,7 @@
 				53332BE12644CC8A00535838 /* UIColor+HZXColor.m in Sources */,
 				5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */,
 				5335B296263571A5006F9378 /* Graph.m in Sources */,
+				53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */,
 				5335B26B26356BD2006F9378 /* ViewController.swift in Sources */,
 				5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */,
 				5335B2F526357330006F9378 /* CellView.m in Sources */,
@@ -509,7 +500,6 @@
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
 				5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */,
-				53567BBD26451F0400687883 /* DoActionSheet.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,
 				5335B28C2635717D006F9378 /* ScoreEntity.m in Sources */,
 				5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */,

@@ -211,18 +211,18 @@ extension PlayYoQiuGameViewController: MatrixViewDelegate {
 
 extension PlayYoQiuGameViewController {
     @objc func quit(){
-        let classTypeActionSheet = DoActionSheet()
-        classTypeActionSheet.showC(" ",
-                                   cancel: "取消",
-                                   buttons: ["返回","新游戏"]) { (nResult) in
-            if nResult == 0 {
-                XZGameCenterService.saveHighScore(score: NSInteger(self.matrix.currentGame.score.score))
-                self.navigationController?.popViewController(animated: true)
-            }else if nResult == 1 {
-                self.resetNextCells()
-                self.matrix.reloadNewGame()
-            }
+        
+        let virtuaew = SuspendView()
+        
+        virtuaew.gameCompletion = {[weak self] in
+            self?.resetNextCells()
+            self?.matrix.reloadNewGame()
         }
+        virtuaew.completion = {[weak self] in
+            XZGameCenterService.saveHighScore(score: NSInteger(self?.matrix.currentGame.score.score ?? 0))
+            self?.navigationController?.popViewController(animated: true)
+        }
+        virtuaew.show()
     }
     
     @objc func undo(){
