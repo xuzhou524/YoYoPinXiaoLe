@@ -204,7 +204,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     }
     
     @objc func privacyClick() {
-        let webViewVC = BPYWebViewController.init(url: "https://www.gezhipu.com/shengxiao.pdf", titleStr: "隐私协议")
+        let webViewVC = BPYWebViewController.init(url: "https://www.gezhipu.com/yoyoPinXiaoLe.pdf", titleStr: "隐私协议")
         self.navigationController?.pushViewController(webViewVC, animated: true)
     }
     @objc func praiseClick() {
