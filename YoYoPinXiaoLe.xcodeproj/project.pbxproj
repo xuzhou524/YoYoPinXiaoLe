@@ -23,7 +23,6 @@
 		53332BE92644CC8A00535838 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDF2644CC8A00535838 /* UITableView+Extension.swift */; };
 		53332BF82644CE2500535838 /* LevelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BF72644CE2500535838 /* LevelProvider.m */; };
 		53332BFC2644CE3100535838 /* LevelEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BFA2644CE3100535838 /* LevelEntity.m */; };
-		53332C042644CE4B00535838 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C022644CE4B00535838 /* UndoManager.m */; };
 		53332C082644CE5700535838 /* PersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C072644CE5700535838 /* PersistentStore.m */; };
 		53332C0C2644CE6400535838 /* FastestPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C0B2644CE6400535838 /* FastestPathFinder.m */; };
 		53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C112644CE7A00535838 /* MJPriorityDictionary.mm */; };
@@ -53,6 +52,7 @@
 		536CFC65264B760000BEEAF5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC64264B760000BEEAF5 /* HelpViewController.swift */; };
 		536CFC68264B761C00BEEAF5 /* WithoutAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */; };
 		53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D37AC326462A1600A4061E /* XZGameCenterService.swift */; };
+		53F5286C264BCE9500F63419 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5286B264BCE9500F63419 /* UndoManager.m */; };
 		B46854EAE205DEE308500041 /* libPods-YoYoPinXiaoLe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +78,6 @@
 		53332BF72644CE2500535838 /* LevelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelProvider.m; sourceTree = "<group>"; };
 		53332BFA2644CE3100535838 /* LevelEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelEntity.m; sourceTree = "<group>"; };
 		53332BFB2644CE3100535838 /* LevelEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelEntity.h; sourceTree = "<group>"; };
-		53332C022644CE4B00535838 /* UndoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
-		53332C032644CE4B00535838 /* UndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
 		53332C062644CE5700535838 /* PersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStore.h; sourceTree = "<group>"; };
 		53332C072644CE5700535838 /* PersistentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStore.m; sourceTree = "<group>"; };
 		53332C0A2644CE6400535838 /* FastestPathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastestPathFinder.h; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		536CFC64264B760000BEEAF5 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithoutAuthorizationView.swift; sourceTree = "<group>"; };
 		53D37AC326462A1600A4061E /* XZGameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZGameCenterService.swift; sourceTree = "<group>"; };
+		53F5286A264BCE9500F63419 /* UndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
+		53F5286B264BCE9500F63419 /* UndoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
 		672B30C3B4D7666F8E29E6EC /* Pods-YoYoPinXiaoLe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.release.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.release.xcconfig"; sourceTree = "<group>"; };
 		ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YoYoPinXiaoLe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2FE8C3C75B2D41280CC20A /* Pods-YoYoPinXiaoLe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.debug.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,7 +168,6 @@
 				53332BF42644CDF900535838 /* RandomUnOccupiedCellsGenerator */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
 				53332BF22644CDD300535838 /* PersistentStore */,
-				53332BF12644CDC600535838 /* UndoManager */,
 				53332BF02644CDBB00535838 /* LevelProvider */,
 				53332BD22644CC8A00535838 /* UIColor */,
 				53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */,
@@ -200,15 +199,6 @@
 				53332BF72644CE2500535838 /* LevelProvider.m */,
 			);
 			path = LevelProvider;
-			sourceTree = "<group>";
-		};
-		53332BF12644CDC600535838 /* UndoManager */ = {
-			isa = PBXGroup;
-			children = (
-				53332C032644CE4B00535838 /* UndoManager.h */,
-				53332C022644CE4B00535838 /* UndoManager.m */,
-			);
-			path = UndoManager;
 			sourceTree = "<group>";
 		};
 		53332BF22644CDD300535838 /* PersistentStore */ = {
@@ -300,6 +290,8 @@
 		5335B28326357136006F9378 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53F5286A264BCE9500F63419 /* UndoManager.h */,
+				53F5286B264BCE9500F63419 /* UndoManager.m */,
 				5335B29A263571B4006F9378 /* MSize.h */,
 				5335B299263571B4006F9378 /* MSize.m */,
 				5335B28826357168006F9378 /* Graph Representation */,
@@ -494,6 +486,7 @@
 				5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */,
 				5335B2F526357330006F9378 /* CellView.m in Sources */,
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
+				53F5286C264BCE9500F63419 /* UndoManager.m in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
@@ -506,7 +499,6 @@
 				5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */,
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
-				53332C042644CE4B00535838 /* UndoManager.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,
 				53332C212644CE9500535838 /* ConnectedCellRowsDetector.m in Sources */,
