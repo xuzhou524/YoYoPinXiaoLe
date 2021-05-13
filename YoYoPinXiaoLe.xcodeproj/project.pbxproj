@@ -12,6 +12,7 @@
 		5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */; };
 		5314F5CB264A70C800F75D44 /* TopPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5CA264A70C800F75D44 /* TopPromptView.swift */; };
 		5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314F5F3264A889300F75D44 /* XZAlertView.swift */; };
+		531953E0264CFB0700A09585 /* XZTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531953DF264CFB0700A09585 /* XZTipView.swift */; };
 		53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53250A97264BC2B300F00AE8 /* SuspendView.swift */; };
 		53332BC72644CB0400535838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BC62644CB0400535838 /* HomeViewController.swift */; };
 		53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BCA2644CBBD00535838 /* XZNavigationController.swift */; };
@@ -61,6 +62,7 @@
 		5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		5314F5CA264A70C800F75D44 /* TopPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPromptView.swift; sourceTree = "<group>"; };
 		5314F5F3264A889300F75D44 /* XZAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAlertView.swift; sourceTree = "<group>"; };
+		531953DF264CFB0700A09585 /* XZTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZTipView.swift; sourceTree = "<group>"; };
 		53250A97264BC2B300F00AE8 /* SuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspendView.swift; sourceTree = "<group>"; };
 		53332BC62644CB0400535838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		53332BCA2644CBBD00535838 /* XZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZNavigationController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				5314F5CA264A70C800F75D44 /* TopPromptView.swift */,
+				531953DF264CFB0700A09585 /* XZTipView.swift */,
 				5314F5F3264A889300F75D44 /* XZAlertView.swift */,
 				53250A97264BC2B300F00AE8 /* SuspendView.swift */,
 				536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */,
@@ -410,6 +413,7 @@
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
+				531953E0264CFB0700A09585 /* XZTipView.swift in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
 				5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,

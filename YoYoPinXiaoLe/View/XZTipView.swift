@@ -1,16 +1,19 @@
 //
-//  TopPromptView.swift
+//  XZTipView.swift
 //  YoYoPinXiaoLe
 //
-//  Created by xuzhou on 2021/5/11.
+//  Created by gozap on 2021/5/13.
 //
 
 import UIKit
 
-class TopPromptView: UIView {
-        
+class XZTipView: UIView {
+    
+    var gameCompletion:(() -> Void)?
+    var completion:(() -> Void)?
+
     init() {
-        super.init(frame: CGRect(x: 20, y: 44, width: kScreenWidth - 40 , height: 80))
+        super.init(frame: CGRect(x: 30, y: kScreenHeight / 2.0 - 120, width: kScreenWidth - 60 , height: 150))
         
         self.backgroundColor = UIColor(named: "color_red")
         self.layer.cornerRadius = 5;
@@ -18,7 +21,7 @@ class TopPromptView: UIView {
         
         self.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
             make.left.equalTo(20)
             make.width.height.equalTo(16)
         }
@@ -26,18 +29,35 @@ class TopPromptView: UIView {
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.iconImageView.snp.right).offset(20)
-            make.bottom.equalTo(self.snp.centerY).offset(-5)
+            make.centerY.equalTo(self.iconImageView)
         }
 
         self.addSubview(summeryLabel)
         summeryLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.titleLabel)
-            make.top.equalTo(self.snp.centerY).offset(3)
+            make.right.equalToSuperview().offset(-20)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(8)
+        }
+        
+        self.addSubview(gameButton)
+        gameButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-10)
+            make.right.equalToSuperview().offset(-20)
+            make.width.equalTo(55)
+            make.height.equalTo(45)
+        }
+        
+        self.addSubview(doneButton)
+        doneButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-10)
+            make.right.equalTo(self.gameButton.snp.left).offset(-30)
+            make.width.equalTo(55)
+            make.height.equalTo(45)
         }
         
         panel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hide)))
-        self.perform(#selector(self.hide), with: nil, afterDelay: 2.0)
-        
+        doneButton.addTarget(self, action: #selector(hide), for: .touchUpInside)
+        gameButton.addTarget(self, action: #selector(game), for: .touchUpInside)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -61,8 +81,25 @@ class TopPromptView: UIView {
         let label = UILabel()
         label.font = fontWithSize(13)
         label.textColor = UIColor(named: "color_title_black")
-        label.text = "到达此处的位置不通，无法抵达."
+        label.text = "当前Game Center没有授权无法保存分值，请点击帮助中心查看如何开启"
+        label.numberOfLines = 0
         return label
+    }()
+    
+    let doneButton:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("取消", for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
+        btn.titleLabel?.font = fontWithSize(16)
+        return btn
+    }()
+    
+    let gameButton:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("继续", for: .normal)
+        btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
+        btn.titleLabel?.font = fontWithSize(16)
+        return btn
     }()
 
     let panel:UIView = {
@@ -96,6 +133,11 @@ class TopPromptView: UIView {
             self.panel.removeFromSuperview()
             self.removeFromSuperview()
         }
+    }
+    
+    @objc func game() {
+        self.gameCompletion?()
+        hide()
     }
 
 }

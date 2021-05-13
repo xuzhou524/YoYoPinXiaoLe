@@ -186,7 +186,15 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     }
     
     @objc func newGameClick() {
-        self.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
+        if GKLocalPlayer.local.isAuthenticated {
+            self.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
+        }else{
+            let views = XZTipView()
+            views.gameCompletion = {[weak self] in
+                self?.navigationController?.pushViewController(PlayYoQiuGameViewController(), animated: true)
+            }
+            views.show()
+        }
     }
     
     @objc func rankListClick() {
