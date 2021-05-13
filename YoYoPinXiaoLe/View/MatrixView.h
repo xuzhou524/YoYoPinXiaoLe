@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MSize.h"
-#import "CellView.h"
+#import "XZYoYoCellView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "FastestPathFinder.h"
 #import "Graph.h"
@@ -22,7 +22,7 @@
 typedef void (^CompletionBlock)(NSArray* detectedCells);
 typedef void (^AnimationCompletionBlock)(void);
 typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
-@interface MatrixView : UIView<CellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
+@interface MatrixView : UIView<XZYoYoCellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
     ReductionBlock reductionBlock;
     BOOL IsGameResumed;
     LevelProvider *levelProvider;

@@ -116,7 +116,7 @@ class PlayYoQiuGameViewController: UIViewController {
         let cellSize = 32
         
         for i in 0..<5 {
-            let cell:CellView = CellView.init(frame: CGRect(x: 20+Int(i)*(cellSize+padding)+xOffset, y: y, width: cellSize, height: cellSize))
+            let cell:XZYoYoCellView = XZYoYoCellView.init(frame: CGRect(x: 20+Int(i)*(cellSize+padding)+xOffset, y: y, width: cellSize, height: cellSize))
             cell.tag = Int(4000+i)
             gameContainerView.addSubview(cell)
         }
@@ -178,7 +178,7 @@ extension PlayYoQiuGameViewController: MatrixViewDelegate {
     
     func addNextCells(withGraphCells GCells: [Any]!) {
         for i in 0..<5 {
-            let cell:CellView = self.view.viewWithTag(4000+Int(i)) as! CellView
+            let cell:XZYoYoCellView = self.view.viewWithTag(4000+Int(i)) as! XZYoYoCellView
             if ( GCells != nil && i < GCells.count){
                 let emptyCell:GraphCell = GCells[Int(i)] as! GraphCell
                 cell.setStatusWith(emptyCell, animatation: CellAnimationType.init(rawValue: 2))
@@ -203,7 +203,7 @@ extension PlayYoQiuGameViewController: MatrixViewDelegate {
         let emptyCell = GraphCell()
         emptyCell.color = unOccupied
         for i in 0..<5 {
-            let cell:CellView = self.view.viewWithTag(4000+Int(i)) as! CellView
+            let cell:XZYoYoCellView = self.view.viewWithTag(4000+Int(i)) as! XZYoYoCellView
             cell.setStatusWith(emptyCell, animatation: CellAnimationType.init(rawValue: 2))
         }
     }

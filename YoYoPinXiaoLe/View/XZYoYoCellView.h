@@ -1,5 +1,5 @@
 //
-//  CellView.h
+//  XZYoYoCellView.h
 //  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/4/25.
@@ -13,7 +13,7 @@
 #define WRONG_IMAGE_NAME @"WRONG TOUCH.png"
 #define SQUARE_IMAGE @"SQUARE WHITE UNPRESSED.png"
 #define CELL_SIZE ((([[UIDevice currentDevice] userInterfaceIdiom]) == (UIUserInterfaceIdiomPhone)) ? (42.5) : (60))
-@protocol CellViewDelegate;
+@protocol XZYoYoCellViewDelegate;
 typedef void (^CellAnimationCompletionBlock)(BOOL finished);
 typedef enum
 {
@@ -22,12 +22,12 @@ typedef enum
     CellAnimationTypeNone
     
 }CellAnimationType;
-@interface CellView : UIView<UIGestureRecognizerDelegate>
+@interface XZYoYoCellView : UIView<UIGestureRecognizerDelegate>
 {
     UIImageView *contentView;
     //UIImageView *BackImgView;
 }
-@property(nonatomic,assign)id<CellViewDelegate> delegate;
+@property(nonatomic,assign)id<XZYoYoCellViewDelegate> delegate;
 @property(nonatomic)BOOL IsOccupied;
 @property(nonatomic)BOOL SetTouchable;
 
@@ -44,6 +44,6 @@ typedef enum
 -(void)RemovePathTraceImage;
 -(UIColor*)getColorWithStatus:(GraphCellStatus)status;
 @end
-@protocol CellViewDelegate <NSObject>
--(void)CellViewTouched:(CellView*)cellView;
+@protocol XZYoYoCellViewDelegate <NSObject>
+-(void)XZYoYoCellViewTouched:(XZYoYoCellView*)cellView;
 @end

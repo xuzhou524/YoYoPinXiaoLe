@@ -153,7 +153,7 @@
             CurrentY = 5;
             CurrentX+=CELL_SIZE+2;
         }
-        CellView *cell = [[CellView alloc] initWithFrame:CGRectMake(CurrentX, CurrentY, CELL_SIZE, CELL_SIZE)];
+        XZYoYoCellView *cell = [[XZYoYoCellView alloc] initWithFrame:CGRectMake(CurrentX, CurrentY, CELL_SIZE, CELL_SIZE)];
         cell.tag = i+1000;
         cell.delegate = self;
         
@@ -224,7 +224,7 @@
             GraphCell *AddedGCell = [self.currentGame.nextCellsToAdd objectAtIndex:i];
             GraphCell *LocalGCell = [self.currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             LocalGCell.color = AddedGCell.color;
-            CellView *LocalCell = [self getCellViewWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
+            XZYoYoCellView *LocalCell = [self getXZYoYoCellViewWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             [AddedCells addObject:LocalGCell];
             [LocalCell SetStatusWithGraphCell:LocalGCell Animatation:CellAnimationTypeAdded withDelay:i withCompletionBlock:^(BOOL finished){
                 int numberOfAddedCells = [levelProvider GetCurrentLevel].numberOfAddedCells ;
@@ -255,20 +255,20 @@
 }
 
 //******************HANDLE TOUCH EVENT************************************************************
--(void)CellViewTouched:(CellView *)touchedCell{
+-(void)XZYoYoCellViewTouched:(XZYoYoCellView *)touchedCell{
     if(touchedCell.IsOccupied==YES){
         if(_startCellIndex){
             //deselect prevoiusly selected Start Cell View
             GraphCell *LastSelectedStartGcell = [_currentGame.graph getGraphCellWithIndex:_startCellIndex.intValue];
             LastSelectedStartGcell.temporarilyUnoccupied = NO;
             
-            CellView *LastSelectedStartCellView = [self getCellViewWithIndex:_startCellIndex.intValue];
-            [LastSelectedStartCellView cellUnTouched];
+            XZYoYoCellView *LastSelectedStartXZYoYoCellView = [self getXZYoYoCellViewWithIndex:_startCellIndex.intValue];
+            [LastSelectedStartXZYoYoCellView cellUnTouched];
         }
         if(_endCellIndex){
             //deselect prevoiusly selected End Cell View
-            CellView *LastSelectedEndCellView = [self getCellViewWithIndex:_endCellIndex.intValue];
-            [LastSelectedEndCellView cellUnTouched];
+            XZYoYoCellView *LastSelectedEndXZYoYoCellView = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
+            [LastSelectedEndXZYoYoCellView cellUnTouched];
             [self UnDrawPathWithPath:self.SelectedPath];
         }
         [_SelectedPath removeAllObjects];
@@ -283,8 +283,8 @@
         }
         if(_endCellIndex){
             //deselect prevoiusly selected End Cell View
-            CellView *LastSelectedEndCellView = [self getCellViewWithIndex:_endCellIndex.intValue];
-            [LastSelectedEndCellView cellUnTouched];
+            XZYoYoCellView *LastSelectedEndXZYoYoCellView = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
+            [LastSelectedEndXZYoYoCellView cellUnTouched];
             [self UnDrawPathWithPath:self.SelectedPath];
         }
         self.endCellIndex = [NSNumber numberWithInt:touchedCell.tag-1000] ;
@@ -302,7 +302,7 @@
 -(void)UnDrawPathWithPath:(NSArray*)path{
     for(int i =1;i<path.count;i++){
         NSNumber *CellIndex = [path objectAtIndex:i];
-        CellView *cell = [self getCellViewWithIndex:CellIndex.intValue];
+        XZYoYoCellView *cell = [self getXZYoYoCellViewWithIndex:CellIndex.intValue];
         [cell RemovePathTraceImage];
     }
 }
@@ -311,7 +311,7 @@
     GraphCell *fromGCell = [_currentGame.graph getGraphCellWithIndex:((NSNumber*)[path objectAtIndex:0]).intValue];
     for(int i =1;i<path.count;i++){
         NSNumber *CellIndex = [path objectAtIndex:i];
-        CellView *cell = [self getCellViewWithIndex:CellIndex.intValue];
+        XZYoYoCellView *cell = [self getXZYoYoCellViewWithIndex:CellIndex.intValue];
         [cell setPathtTraceImageWithStatus:fromGCell.color];
     }
 }
@@ -327,10 +327,10 @@
     }
     [self setUserInteractionEnabled:NO];
 
-    CellView *fromCell = [self getCellViewWithIndex:_startCellIndex.intValue];
+    XZYoYoCellView *fromCell = [self getXZYoYoCellViewWithIndex:_startCellIndex.intValue];
     GraphCell *fromGCell = [_currentGame.graph getGraphCellWithIndex:_startCellIndex.intValue];
     fromGCell.temporarilyUnoccupied = NO;
-    CellView *Tocell = [self getCellViewWithIndex:_endCellIndex.intValue];
+    XZYoYoCellView *Tocell = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
     
     [self MoveOccupiedCellFromIndex:self.startCellIndex.intValue toIndex:self.endCellIndex.intValue WithPath:self.SelectedPath];
     
@@ -351,8 +351,8 @@
 }
 
 -(void)MoveOccupiedCellFromIndex:(int)Fromindex toIndex:(int)toIndex WithPath:(NSArray*)path{
-    CellView *fromCell = [self getCellViewWithIndex:Fromindex];
-    CellView *toCell = [self getCellViewWithIndex:toIndex];
+    XZYoYoCellView *fromCell = [self getXZYoYoCellViewWithIndex:Fromindex];
+    XZYoYoCellView *toCell = [self getXZYoYoCellViewWithIndex:toIndex];
 
     GraphCell *FromGCell = [_currentGame.graph getGraphCellWithIndex:Fromindex];
     FromGCell.temporarilyUnoccupied = NO;
@@ -417,7 +417,7 @@
     for(GraphCell *GCell in cells){
         GCell.color = unOccupied;
         int index = [_currentGame.graph getIndexOfGraphCell:GCell];
-        CellView *cellView = [self getCellViewWithIndex:index];
+        XZYoYoCellView *cellView = [self getXZYoYoCellViewWithIndex:index];
         [cellView SetStatusWithGraphCell:GCell Animatation:CellAnimationTypeRemoval];
     }
 }
@@ -435,8 +435,8 @@
     }
 }
 
--(CellView*)getCellViewWithIndex:(int)index{
-    return ((CellView*)[self viewWithTag:index+1000]);
+-(XZYoYoCellView*)getXZYoYoCellViewWithIndex:(int)index{
+    return ((XZYoYoCellView*)[self viewWithTag:index+1000]);
 }
 
 @end

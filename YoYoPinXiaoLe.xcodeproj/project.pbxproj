@@ -39,7 +39,7 @@
 		5335B297263571A5006F9378 /* GraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B295263571A5006F9378 /* GraphCell.m */; };
 		5335B29B263571B4006F9378 /* MSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B299263571B4006F9378 /* MSize.m */; };
 		5335B2F126357321006F9378 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F026357320006F9378 /* UIView+Glow.m */; };
-		5335B2F526357330006F9378 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F426357330006F9378 /* CellView.m */; };
+		5335B2F526357330006F9378 /* XZYoYoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F426357330006F9378 /* XZYoYoCellView.m */; };
 		5335B2F92635733A006F9378 /* MatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5335B2F82635733A006F9378 /* MatrixView.m */; };
 		5335B34A26357817006F9378 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34926357817006F9378 /* GameKit.framework */; };
 		5335B34C26357825006F9378 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335B34B26357825006F9378 /* CoreGraphics.framework */; };
@@ -106,8 +106,8 @@
 		5335B29A263571B4006F9378 /* MSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSize.h; sourceTree = "<group>"; };
 		5335B2EF26357320006F9378 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		5335B2F026357320006F9378 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
-		5335B2F326357330006F9378 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
-		5335B2F426357330006F9378 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		5335B2F326357330006F9378 /* XZYoYoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZYoYoCellView.h; sourceTree = "<group>"; };
+		5335B2F426357330006F9378 /* XZYoYoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZYoYoCellView.m; sourceTree = "<group>"; };
 		5335B2F72635733A006F9378 /* MatrixView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixView.h; sourceTree = "<group>"; };
 		5335B2F82635733A006F9378 /* MatrixView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixView.m; sourceTree = "<group>"; };
 		5335B34926357817006F9378 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -269,8 +269,8 @@
 				536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */,
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
-				5335B2F326357330006F9378 /* CellView.h */,
-				5335B2F426357330006F9378 /* CellView.m */,
+				5335B2F326357330006F9378 /* XZYoYoCellView.h */,
+				5335B2F426357330006F9378 /* XZYoYoCellView.m */,
 				5335B2F72635733A006F9378 /* MatrixView.h */,
 				5335B2F82635733A006F9378 /* MatrixView.m */,
 				5335B292263571A5006F9378 /* Graph.h */,
@@ -416,7 +416,7 @@
 				53250A98264BC2B300F00AE8 /* SuspendView.swift in Sources */,
 				5335B26B26356BD2006F9378 /* ViewController.swift in Sources */,
 				5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */,
-				5335B2F526357330006F9378 /* CellView.m in Sources */,
+				5335B2F526357330006F9378 /* XZYoYoCellView.m in Sources */,
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
 				53F5286C264BCE9500F63419 /* ReductionManager.m in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,

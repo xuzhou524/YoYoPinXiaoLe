@@ -1,13 +1,13 @@
 //
-//  CellView.m
+//  XZYoYoCellView.m
 //  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/4/25.
 //
 
-#import "CellView.h"
+#import "XZYoYoCellView.h"
 
-@implementation CellView
+@implementation XZYoYoCellView
 
 - (id)initWithFrame:(CGRect)frame{
     //frame = CGRectMake(frame.origin.x, frame.origin.y, CELL_SIZE-0.5, CELL_SIZE-0.5);
@@ -73,8 +73,8 @@
 }
 
 -(void)HandleTap:(UIGestureRecognizer*)sender{
-    if([_delegate respondsToSelector:@selector(CellViewTouched:)]){
-        [_delegate CellViewTouched:self];
+    if([_delegate respondsToSelector:@selector(XZYoYoCellViewTouched:)]){
+        [_delegate XZYoYoCellViewTouched:self];
     }
 }
 
