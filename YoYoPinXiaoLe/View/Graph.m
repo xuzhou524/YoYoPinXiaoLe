@@ -113,7 +113,7 @@
     return [self.graphArray indexOfObject:GCell];
 }
 
--(void)ResetGraph{
+-(void)resetGraph{
     for(GraphCell *cell in _graphArray){
         cell.color = unOccupied;
         cell.temporarilyUnoccupied = NO;

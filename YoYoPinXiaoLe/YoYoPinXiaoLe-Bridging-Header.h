@@ -4,3 +4,5 @@
 
 #import "CrystalBallMatrixView.h"
 #import "GWProgressView.h"
+#import "Graph.h"
+#import "ScoreEntity.h"

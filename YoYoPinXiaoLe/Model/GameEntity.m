@@ -8,8 +8,7 @@
 #import "GameEntity.h"
 
 @implementation GameEntity
--(id)initWithCoder:(NSCoder *)aDecoder
-{
+-(id)initWithCoder:(NSCoder *)aDecoder{
     if(self = [super init])
     {
         self.graph = [aDecoder decodeObjectForKey:@"graph"];
@@ -18,22 +17,20 @@
     }
     return self;
 }
--(void)encodeWithCoder:(NSCoder *)aCoder
-{
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.graph forKey:@"graph"];
     [aCoder encodeObject:self.score forKey:@"score"];
     [aCoder encodeObject:self.nextCellsToAdd forKey:@"NextCellsToAdd"];
 }
--(id)copyWithZone:(NSZone *)zone
-{
+
+-(id)copyWithZone:(NSZone *)zone{
     GameEntity *copy = [[GameEntity alloc] init];
-    if(copy)
-    {
+    if(copy){
         [copy setGraph:[self.graph copyWithZone:zone]];
         [copy setScore:[self.score copyWithZone:zone]];
         NSMutableArray *CopyArray = [NSMutableArray array];
-        for(GraphCell *cell in _nextCellsToAdd)
-        {
+        for(GraphCell *cell in _nextCellsToAdd){
             GraphCell *copyGCell = [cell copyWithZone:zone];
             [CopyArray addObject:copyGCell];
         }
@@ -41,5 +38,4 @@
     }
     return copy;
 }
-
 @end

@@ -23,6 +23,6 @@
 -(NSArray*)getOcuupiedCells;
 -(NSArray*)getUnOccupiedCells;
 -(int)getIndexOfGraphCell:(GraphCell*)GCell;
--(void)ResetGraph;
+-(void)resetGraph;
 -(int)indexWithX:(int)x AndY:(int)y;
 @end

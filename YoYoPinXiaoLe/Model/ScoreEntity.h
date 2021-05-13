@@ -10,6 +10,6 @@
 @interface ScoreEntity : NSObject<NSCoding,NSCopying>
 @property(nonatomic)NSInteger score;
 @property(nonatomic)NSInteger numberOfConsecutiveRowCollection;
--(void)ReportScoreWithNumberOfDetectedCells:(NSInteger)numberOfDetectedCells;
--(void)ResetScore;
+-(void)reportScoreWithNumberOfDetectedCells:(NSInteger)numberOfDetectedCells;
+-(void)resetScore;
 @end

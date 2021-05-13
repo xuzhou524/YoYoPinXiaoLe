@@ -105,8 +105,8 @@
     [levelManager ResetLevel];
     [_ReductionManager ResetManager];
     _ReductionBtn.enabled = NO;
-    [_currentGame.score ResetScore];
-    [_currentGame.graph ResetGraph];
+    [_currentGame.score resetScore];
+    [_currentGame.graph resetGraph];
     [self updateScore];
     [self reloadWithSize:_currentGame.graph.size gameResumed:NO];
 }
@@ -403,7 +403,7 @@
          NSInteger numberOfCellsDetected = result.count;
          [self removeCells:result];
          //Update Score
-         [self.currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
+         [self.currentGame.score reportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
          
          [self updateScore];
          
