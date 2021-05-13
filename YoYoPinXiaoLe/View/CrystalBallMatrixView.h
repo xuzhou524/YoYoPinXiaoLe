@@ -1,5 +1,5 @@
 //
-//  MatrixView.h
+//  CrystalBallMatrixView.h
 //  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/4/25.
@@ -18,11 +18,11 @@
 #import "ReductionManager.h"
 #import "LevelProvider.h"
 
-@protocol MatrixViewDelegate;
+@protocol CrystalBallMatrixViewDelegate;
 typedef void (^CompletionBlock)(NSArray* detectedCells);
 typedef void (^AnimationCompletionBlock)(void);
 typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
-@interface MatrixView : UIView<XZYoYoCellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
+@interface CrystalBallMatrixView : UIView<XZYoYoCellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
     ReductionBlock reductionBlock;
     BOOL IsGameResumed;
     LevelProvider *levelProvider;
@@ -34,23 +34,23 @@ typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,
 @property(nonatomic,strong)GameEntity *currentGame;
 
 //Status Variables
-@property(nonatomic,assign)id<MatrixViewDelegate> delegate;
+@property(nonatomic,assign)id<CrystalBallMatrixViewDelegate> delegate;
 @property(nonatomic,retain)NSMutableArray *SelectedPath;
 @property(nonatomic,retain) NSNumber *startCellIndex;
 @property(nonatomic,retain) NSNumber *endCellIndex;
 
 -(id)initWithFrame:(CGRect)frame withGame:(GameEntity*)Game gameReumed:(BOOL)resumed;
 
--(void)ReloadNewGame;
--(void)ReloadGame:(GameEntity*)game;
+-(void)reloadNewGame;
+-(void)reloadGame:(GameEntity*)game;
 -(void)saveGame;
 -(void)reductionLastMove;
 
 @end
-@protocol MatrixViewDelegate <NSObject>
+@protocol CrystalBallMatrixViewDelegate <NSObject>
 
--(void)MatrixViewQuit:(MatrixView*)matrixView;
--(void)AddNextCellsWithGraphCells:(NSArray*)GCells;
+-(void)crystalBallMatrixViewQuit:(CrystalBallMatrixView*)matrixView;
+-(void)addNextCellsWithGraphCells:(NSArray*)GCells;
 -(void)setProgress:(CGFloat)progress withLevelNumber:(int)levelNo;
 -(void)ResetNextAddedCells;
 @end

@@ -23,8 +23,8 @@ class PlayYoQiuGameViewController: UIViewController {
         return view
     }()
     
-    let matrix:MatrixView = {
-        let view = MatrixView.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
+    let matrix:CrystalBallMatrixView = {
+        let view = CrystalBallMatrixView.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
         return view
     }()
     
@@ -171,8 +171,8 @@ class PlayYoQiuGameViewController: UIViewController {
     }
 }
 
-extension PlayYoQiuGameViewController: MatrixViewDelegate {
-    func matrixViewQuit(_ matrixView: MatrixView!) {
+extension PlayYoQiuGameViewController: CrystalBallMatrixViewDelegate {
+    func crystalBallMatrixViewQuit(_ matrixView: CrystalBallMatrixView!) {
         self.navigationController?.popViewController(animated: true)
     }
     

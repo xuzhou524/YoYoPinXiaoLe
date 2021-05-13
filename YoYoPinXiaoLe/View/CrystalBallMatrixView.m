@@ -1,14 +1,14 @@
 //
-//  MatrixView.m
+//  CrystalBallMatrixView.m
 //  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/4/25.
 //
 
-#import "MatrixView.h"
+#import "CrystalBallMatrixView.h"
 #import "YoYoPinXiaoLe-Swift.h"
 
-@implementation MatrixView
+@implementation CrystalBallMatrixView
 
 -(id)initWithFrame:(CGRect)frame{
     return [self initWithFrame:frame withGame:nil gameReumed:NO];
@@ -61,29 +61,29 @@
             [_currentGame.nextCellsToAdd addObject:Gcell];
         }
     }
-    [self AddNextCellsToSuperView];
+    [self addNextCellsToSuperView];
 }
 
 -(void)saveGame{
-    [self PersistGameToPermenantStore];
-    [self SaveGameToReductionManager];
+    [self persistGameToPermenantStore];
+    [self saveGameToReductionManager];
 }
 
--(void)SaveGameToReductionManager{
+-(void)saveGameToReductionManager{
     [_ReductionManager EnqueueGameInReductionList:_currentGame];
     if([_ReductionManager CanReduction]){
         _ReductionBtn.enabled = YES;
     }
 }
 
--(void)PersistGameToPermenantStore{
+-(void)persistGameToPermenantStore{
 }
 
 -(void)reductionLastMove{
     GameEntity *UndoneGame = [_ReductionManager ReductionLastMove];
     if(UndoneGame){
-        [self ReloadGame:UndoneGame];
-        [self PersistGameToPermenantStore];
+        [self reloadGame:UndoneGame];
+        [self persistGameToPermenantStore];
         _ReductionBtn.enabled = NO;
     }
 }
@@ -91,14 +91,14 @@
 -(void)willMoveToSuperview:(UIView *)newSuperview{
     if(newSuperview){
         if(IsGameResumed){
-            [self ReloadGame:_currentGame];
+            [self reloadGame:_currentGame];
         }else{
-            [self ReloadNewGame];
+            [self reloadNewGame];
         }
     }
 }
 
--(void)ReloadNewGame{
+-(void)reloadNewGame{
     if([_delegate respondsToSelector:@selector(ResetNextAddedCells)]){
         [_delegate ResetNextAddedCells];
     }
@@ -108,18 +108,18 @@
     [_currentGame.score ResetScore];
     [_currentGame.graph ResetGraph];
     [self UpdateScore];
-    [self ReloadWithSize:_currentGame.graph.size gameResumed:NO];
+    [self reloadWithSize:_currentGame.graph.size gameResumed:NO];
 }
 
--(void)ReloadGame:(GameEntity*)game{
+-(void)reloadGame:(GameEntity*)game{
     _currentGame = game;
     [self UpdateScore];
     
-    [self ReloadWithSize:_currentGame.graph.size gameResumed:YES];
+    [self reloadWithSize:_currentGame.graph.size gameResumed:YES];
 }
 
 //**********************MATRIX RELOAD WITH CELLS ***************************************************
--(void)ReloadWithSize:(MSize*)size gameResumed:(BOOL)resumed{
+-(void)reloadWithSize:(MSize*)size gameResumed:(BOOL)resumed{
     
     NSArray *subviews = [self subviews];
     for(UIView *subview in subviews){
@@ -132,10 +132,10 @@
     }else{
         self.center = CGPointMake(350, 250);
     }
-    [self LoadWithCellsGameResumed:resumed];
+    [self loadWithCellsGameResumed:resumed];
 }
 
--(void)LoadWithCellsGameResumed:(BOOL)Resumed{
+-(void)loadWithCellsGameResumed:(BOOL)Resumed{
     int TotalCellsCount = _currentGame.graph.size.width*_currentGame.graph.size.height;
     CGFloat AnimationDelay =0.0;
     int CurrentX = CELL_SIZE;
@@ -164,10 +164,10 @@
         AnimationDelay += 0.1;
     }
     if(!Resumed){
-        [self GenerateDisorderCellsAndAddToSuperView:NO];
-        [self performSelector:@selector(AddNewCells) withObject:nil afterDelay:0.5];
+        [self generateDisorderCellsAndAddToSuperView:NO];
+        [self performSelector:@selector(addNewCells) withObject:nil afterDelay:0.5];
     }else{
-        [self AddNextCellsToSuperView];
+        [self addNextCellsToSuperView];
     }
 }
 
@@ -193,7 +193,7 @@
     }
 }
 
--(void)GenerateDisorderCellsAndAddToSuperView:(BOOL)addToSuperView{
+-(void)generateDisorderCellsAndAddToSuperView:(BOOL)addToSuperView{
     NSMutableArray *addedCells = [NSMutableArray array];
     for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
         GraphCell *CopyGCell = [[GraphCell alloc] init];
@@ -203,16 +203,16 @@
     
     _currentGame.nextCellsToAdd = addedCells;
     if(addToSuperView)
-        [self AddNextCellsToSuperView];
+        [self addNextCellsToSuperView];
 }
--(void)AddNextCellsToSuperView{
-    if([_delegate respondsToSelector:@selector(AddNextCellsWithGraphCells:)]){
-        [_delegate AddNextCellsWithGraphCells:_currentGame.nextCellsToAdd];
+-(void)addNextCellsToSuperView{
+    if([_delegate respondsToSelector:@selector(addNextCellsWithGraphCells:)]){
+        [_delegate addNextCellsWithGraphCells:_currentGame.nextCellsToAdd];
     }
     
 }
 
--(void)AddNewCells{
+-(void)addNewCells{
     NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
     if(unoccupiedCells.count<[levelProvider GetCurrentLevel].numberOfAddedCells){
         [self GameOver];
@@ -236,7 +236,7 @@
                             [self GameOver];
                             
                         }else{
-                            [self GenerateDisorderCellsAndAddToSuperView:YES];
+                            [self generateDisorderCellsAndAddToSuperView:YES];
                             [self saveGame];
                         }
                     } withVerticesArray:AddedCells];
@@ -336,7 +336,7 @@
     
     CompletionBlock block = ^(NSArray *detectedCells){
         if(detectedCells.count==0){
-            [self AddNewCells];
+            [self addNewCells];
         }else{
             [self setUserInteractionEnabled:YES];
             [self saveGame];
@@ -386,12 +386,12 @@
     [self ReportScoreToGameCenter];
     XZAlertView * view = [[XZAlertView alloc] init];
     view.completion = ^{
-        if([self.delegate respondsToSelector:@selector(MatrixViewQuit:)]){
-            [self.delegate MatrixViewQuit:self];
+        if([self.delegate respondsToSelector:@selector(crystalBallMatrixViewQuit:)]){
+            [self.delegate crystalBallMatrixViewQuit:self];
         }
     };
     view.gameCompletion = ^{
-        [self ReloadNewGame];
+        [self reloadNewGame];
     };
 
     [view show];
