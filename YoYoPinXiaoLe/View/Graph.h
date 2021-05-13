@@ -8,8 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "MSize.h"
 #import "GraphCell.h"
-@interface Graph : NSObject<NSCoding,NSCopying>
-{
+@interface Graph : NSObject<NSCoding,NSCopying>{
     
 }
 

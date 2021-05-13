@@ -16,16 +16,16 @@
 #import "GameEntity.h"
 #import "ConnectCellRowsManager.h"
 #import "ReductionManager.h"
-#import "LevelProvider.h"
+#import "LevelManager.h"
 
 @protocol CrystalBallMatrixViewDelegate;
 typedef void (^CompletionBlock)(NSArray* detectedCells);
 typedef void (^AnimationCompletionBlock)(void);
 typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
-@interface CrystalBallMatrixView : UIView<XZYoYoCellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
+@interface CrystalBallMatrixView : UIView<XZYoYoCellViewDelegate,UIAlertViewDelegate,LevelManagerDelegate>{
     ReductionBlock reductionBlock;
     BOOL IsGameResumed;
-    LevelProvider *levelProvider;
+    LevelManager *levelManager;
     ReductionManager *_ReductionManager;
 }
 //UI Controls

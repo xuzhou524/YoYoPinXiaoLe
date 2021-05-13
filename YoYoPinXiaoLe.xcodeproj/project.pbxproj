@@ -20,8 +20,7 @@
 		53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */; };
 		53332BE82644CC8A00535838 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDD2644CC8A00535838 /* Client.swift */; };
 		53332BE92644CC8A00535838 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53332BDF2644CC8A00535838 /* UITableView+Extension.swift */; };
-		53332BF82644CE2500535838 /* LevelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BF72644CE2500535838 /* LevelProvider.m */; };
-		53332BFC2644CE3100535838 /* LevelEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BFA2644CE3100535838 /* LevelEntity.m */; };
+		53332BF82644CE2500535838 /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332BF72644CE2500535838 /* LevelManager.m */; };
 		53332C0C2644CE6400535838 /* FastestPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C0B2644CE6400535838 /* FastestPathFinder.m */; };
 		53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C112644CE7A00535838 /* MJPriorityDictionary.mm */; };
 		53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C132644CE7A00535838 /* MJPriorityQueue.mm */; };
@@ -70,10 +69,8 @@
 		53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUserInfoConfig.swift; sourceTree = "<group>"; };
 		53332BDD2644CC8A00535838 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		53332BDF2644CC8A00535838 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		53332BF62644CE2500535838 /* LevelProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelProvider.h; sourceTree = "<group>"; };
-		53332BF72644CE2500535838 /* LevelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelProvider.m; sourceTree = "<group>"; };
-		53332BFA2644CE3100535838 /* LevelEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelEntity.m; sourceTree = "<group>"; };
-		53332BFB2644CE3100535838 /* LevelEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelEntity.h; sourceTree = "<group>"; };
+		53332BF62644CE2500535838 /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
+		53332BF72644CE2500535838 /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		53332C0A2644CE6400535838 /* FastestPathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastestPathFinder.h; sourceTree = "<group>"; };
 		53332C0B2644CE6400535838 /* FastestPathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastestPathFinder.m; sourceTree = "<group>"; };
 		53332C112644CE7A00535838 /* MJPriorityDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MJPriorityDictionary.mm; sourceTree = "<group>"; };
@@ -159,7 +156,6 @@
 			children = (
 				5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */,
 				53332BF32644CDE800535838 /* FastestPathFinder */,
-				53332BF02644CDBB00535838 /* LevelProvider */,
 				53332BDA2644CC8A00535838 /* UIViewController+Extension.swift */,
 				53332BDB2644CC8A00535838 /* GameUserInfoConfig.swift */,
 				53D37AC326462A1600A4061E /* XZGameCenterService.swift */,
@@ -169,17 +165,6 @@
 				53332BDF2644CC8A00535838 /* UITableView+Extension.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		53332BF02644CDBB00535838 /* LevelProvider */ = {
-			isa = PBXGroup;
-			children = (
-				53332BFB2644CE3100535838 /* LevelEntity.h */,
-				53332BFA2644CE3100535838 /* LevelEntity.m */,
-				53332BF62644CE2500535838 /* LevelProvider.h */,
-				53332BF72644CE2500535838 /* LevelProvider.m */,
-			);
-			path = LevelProvider;
 			sourceTree = "<group>";
 		};
 		53332BF32644CDE800535838 /* FastestPathFinder */ = {
@@ -244,6 +229,8 @@
 		5335B28326357136006F9378 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53332BF62644CE2500535838 /* LevelManager.h */,
+				53332BF72644CE2500535838 /* LevelManager.m */,
 				53332C192644CE8900535838 /* DisorderUnOccupiManager.h */,
 				53332C1A2644CE8900535838 /* DisorderUnOccupiManager.m */,
 				53332C1F2644CE9500535838 /* ConnectCellRowsManager.h */,
@@ -430,7 +417,7 @@
 				5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */,
 				5314F5B9264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m in Sources */,
 				53332BC72644CB0400535838 /* HomeViewController.swift in Sources */,
-				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
+				53332BF82644CE2500535838 /* LevelManager.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,
 				53332C212644CE9500535838 /* ConnectCellRowsManager.m in Sources */,
@@ -438,7 +425,6 @@
 				53332BE82644CC8A00535838 /* Client.swift in Sources */,
 				53409F33264BB5AE00E16DFF /* XZWebViewController.swift in Sources */,
 				53332C1B2644CE8900535838 /* DisorderUnOccupiManager.m in Sources */,
-				53332BFC2644CE3100535838 /* LevelEntity.m in Sources */,
 				53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */,
 				53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */,
 				536CFC65264B760000BEEAF5 /* HelpViewController.swift in Sources */,

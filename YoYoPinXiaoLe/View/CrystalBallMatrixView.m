@@ -40,8 +40,8 @@
             _currentGame.nextCellsToAdd = [NSMutableArray array];
         }
         
-        levelProvider = [[LevelProvider alloc] initWithNumberOfLevels:3];
-        levelProvider.delegate = self;
+        levelManager = [[LevelManager alloc] initWithNumberOfLevels:3];
+        levelManager.delegate = self;
         
         self.SelectedPath = [NSMutableArray array];
         self.clipsToBounds = NO;
@@ -49,7 +49,7 @@
     return self;
 }
 
--(void)levelProvider:(LevelProvider *)lvlProvider LevelChanged:(LevelEntity *)newLevel{
+-(void)levelManager:(LevelManager *)lvlProvider LevelChanged:(LevelEntity *)newLevel{
     if(newLevel == [lvlProvider GetCurrentLevel]){
         return;
     }
@@ -102,7 +102,7 @@
     if([_delegate respondsToSelector:@selector(resetNextAddedCells)]){
         [_delegate resetNextAddedCells];
     }
-    [levelProvider ResetLevel];
+    [levelManager ResetLevel];
     [_ReductionManager ResetManager];
     _ReductionBtn.enabled = NO;
     [_currentGame.score ResetScore];
@@ -195,7 +195,7 @@
 
 -(void)generateDisorderCellsAndAddToSuperView:(BOOL)addToSuperView{
     NSMutableArray *addedCells = [NSMutableArray array];
-    for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
+    for(int i=0 ;i<[levelManager GetCurrentLevel].numberOfAddedCells;i++){
         GraphCell *CopyGCell = [[GraphCell alloc] init];
         [addedCells addObject:CopyGCell];
         CopyGCell.color = [self getRandomColor];
@@ -214,20 +214,20 @@
 
 -(void)addNewCells{
     NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
-    if(unoccupiedCells.count<[levelProvider GetCurrentLevel].numberOfAddedCells){
+    if(unoccupiedCells.count<[levelManager GetCurrentLevel].numberOfAddedCells){
         [self gameOver];
         return;
     }
-    [DisorderUnOccupiManager generateDisorderUnOccupiedCellsIndexes:[levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
+    [DisorderUnOccupiManager generateDisorderUnOccupiedCellsIndexes:[levelManager GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
         NSMutableArray *AddedCells = [NSMutableArray array];
-        for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
+        for(int i=0 ;i<[levelManager GetCurrentLevel].numberOfAddedCells;i++){
             GraphCell *AddedGCell = [self.currentGame.nextCellsToAdd objectAtIndex:i];
             GraphCell *LocalGCell = [self.currentGame.graph getGraphCellWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             LocalGCell.color = AddedGCell.color;
             XZYoYoCellView *LocalCell = [self getXZYoYoCellViewWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             [AddedCells addObject:LocalGCell];
             [LocalCell setStatusWithGraphCell:LocalGCell Animatation:CellAnimationTypeAdded withDelay:i withCompletionBlock:^(BOOL finished){
-                int numberOfAddedCells = [levelProvider GetCurrentLevel].numberOfAddedCells ;
+                int numberOfAddedCells = [levelManager GetCurrentLevel].numberOfAddedCells ;
                 if(i==numberOfAddedCells-1) {
                     [self detectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
                         [self setUserInteractionEnabled:YES];
@@ -423,15 +423,15 @@
 }
 
 -(void)updateScore{
-    [levelProvider ReportScore:_currentGame.score.score];
+    [levelManager ReportScore:_currentGame.score.score];
     [self setScoreInScoreBoard:_currentGame.score.score];
     if([_delegate respondsToSelector:@selector(setProgress:withLevelNumber:)]){
         CGFloat Mod = _currentGame.score.score % (int)(LEVEL_RANGE);
         CGFloat progress = (CGFloat)(Mod/LEVEL_RANGE);
-        if([levelProvider isFinalLevel]){
+        if([levelManager isFinalLevel]){
             progress = 1.0f;
         }
-        [_delegate setProgress:progress withLevelNumber:[levelProvider GetCurrentLevel].LevelIndex];
+        [_delegate setProgress:progress withLevelNumber:[levelManager GetCurrentLevel].LevelIndex];
     }
 }
 

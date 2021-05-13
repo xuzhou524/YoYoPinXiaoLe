@@ -1,17 +1,22 @@
 //
-//  LevelProvider.m
+//  LevelManager.m
 //  YoYoPinXiaoLe
 //
 //  Created by xuzhou on 2021/4/25.
 //
 
-#import "LevelProvider.h"
+#import "LevelManager.h"
 
-@interface LevelProvider ()
+@implementation LevelEntity
+
+@end
+
+
+@interface LevelManager ()
 @property(nonatomic,retain)LevelEntity *currentLevel;
 @property(nonatomic,retain)NSArray *Levels;
 @end
-@implementation LevelProvider
+@implementation LevelManager
 
 -(id)initWithNumberOfLevels:(NSInteger)noOfLevels{
     self = [super init];
@@ -48,8 +53,8 @@
             newLevel = level;
         }
     }
-    if(newLevel!=_currentLevel && [_delegate respondsToSelector:@selector(levelProvider:LevelChanged:)]){
-        [_delegate levelProvider:self LevelChanged:newLevel];
+    if(newLevel!=_currentLevel && [_delegate respondsToSelector:@selector(levelManager:LevelChanged:)]){
+        [_delegate levelManager:self LevelChanged:newLevel];
     }
     _currentLevel = newLevel;
 }
