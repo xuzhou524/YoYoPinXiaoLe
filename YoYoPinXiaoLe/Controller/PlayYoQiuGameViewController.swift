@@ -35,7 +35,7 @@ class PlayYoQiuGameViewController: UIViewController {
     
     let suspendView:UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
         button.alpha = 0.3
@@ -49,7 +49,7 @@ class PlayYoQiuGameViewController: UIViewController {
     
     let reductionView:UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
         button.alpha = 0.3

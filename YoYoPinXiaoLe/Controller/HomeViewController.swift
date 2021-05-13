@@ -23,7 +23,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setTitle("玩一下", for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
         button.titleLabel?.font = blodFontWithSize(16)
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
         button.alpha = 0.8
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setTitle("排行榜", for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
         button.titleLabel?.font = blodFontWithSize(16)
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
         button.alpha = 0.8
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         button.setTitle("帮助中心", for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
         button.titleLabel?.font = blodFontWithSize(16)
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
         button.alpha = 0.8
@@ -56,7 +56,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     let privacyBtn:UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         button.alpha = 0.3
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     let praiseBtn:UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         button.alpha = 0.3
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     let shareBtn:UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIColor(named: "color_title_black")?.image, for: .normal)
+        button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         button.alpha = 0.3
