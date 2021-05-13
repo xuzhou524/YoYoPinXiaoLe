@@ -11,25 +11,25 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FastestPathFinder.h"
 #import "Graph.h"
-#import "RandomUnOccupiedCellsGenerator.h"
+#import "DisorderUnOccupiManager.h"
 #import <GameKit/GameKit.h>
 #import "GameEntity.h"
-#import "ConnectedCellRowsDetector.h"
-#import "UndoManager.h"
+#import "ConnectCellRowsManager.h"
+#import "ReductionManager.h"
 #import "LevelProvider.h"
 
 @protocol MatrixViewDelegate;
 typedef void (^CompletionBlock)(NSArray* detectedCells);
 typedef void (^AnimationCompletionBlock)(void);
-typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
+typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNumber *lastStartCellIndex,NSNumber *lastEndCellIndex);
 @interface MatrixView : UIView<CellViewDelegate,UIAlertViewDelegate,LevelProviderDelegate>{
-    UndoBlock undoBlock;
+    ReductionBlock reductionBlock;
     BOOL IsGameResumed;
     LevelProvider *levelProvider;
-    UndoManager *_UndoManager;
+    ReductionManager *_ReductionManager;
 }
 //UI Controls
-@property(nonatomic,retain)UIButton *UndoBtn;
+@property(nonatomic,retain)UIButton *ReductionBtn;
 @property(nonatomic,retain)UILabel *ScoreBoard;
 @property(nonatomic,strong)GameEntity *currentGame;
 
@@ -44,7 +44,7 @@ typedef void(^UndoBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,NSNum
 -(void)ReloadNewGame;
 -(void)ReloadGame:(GameEntity*)game;
 -(void)saveGame;
--(void)undoLastMove;
+-(void)reductionLastMove;
 
 @end
 @protocol MatrixViewDelegate <NSObject>

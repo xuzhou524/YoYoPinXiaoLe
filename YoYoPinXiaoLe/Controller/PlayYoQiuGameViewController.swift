@@ -28,7 +28,7 @@ class PlayYoQiuGameViewController: UIViewController {
         return view
     }()
     
-    let undoBtn:UIButton = {
+    let reductionBtn:UIButton = {
         let button = UIButton()
         return button
     }()
@@ -64,7 +64,7 @@ class PlayYoQiuGameViewController: UIViewController {
     let progressView:GWProgressView = {
         let view = GWProgressView.init(frame: CGRect(x: 30, y: 0, width: kScreenWidth-60, height: 15))
         view.trackTintColor = UIColor.lightGray
-        view.progressTintColor = UIColor.green
+        view.progressTintColor = UIColor(named: "color_red")
         return view
     }()
     
@@ -121,7 +121,7 @@ class PlayYoQiuGameViewController: UIViewController {
             gameContainerView.addSubview(cell)
         }
         
-        matrix.undoBtn = undoBtn
+        matrix.reductionBtn = reductionBtn
         gameContainerView.addSubview(matrix)
         
         self.view.addSubview(self.suspendView)
@@ -153,7 +153,7 @@ class PlayYoQiuGameViewController: UIViewController {
         }
 
         self.suspendView.addTarget(self, action: #selector(quit), for: .touchUpInside)
-        self.reductionView.addTarget(self, action: #selector(undo), for: .touchUpInside)
+        self.reductionView.addTarget(self, action: #selector(reduction), for: .touchUpInside)
         
         self.view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
@@ -225,7 +225,7 @@ extension PlayYoQiuGameViewController {
         virtuaew.show()
     }
     
-    @objc func undo(){
-        matrix.undoLastMove()
+    @objc func reduction(){
+        matrix.reductionLastMove()
     }
 }

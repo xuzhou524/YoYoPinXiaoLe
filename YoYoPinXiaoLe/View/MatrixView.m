@@ -17,7 +17,7 @@
 -(id)initWithFrame:(CGRect)frame withGame:(GameEntity*)Game gameReumed:(BOOL)resumed{
     self = [super initWithFrame:frame];
     if (self) {
-        _UndoManager = [[UndoManager alloc] init];
+        _ReductionManager = [[ReductionManager alloc] init];
         self.backgroundColor = [UIColor colorWithRed:(57.0f/255.0f) green:(57.0f/255.0f) blue:(57.0f/255.0f) alpha:1.0];
         self.layer.borderColor = [UIColor lightGrayColor].CGColor;
         self.layer.borderWidth = 3;
@@ -66,25 +66,25 @@
 
 -(void)saveGame{
     [self PersistGameToPermenantStore];
-    [self SaveGameToUndoManager];
+    [self SaveGameToReductionManager];
 }
 
--(void)SaveGameToUndoManager{
-    [_UndoManager EnqueueGameInUndoList:_currentGame];
-    if([_UndoManager CanUndo]){
-        _UndoBtn.enabled = YES;
+-(void)SaveGameToReductionManager{
+    [_ReductionManager EnqueueGameInReductionList:_currentGame];
+    if([_ReductionManager CanReduction]){
+        _ReductionBtn.enabled = YES;
     }
 }
 
 -(void)PersistGameToPermenantStore{
 }
 
--(void)undoLastMove{
-    GameEntity *UndoneGame = [_UndoManager UndoLastMove];
+-(void)reductionLastMove{
+    GameEntity *UndoneGame = [_ReductionManager ReductionLastMove];
     if(UndoneGame){
         [self ReloadGame:UndoneGame];
         [self PersistGameToPermenantStore];
-        _UndoBtn.enabled = NO;
+        _ReductionBtn.enabled = NO;
     }
 }
 
@@ -103,8 +103,8 @@
         [_delegate ResetNextAddedCells];
     }
     [levelProvider ResetLevel];
-    [_UndoManager ResetManager];
-    _UndoBtn.enabled = NO;
+    [_ReductionManager ResetManager];
+    _ReductionBtn.enabled = NO;
     [_currentGame.score ResetScore];
     [_currentGame.graph ResetGraph];
     [self UpdateScore];
@@ -164,7 +164,7 @@
         AnimationDelay += 0.1;
     }
     if(!Resumed){
-        [self GenerateRandomCellsAndAddToSuperView:NO];
+        [self GenerateDisorderCellsAndAddToSuperView:NO];
         [self performSelector:@selector(AddNewCells) withObject:nil afterDelay:0.5];
     }else{
         [self AddNextCellsToSuperView];
@@ -193,7 +193,7 @@
     }
 }
 
--(void)GenerateRandomCellsAndAddToSuperView:(BOOL)addToSuperView{
+-(void)GenerateDisorderCellsAndAddToSuperView:(BOOL)addToSuperView{
     NSMutableArray *addedCells = [NSMutableArray array];
     for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
         GraphCell *CopyGCell = [[GraphCell alloc] init];
@@ -218,7 +218,7 @@
         [self GameOver];
         return;
     }
-    [RandomUnOccupiedCellsGenerator GenerateRandomUnOccupiedCellsIndexes:[levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
+    [DisorderUnOccupiManager generateDisorderUnOccupiedCellsIndexes:[levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
         NSMutableArray *AddedCells = [NSMutableArray array];
         for(int i=0 ;i<[levelProvider GetCurrentLevel].numberOfAddedCells;i++){
             GraphCell *AddedGCell = [self.currentGame.nextCellsToAdd objectAtIndex:i];
@@ -236,7 +236,7 @@
                             [self GameOver];
                             
                         }else{
-                            [self GenerateRandomCellsAndAddToSuperView:YES];
+                            [self GenerateDisorderCellsAndAddToSuperView:YES];
                             [self saveGame];
                         }
                     } withVerticesArray:AddedCells];
@@ -398,7 +398,7 @@
 }
 
 -(void)DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{
-     [ConnectedCellRowsDetector getConnectedCellsWithGraph:_currentGame.graph withVertices:vertices withCompletionBlock:^(NSArray *result){
+     [ConnectCellRowsManager getConnectedCellsWithGraph:_currentGame.graph withVertices:vertices withCompletionBlock:^(NSArray *result){
          // iterate on detected cells and remove them
          NSInteger numberOfCellsDetected = result.count;
          [self RemoveCells:result];

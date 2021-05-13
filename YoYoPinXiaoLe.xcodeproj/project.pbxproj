@@ -25,8 +25,8 @@
 		53332C0C2644CE6400535838 /* FastestPathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C0B2644CE6400535838 /* FastestPathFinder.m */; };
 		53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C112644CE7A00535838 /* MJPriorityDictionary.mm */; };
 		53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53332C132644CE7A00535838 /* MJPriorityQueue.mm */; };
-		53332C1B2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */; };
-		53332C212644CE9500535838 /* ConnectedCellRowsDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */; };
+		53332C1B2644CE8900535838 /* DisorderUnOccupiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1A2644CE8900535838 /* DisorderUnOccupiManager.m */; };
+		53332C212644CE9500535838 /* ConnectCellRowsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C1D2644CE9400535838 /* ConnectCellRowsManager.m */; };
 		53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */ = {isa = PBXBuildFile; fileRef = 53332C282644D63D00535838 /* MJDijkstra.m */; };
 		5335B26726356BD2006F9378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26626356BD2006F9378 /* AppDelegate.swift */; };
 		5335B26B26356BD2006F9378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335B26A26356BD2006F9378 /* ViewController.swift */; };
@@ -50,7 +50,7 @@
 		536CFC65264B760000BEEAF5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC64264B760000BEEAF5 /* HelpViewController.swift */; };
 		536CFC68264B761C00BEEAF5 /* WithoutAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */; };
 		53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D37AC326462A1600A4061E /* XZGameCenterService.swift */; };
-		53F5286C264BCE9500F63419 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5286B264BCE9500F63419 /* UndoManager.m */; };
+		53F5286C264BCE9500F63419 /* ReductionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5286B264BCE9500F63419 /* ReductionManager.m */; };
 		B46854EAE205DEE308500041 /* libPods-YoYoPinXiaoLe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */; };
 /* End PBXBuildFile section */
 
@@ -80,10 +80,10 @@
 		53332C122644CE7A00535838 /* MJPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPriorityQueue.h; sourceTree = "<group>"; };
 		53332C132644CE7A00535838 /* MJPriorityQueue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MJPriorityQueue.mm; sourceTree = "<group>"; };
 		53332C142644CE7A00535838 /* MJPriorityDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPriorityDictionary.h; sourceTree = "<group>"; };
-		53332C192644CE8900535838 /* RandomUnOccupiedCellsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomUnOccupiedCellsGenerator.h; sourceTree = "<group>"; };
-		53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomUnOccupiedCellsGenerator.m; sourceTree = "<group>"; };
-		53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedCellRowsDetector.m; sourceTree = "<group>"; };
-		53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedCellRowsDetector.h; sourceTree = "<group>"; };
+		53332C192644CE8900535838 /* DisorderUnOccupiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisorderUnOccupiManager.h; sourceTree = "<group>"; };
+		53332C1A2644CE8900535838 /* DisorderUnOccupiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisorderUnOccupiManager.m; sourceTree = "<group>"; };
+		53332C1D2644CE9400535838 /* ConnectCellRowsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectCellRowsManager.m; sourceTree = "<group>"; };
+		53332C1F2644CE9500535838 /* ConnectCellRowsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectCellRowsManager.h; sourceTree = "<group>"; };
 		53332C282644D63D00535838 /* MJDijkstra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDijkstra.m; sourceTree = "<group>"; };
 		53332C292644D63D00535838 /* MJDijkstra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDijkstra.h; sourceTree = "<group>"; };
 		5335B26326356BD2006F9378 /* YoYoPinXiaoLe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYoPinXiaoLe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +119,8 @@
 		536CFC64264B760000BEEAF5 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithoutAuthorizationView.swift; sourceTree = "<group>"; };
 		53D37AC326462A1600A4061E /* XZGameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZGameCenterService.swift; sourceTree = "<group>"; };
-		53F5286A264BCE9500F63419 /* UndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
-		53F5286B264BCE9500F63419 /* UndoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
+		53F5286A264BCE9500F63419 /* ReductionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReductionManager.h; sourceTree = "<group>"; };
+		53F5286B264BCE9500F63419 /* ReductionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReductionManager.m; sourceTree = "<group>"; };
 		672B30C3B4D7666F8E29E6EC /* Pods-YoYoPinXiaoLe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.release.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.release.xcconfig"; sourceTree = "<group>"; };
 		ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YoYoPinXiaoLe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2FE8C3C75B2D41280CC20A /* Pods-YoYoPinXiaoLe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYoPinXiaoLe.debug.xcconfig"; path = "Target Support Files/Pods-YoYoPinXiaoLe/Pods-YoYoPinXiaoLe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,10 +145,10 @@
 		5314F5B1264A5BEE00F75D44 /* GW_ProgressViewKit */ = {
 			isa = PBXGroup;
 			children = (
-				5314F5B2264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.h */,
-				5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */,
 				5314F5B3264A5BEE00F75D44 /* GWProgressView.h */,
 				5314F5B5264A5BEE00F75D44 /* GWProgressView.m */,
+				5314F5B2264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.h */,
+				5314F5B6264A5BEE00F75D44 /* GW_AnimatedGIFImageSerialization.m */,
 				5314F5B4264A5BEE00F75D44 /* progressImage.gif */,
 			);
 			path = GW_ProgressViewKit;
@@ -244,12 +244,12 @@
 		5335B28326357136006F9378 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				53332C192644CE8900535838 /* RandomUnOccupiedCellsGenerator.h */,
-				53332C1A2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m */,
-				53332C1F2644CE9500535838 /* ConnectedCellRowsDetector.h */,
-				53332C1D2644CE9400535838 /* ConnectedCellRowsDetector.m */,
-				53F5286A264BCE9500F63419 /* UndoManager.h */,
-				53F5286B264BCE9500F63419 /* UndoManager.m */,
+				53332C192644CE8900535838 /* DisorderUnOccupiManager.h */,
+				53332C1A2644CE8900535838 /* DisorderUnOccupiManager.m */,
+				53332C1F2644CE9500535838 /* ConnectCellRowsManager.h */,
+				53332C1D2644CE9400535838 /* ConnectCellRowsManager.m */,
+				53F5286A264BCE9500F63419 /* ReductionManager.h */,
+				53F5286B264BCE9500F63419 /* ReductionManager.m */,
 				5335B29A263571B4006F9378 /* MSize.h */,
 				5335B299263571B4006F9378 /* MSize.m */,
 				5335B28E26357195006F9378 /* GameEntity.h */,
@@ -418,7 +418,7 @@
 				5314F5F4264A889300F75D44 /* XZAlertView.swift in Sources */,
 				5335B2F526357330006F9378 /* CellView.m in Sources */,
 				53332BE52644CC8A00535838 /* UIViewController+Extension.swift in Sources */,
-				53F5286C264BCE9500F63419 /* UndoManager.m in Sources */,
+				53F5286C264BCE9500F63419 /* ReductionManager.m in Sources */,
 				5335B2F92635733A006F9378 /* MatrixView.m in Sources */,
 				5335B29B263571B4006F9378 /* MSize.m in Sources */,
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
@@ -433,11 +433,11 @@
 				53332BF82644CE2500535838 /* LevelProvider.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,
-				53332C212644CE9500535838 /* ConnectedCellRowsDetector.m in Sources */,
+				53332C212644CE9500535838 /* ConnectCellRowsManager.m in Sources */,
 				53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */,
 				53332BE82644CC8A00535838 /* Client.swift in Sources */,
 				53409F33264BB5AE00E16DFF /* XZWebViewController.swift in Sources */,
-				53332C1B2644CE8900535838 /* RandomUnOccupiedCellsGenerator.m in Sources */,
+				53332C1B2644CE8900535838 /* DisorderUnOccupiManager.m in Sources */,
 				53332BFC2644CE3100535838 /* LevelEntity.m in Sources */,
 				53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */,
 				53332C162644CE7A00535838 /* MJPriorityDictionary.mm in Sources */,
