@@ -135,19 +135,19 @@
     UIImage *backColor ;
     switch (status) {
         case red:
-            backColor  = [UIImage imageNamed:@"circle_red.png"];
+            backColor  = [UIImage imageNamed:@"crystalBall_red.png"];
             break;
         case blue:
-            backColor = [UIImage imageNamed:@"circle_blue.png"];
+            backColor = [UIImage imageNamed:@"crystalBall_blue.png"];
             break;
         case green:
-            backColor = [UIImage imageNamed:@"circle_green.png"];
+            backColor = [UIImage imageNamed:@"crystalBall_green.png"];
             break;
         case yellow:
-            backColor = [UIImage imageNamed:@"circle_yellow.png"];
+            backColor = [UIImage imageNamed:@"crystalBall_yellow.png"];
             break;
         case orange:
-            backColor = [UIImage imageNamed:@"circle_orange.png"];
+            backColor = [UIImage imageNamed:@"crystalBall_orange.png"];
             break;
         default:
             backColor = nil;
