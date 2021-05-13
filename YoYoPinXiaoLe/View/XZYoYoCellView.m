@@ -110,19 +110,19 @@
     UIColor *backColor ;
     switch (status) {
         case red:
-            backColor  = [UIColor redColor];
+            backColor  = [UIColor colorWithRed:238/255.00 green:46/255.00 blue:72/255.00 alpha:1];
             break;
         case blue:
-            backColor = [UIColor blueColor];
+            backColor = [UIColor colorWithRed:0/255.00 green:61/255.00 blue:120/255.00 alpha:1];
             break;
         case green:
-            backColor = [UIColor greenColor];
+            backColor = [UIColor colorWithRed:0/255.00 green:133/255.00 blue:61/255.00 alpha:1];
             break;
         case yellow:
-            backColor = [UIColor yellowColor];
+            backColor = [UIColor colorWithRed:255/255.00 green:185/255.00 blue:61/255.00 alpha:1];
             break;
         case orange:
-            backColor = [UIColor orangeColor];
+            backColor = [UIColor colorWithRed:125/255.00 green:42/255.00 blue:114/255.00 alpha:1];
             break;
         default:
             backColor = [UIColor whiteColor];
