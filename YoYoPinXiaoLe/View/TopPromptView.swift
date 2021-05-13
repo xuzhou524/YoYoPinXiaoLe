@@ -61,7 +61,7 @@ class TopPromptView: UIView {
         let label = UILabel()
         label.font = fontWithSize(13)
         label.textColor = UIColor(named: "color_title_black")
-        label.text = "到达此处的位置不通，无法抵达."
+        label.text = "到达此处位置的路不通，无法抵达."
         return label
     }()
 

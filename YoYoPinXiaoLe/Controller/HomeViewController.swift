@@ -110,7 +110,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(nameImageView)
         nameImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(155)
+            make.top.equalToSuperview().offset(kIsFullScreen ? 155 : 125)
             make.width.equalTo(236)
             make.height.equalTo(59)
         }
@@ -118,7 +118,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(tipButton1)
         tipButton1.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50)
+            make.centerY.equalToSuperview().offset(kIsFullScreen ? -50 : -30)
             make.height.equalTo(45)
             make.width.equalTo(200)
         }
