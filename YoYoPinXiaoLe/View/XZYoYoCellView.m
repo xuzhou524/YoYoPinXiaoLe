@@ -23,7 +23,7 @@
         self.layer.cornerRadius = frame.size.width/2;
         self.IsOccupied = NO;
         self.SetTouchable = YES;
-        UITapGestureRecognizer *TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(HandleTap:)];
+        UITapGestureRecognizer *TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         TapGesture.delegate = self;
         [self addGestureRecognizer:TapGesture];
         TapGesture = nil;
@@ -72,13 +72,13 @@
     [[self layer] addSublayer:shadowLayer];
 }
 
--(void)HandleTap:(UIGestureRecognizer*)sender{
-    if([_delegate respondsToSelector:@selector(XZYoYoCellViewTouched:)]){
-        [_delegate XZYoYoCellViewTouched:self];
+-(void)handleTap:(UIGestureRecognizer*)sender{
+    if([_delegate respondsToSelector:@selector(xZYoYoCellViewTouched:)]){
+        [_delegate xZYoYoCellViewTouched:self];
     }
 }
 
--(void)SetOccupiedWithColor:(UIColor*)color{
+-(void)setOccupiedWithColor:(UIColor*)color{
     self.backgroundColor = color;
 }
 
@@ -97,7 +97,7 @@
     contentView.alpha = 0.4;
 }
 
--(void)RemovePathTraceImage{
+-(void)removePathTraceImage{
     contentView.image = nil;
     contentView.alpha = 1.0;
 }
@@ -156,11 +156,11 @@
     return backColor;
 }
 
--(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType{
-    [self SetStatusWithGraphCell:GCell Animatation:animationType withDelay:0.0 withCompletionBlock:nil];
+-(void)setStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType{
+    [self setStatusWithGraphCell:GCell Animatation:animationType withDelay:0.0 withCompletionBlock:nil];
 }
 
--(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock{
+-(void)setStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock{
     if(GCell.color==unOccupied){
         self.IsOccupied = NO;
     }else{

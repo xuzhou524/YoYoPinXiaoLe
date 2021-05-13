@@ -37,13 +37,13 @@ typedef enum
 -(void)cellUnTouched;
 
 // Methods to set the colour status of the cell with animation
--(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType;
--(void)SetStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
+-(void)setStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType;
+-(void)setStatusWithGraphCell:(GraphCell*)GCell Animatation:(CellAnimationType)animationType withDelay:(NSTimeInterval)delay withCompletionBlock:(CellAnimationCompletionBlock)completionBlock;
 
 -(void)setPathtTraceImageWithStatus:(GraphCellStatus)color;
--(void)RemovePathTraceImage;
+-(void)removePathTraceImage;
 -(UIColor*)getColorWithStatus:(GraphCellStatus)status;
 @end
 @protocol XZYoYoCellViewDelegate <NSObject>
--(void)XZYoYoCellViewTouched:(XZYoYoCellView*)cellView;
+-(void)xZYoYoCellViewTouched:(XZYoYoCellView*)cellView;
 @end

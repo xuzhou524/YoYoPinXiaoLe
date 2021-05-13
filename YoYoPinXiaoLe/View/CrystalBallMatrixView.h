@@ -52,5 +52,5 @@ typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,
 -(void)crystalBallMatrixViewQuit:(CrystalBallMatrixView*)matrixView;
 -(void)addNextCellsWithGraphCells:(NSArray*)GCells;
 -(void)setProgress:(CGFloat)progress withLevelNumber:(int)levelNo;
--(void)ResetNextAddedCells;
+-(void)resetNextAddedCells;
 @end

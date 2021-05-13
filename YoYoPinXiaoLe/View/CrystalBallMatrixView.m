@@ -99,21 +99,21 @@
 }
 
 -(void)reloadNewGame{
-    if([_delegate respondsToSelector:@selector(ResetNextAddedCells)]){
-        [_delegate ResetNextAddedCells];
+    if([_delegate respondsToSelector:@selector(resetNextAddedCells)]){
+        [_delegate resetNextAddedCells];
     }
     [levelProvider ResetLevel];
     [_ReductionManager ResetManager];
     _ReductionBtn.enabled = NO;
     [_currentGame.score ResetScore];
     [_currentGame.graph ResetGraph];
-    [self UpdateScore];
+    [self updateScore];
     [self reloadWithSize:_currentGame.graph.size gameResumed:NO];
 }
 
 -(void)reloadGame:(GameEntity*)game{
     _currentGame = game;
-    [self UpdateScore];
+    [self updateScore];
     
     [self reloadWithSize:_currentGame.graph.size gameResumed:YES];
 }
@@ -158,7 +158,7 @@
         cell.delegate = self;
         
         GraphCell *graphCell = [_currentGame.graph getGraphCellWithIndex:i];
-        [cell SetStatusWithGraphCell:graphCell Animatation:CellAnimationTypeNone];
+        [cell setStatusWithGraphCell:graphCell Animatation:CellAnimationTypeNone];
         cell.SetTouchable = NO;
         [self addSubview:cell];
         AnimationDelay += 0.1;
@@ -215,7 +215,7 @@
 -(void)addNewCells{
     NSArray *unoccupiedCells = [_currentGame.graph getUnOccupiedCells];
     if(unoccupiedCells.count<[levelProvider GetCurrentLevel].numberOfAddedCells){
-        [self GameOver];
+        [self gameOver];
         return;
     }
     [DisorderUnOccupiManager generateDisorderUnOccupiedCellsIndexes:[levelProvider GetCurrentLevel].numberOfAddedCells WithUnOccupiedCells:unoccupiedCells withCompletionBlock:^(NSArray* result){
@@ -226,14 +226,14 @@
             LocalGCell.color = AddedGCell.color;
             XZYoYoCellView *LocalCell = [self getXZYoYoCellViewWithIndex:((NSNumber*)[result objectAtIndex:i]).intValue];
             [AddedCells addObject:LocalGCell];
-            [LocalCell SetStatusWithGraphCell:LocalGCell Animatation:CellAnimationTypeAdded withDelay:i withCompletionBlock:^(BOOL finished){
+            [LocalCell setStatusWithGraphCell:LocalGCell Animatation:CellAnimationTypeAdded withDelay:i withCompletionBlock:^(BOOL finished){
                 int numberOfAddedCells = [levelProvider GetCurrentLevel].numberOfAddedCells ;
                 if(i==numberOfAddedCells-1) {
-                    [self DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
+                    [self detectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:^(NSArray* detectedCells){
                         [self setUserInteractionEnabled:YES];
                         NSArray *unoccupiedCells = [self.currentGame.graph getUnOccupiedCells];
                         if(unoccupiedCells.count==0){
-                            [self GameOver];
+                            [self gameOver];
                             
                         }else{
                             [self generateDisorderCellsAndAddToSuperView:YES];
@@ -246,16 +246,16 @@
     }];
 }
 
--(void)SetScoreInScoreBoard:(NSInteger)score{
+-(void)setScoreInScoreBoard:(NSInteger)score{
     _ScoreBoard.text = [NSString stringWithFormat:@"%ld",(long)score];
 }
 
--(void)ReportScoreToGameCenter{
+-(void)reportScoreToGameCenter{
     [XZGameCenterService saveHighScoreWithScore:_currentGame.score.score];
 }
 
 //******************HANDLE TOUCH EVENT************************************************************
--(void)XZYoYoCellViewTouched:(XZYoYoCellView *)touchedCell{
+-(void)xZYoYoCellViewTouched:(XZYoYoCellView *)touchedCell{
     if(touchedCell.IsOccupied==YES){
         if(_startCellIndex){
             //deselect prevoiusly selected Start Cell View
@@ -269,7 +269,7 @@
             //deselect prevoiusly selected End Cell View
             XZYoYoCellView *LastSelectedEndXZYoYoCellView = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
             [LastSelectedEndXZYoYoCellView cellUnTouched];
-            [self UnDrawPathWithPath:self.SelectedPath];
+            [self unDrawPathWithPath:self.SelectedPath];
         }
         [_SelectedPath removeAllObjects];
         
@@ -285,29 +285,29 @@
             //deselect prevoiusly selected End Cell View
             XZYoYoCellView *LastSelectedEndXZYoYoCellView = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
             [LastSelectedEndXZYoYoCellView cellUnTouched];
-            [self UnDrawPathWithPath:self.SelectedPath];
+            [self unDrawPathWithPath:self.SelectedPath];
         }
         self.endCellIndex = [NSNumber numberWithInt:touchedCell.tag-1000] ;
         [self.SelectedPath removeAllObjects];
-        [self FindFastesPathWithCompletionBlock:^(NSArray *path){
+        [self findFastesPathWithCompletionBlock:^(NSArray *path){
             [self.SelectedPath addObjectsFromArray:path];
             if(self.SelectedPath.count==0){
                 [self showBannerWithMessage:@"Can't go there !" withTitle:@"Sorry"];
             }
-            [self OKAction:nil];
+            [self oKAction:nil];
         }];
     }
 }
 
--(void)UnDrawPathWithPath:(NSArray*)path{
+-(void)unDrawPathWithPath:(NSArray*)path{
     for(int i =1;i<path.count;i++){
         NSNumber *CellIndex = [path objectAtIndex:i];
         XZYoYoCellView *cell = [self getXZYoYoCellViewWithIndex:CellIndex.intValue];
-        [cell RemovePathTraceImage];
+        [cell removePathTraceImage];
     }
 }
 
--(void)DrawPathWithPath:(NSArray*)path{
+-(void)drawPathWithPath:(NSArray*)path{
     GraphCell *fromGCell = [_currentGame.graph getGraphCellWithIndex:((NSNumber*)[path objectAtIndex:0]).intValue];
     for(int i =1;i<path.count;i++){
         NSNumber *CellIndex = [path objectAtIndex:i];
@@ -316,11 +316,11 @@
     }
 }
 
--(void)FindFastesPathWithCompletionBlock:(FastestPathFinderBlock)block{
+-(void)findFastesPathWithCompletionBlock:(FastestPathFinderBlock)block{
     [FastestPathFinder findFastestPathWithOccupiedCells:[_currentGame.graph getOcuupiedCells] withSize:_currentGame.graph.size withStart:self.startCellIndex WithEnd:self.endCellIndex WithCompletionBlock:block];
 }
 
--(void)OKAction:(UIButton *)sender{
+-(void)oKAction:(UIButton *)sender{
     if(self.SelectedPath.count==0 || !self.SelectedPath){
         [self setUserInteractionEnabled:YES];
         return;
@@ -332,7 +332,7 @@
     fromGCell.temporarilyUnoccupied = NO;
     XZYoYoCellView *Tocell = [self getXZYoYoCellViewWithIndex:_endCellIndex.intValue];
     
-    [self MoveOccupiedCellFromIndex:self.startCellIndex.intValue toIndex:self.endCellIndex.intValue WithPath:self.SelectedPath];
+    [self moveOccupiedCellFromIndex:self.startCellIndex.intValue toIndex:self.endCellIndex.intValue WithPath:self.SelectedPath];
     
     CompletionBlock block = ^(NSArray *detectedCells){
         if(detectedCells.count==0){
@@ -342,7 +342,7 @@
             [self saveGame];
         }
     };
-    [self DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:block withVerticesArray:[NSArray arrayWithObject:[_currentGame.graph getGraphCellWithIndex:_endCellIndex.intValue]]];
+    [self detectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:block withVerticesArray:[NSArray arrayWithObject:[_currentGame.graph getGraphCellWithIndex:_endCellIndex.intValue]]];
     _endCellIndex = nil;
     [Tocell cellUnTouched];
     _startCellIndex = nil;
@@ -350,7 +350,7 @@
     [fromCell cellUnTouched];
 }
 
--(void)MoveOccupiedCellFromIndex:(int)Fromindex toIndex:(int)toIndex WithPath:(NSArray*)path{
+-(void)moveOccupiedCellFromIndex:(int)Fromindex toIndex:(int)toIndex WithPath:(NSArray*)path{
     XZYoYoCellView *fromCell = [self getXZYoYoCellViewWithIndex:Fromindex];
     XZYoYoCellView *toCell = [self getXZYoYoCellViewWithIndex:toIndex];
 
@@ -377,13 +377,13 @@
         default:
             break;
     }
-    [fromCell SetStatusWithGraphCell:toGCell Animatation:CellAnimationTypeNone];
-    [toCell SetStatusWithGraphCell:FromGCell Animatation:CellAnimationTypeNone];
+    [fromCell setStatusWithGraphCell:toGCell Animatation:CellAnimationTypeNone];
+    [toCell setStatusWithGraphCell:FromGCell Animatation:CellAnimationTypeNone];
    
 }
 
--(void)GameOver{
-    [self ReportScoreToGameCenter];
+-(void)gameOver{
+    [self reportScoreToGameCenter];
     XZAlertView * view = [[XZAlertView alloc] init];
     view.completion = ^{
         if([self.delegate respondsToSelector:@selector(crystalBallMatrixViewQuit:)]){
@@ -397,15 +397,15 @@
     [view show];
 }
 
--(void)DetectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{
+-(void)detectAndRemoveConnectedCellsAndUpdateScoreWithCompetionBlock:(CompletionBlock) block withVerticesArray:(NSArray*)vertices{
      [ConnectCellRowsManager getConnectedCellsWithGraph:_currentGame.graph withVertices:vertices withCompletionBlock:^(NSArray *result){
          // iterate on detected cells and remove them
          NSInteger numberOfCellsDetected = result.count;
-         [self RemoveCells:result];
+         [self removeCells:result];
          //Update Score
          [self.currentGame.score ReportScoreWithNumberOfDetectedCells:numberOfCellsDetected];
          
-         [self UpdateScore];
+         [self updateScore];
          
          //call completion block
          block(result);
@@ -413,18 +413,18 @@
     }];
 }
 
--(void)RemoveCells:(NSArray*)cells{
+-(void)removeCells:(NSArray*)cells{
     for(GraphCell *GCell in cells){
         GCell.color = unOccupied;
         int index = [_currentGame.graph getIndexOfGraphCell:GCell];
         XZYoYoCellView *cellView = [self getXZYoYoCellViewWithIndex:index];
-        [cellView SetStatusWithGraphCell:GCell Animatation:CellAnimationTypeRemoval];
+        [cellView setStatusWithGraphCell:GCell Animatation:CellAnimationTypeRemoval];
     }
 }
 
--(void)UpdateScore{
+-(void)updateScore{
     [levelProvider ReportScore:_currentGame.score.score];
-    [self SetScoreInScoreBoard:_currentGame.score.score];
+    [self setScoreInScoreBoard:_currentGame.score.score];
     if([_delegate respondsToSelector:@selector(setProgress:withLevelNumber:)]){
         CGFloat Mod = _currentGame.score.score % (int)(LEVEL_RANGE);
         CGFloat progress = (CGFloat)(Mod/LEVEL_RANGE);
