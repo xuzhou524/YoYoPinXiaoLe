@@ -214,7 +214,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         #endif
     }
     @objc func shareClick() {
-        let activityController = UIActivityViewController(activityItems: ["https://apps.apple.com/cn/app/id1563693082" + " (分享来自@YoYo拼消乐) " ], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: ["https://apps.apple.com/cn/app/id1566548746" + " (分享来自@YoYo拼消乐) " ], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
     }
     
