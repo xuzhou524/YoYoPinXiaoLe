@@ -52,7 +52,7 @@ class TopPromptView: UIView {
     let titleLabel:UILabel = {
         let label = UILabel()
         label.font = fontWithSize(16)
-        label.textColor = UIColor(named: "color_title_black")
+        label.textColor = UIColor(named: "color_white")
         label.text = "友情提示"
         return label
     }()
@@ -60,7 +60,7 @@ class TopPromptView: UIView {
     let summeryLabel:UILabel = {
         let label = UILabel()
         label.font = fontWithSize(13)
-        label.textColor = UIColor(named: "color_title_black")
+        label.textColor = UIColor(named: "color_white")
         label.text = "到达此处位置的路不通，无法抵达."
         return label
     }()
