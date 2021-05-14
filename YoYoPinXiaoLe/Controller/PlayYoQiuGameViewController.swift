@@ -102,7 +102,7 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(gameContainerView)
         gameContainerView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(kIsFullScreen ? -40 : 20)
+            make.centerY.equalToSuperview().offset(kIsFullScreen ? 0 : 20)
             make.width.equalTo(320)
             make.height.equalTo(350)
         }

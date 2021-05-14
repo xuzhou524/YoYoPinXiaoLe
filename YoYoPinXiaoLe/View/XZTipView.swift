@@ -72,7 +72,7 @@ class XZTipView: UIView {
     let titleLabel:UILabel = {
         let label = UILabel()
         label.font = fontWithSize(16)
-        label.textColor = UIColor(named: "color_title_black")
+        label.textColor = UIColor(named: "color_white")
         label.text = "友情提示"
         return label
     }()
@@ -80,8 +80,8 @@ class XZTipView: UIView {
     let summeryLabel:UILabel = {
         let label = UILabel()
         label.font = fontWithSize(13)
-        label.textColor = UIColor(named: "color_title_black")
-        label.text = "当前Game Center没有授权无法保存分值，请点击帮助中心查看如何开启"
+        label.textColor = UIColor(named: "color_white")
+        label.text = "当前Game Center未授权无法保存分值，请点击帮助中心查看如何开启"
         label.numberOfLines = 0
         return label
     }()
