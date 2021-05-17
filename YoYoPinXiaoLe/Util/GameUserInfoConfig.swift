@@ -13,7 +13,7 @@ class GameUserInfoConfig: NSObject {
     //玩家昵称
     
     var gameId : String = ""
-    var gameName: String = "生肖来了"
+    var gameName: String = "YoYo拼消乐"
     
     //数和 最高分
     var gameShuHeHigheScore: Int = 0

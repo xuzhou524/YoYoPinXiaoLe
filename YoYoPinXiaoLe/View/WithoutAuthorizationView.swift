@@ -48,7 +48,7 @@ class WithoutAuthorizationView: UIView {
         label.font = blodFontWithSize(16)
         label.textColor = UIColor(named: "color_title_black")
         label.numberOfLines = 0
-        label.text = "第三步：登录完成之后，请退出”生肖来了“APP后台重新打开”生肖来了“APP挑战您的排行。"
+        label.text = "第三步：登录完成之后，请退出”YoYo拼消乐“APP后台重新打开”YoYo拼消乐“APP挑战您的排行。"
         return label
     }()
     
