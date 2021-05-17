@@ -14,7 +14,7 @@ class WithoutAuthorizationView: UIView {
         label.font = blodFontWithSize(16)
         label.textColor = UIColor(named: "color_title_black")
         label.numberOfLines = 0
-        label.text = "第一步：打开iPhone手机系统设置，找到Game Center功能。"
+        label.text = NSLocalizedString("helpCenterSum1")
         return label
     }()
     
@@ -31,7 +31,7 @@ class WithoutAuthorizationView: UIView {
         label.font = blodFontWithSize(16)
         label.textColor = UIColor(named: "color_title_black")
         label.numberOfLines = 0
-        label.text = "第二步：点击Game Center，打开授权开关并登录Apple Id账号。"
+        label.text = NSLocalizedString("helpCenterSum2")
         return label
     }()
     
@@ -48,7 +48,7 @@ class WithoutAuthorizationView: UIView {
         label.font = blodFontWithSize(16)
         label.textColor = UIColor(named: "color_title_black")
         label.numberOfLines = 0
-        label.text = "第三步：登录完成之后，请退出”YoYo拼消乐“APP后台重新打开”YoYo拼消乐“APP挑战您的排行。"
+        label.text = NSLocalizedString("helpCenterSum3")
         return label
     }()
     

@@ -75,7 +75,7 @@ class XZAlertView: UIView {
     
     let titleLabel:UILabel = {
         let label = UILabel()
-        label.text = "很遗憾"
+        label.text = NSLocalizedString("sorry")
         label.font = fontWithSize(18)
         label.textColor = UIColor(named: "color_black")
         return label
@@ -83,7 +83,7 @@ class XZAlertView: UIView {
     
     let doneButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("退出", for: .normal)
+        btn.setTitle(NSLocalizedString("exit"), for: .normal)
         btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
@@ -94,7 +94,7 @@ class XZAlertView: UIView {
     
     let gameButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("再来一局", for: .normal)
+        btn.setTitle(NSLocalizedString("newGame"), for: .normal)
         btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true

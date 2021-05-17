@@ -11,6 +11,7 @@ playGame     = "Play";
 rankList     = "Rank";
 helpCenterTitle     = "Help";
 
+privacyAgreement     = "Agreement";
 
 newGame     = "New Game";
 backHome     = "Back Home";
@@ -24,3 +25,11 @@ unauthorizPrompt = "The current Game Center unauthorized cannot keep score, clic
 
 
 pathwayPrompt = "Arrive here the location of the road impassability, unable to reach.";
+
+sorry     = "Sorry";
+exit     = "Exit";
+
+
+helpCenterSum1 = "1、 Open the iPhone system Settings, find the Game Center functions.";
+helpCenterSum2 = "2、 Click on the Game Center, open the authorized switch and log in Apple Id account.";
+helpCenterSum3 = "3、 Login is completed, please exit \"YoYo拼消乐\" APP back to open the \"YoYo拼消乐\" APP challenge your ranking.";
