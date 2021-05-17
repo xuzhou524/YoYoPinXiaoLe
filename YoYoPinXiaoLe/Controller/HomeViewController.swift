@@ -20,9 +20,9 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
 
     let tipButton:UIButton = {
         let button = UIButton()
-        button.setTitle("玩一下", for: .normal)
+        button.setTitle(NSLocalizedString("playGame"), for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(16)
+        button.titleLabel?.font = blodFontWithSize(18)
         button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
@@ -32,9 +32,9 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     let tipButton1:UIButton = {
         let button = UIButton()
-        button.setTitle("排行榜", for: .normal)
+        button.setTitle(NSLocalizedString("rankList"), for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(16)
+        button.titleLabel?.font = blodFontWithSize(18)
         button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true
@@ -44,9 +44,9 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
     let tipButton2:UIButton = {
         let button = UIButton()
-        button.setTitle("帮助中心", for: .normal)
+        button.setTitle(NSLocalizedString("helpCenterTitle"), for: .normal)
         button.setTitleColor(UIColor(named: "color_theme"), for: .normal)
-        button.titleLabel?.font = blodFontWithSize(16)
+        button.titleLabel?.font = blodFontWithSize(18)
         button.backgroundColor = UIColor(named: "color_title_black")
         button.layer.cornerRadius = 19
         button.layer.masksToBounds = true

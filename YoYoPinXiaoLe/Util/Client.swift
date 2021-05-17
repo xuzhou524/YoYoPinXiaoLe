@@ -40,6 +40,9 @@ let kScreenHeight = UIScreen.main.bounds.size.height
 
 let kIsFullScreen = (UIApplication.shared.windows[0].safeAreaInsets.bottom > 0 ? true : false)
 
+func NSLocalizedString( _ key:String ) -> String {
+    return NSLocalizedString(key, comment: "")
+}
 
 class Client: NSObject {
     

@@ -77,7 +77,7 @@ class SuspendView: UIView {
 
     let doneButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("返回首页", for: .normal)
+        btn.setTitle(NSLocalizedString("backHome"), for: .normal)
         btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
@@ -88,7 +88,7 @@ class SuspendView: UIView {
     
     let gameButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("新游戏", for: .normal)
+        btn.setTitle(NSLocalizedString("newGame"), for: .normal)
         btn.backgroundColor = UIColor(named: "color_black")
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
@@ -99,7 +99,7 @@ class SuspendView: UIView {
     
     let cancelButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("取消", for: .normal)
+        btn.setTitle(NSLocalizedString("cancel"), for: .normal)
         btn.setTitleColor(UIColor(named: "color_black"), for: .normal)
         btn.titleLabel?.font = fontWithSize(18)
         return btn
