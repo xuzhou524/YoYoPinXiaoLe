@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  YoYoPinXiaoLe
+
+  Created by gozap on 2021/5/17.
+  
+*/
+
+//首页
+playGame     = "玩一下";
+rankList     = "排行榜";
+helpCenterTitle     = "帮助中心";
+
+
+newGame     = "新游戏";
+backHome     = "返回首页";
+cancel     = "取消";
+
+continue      = "继续";
+
+helpfulHint     = "友情提示";
+
+unauthorizPrompt = "当前Game Center未授权无法保存分值，请点击帮助中心查看如何开启";
+
+pathwayPrompt = "到达此处位置的路不通，无法抵达.";

@@ -73,7 +73,7 @@ class XZTipView: UIView {
         let label = UILabel()
         label.font = fontWithSize(16)
         label.textColor = UIColor(named: "color_white")
-        label.text = "友情提示"
+        label.text = NSLocalizedString("helpfulHint")
         return label
     }()
     
@@ -81,14 +81,14 @@ class XZTipView: UIView {
         let label = UILabel()
         label.font = fontWithSize(13)
         label.textColor = UIColor(named: "color_white")
-        label.text = "当前Game Center未授权无法保存分值，请点击帮助中心查看如何开启"
+        label.text = NSLocalizedString("unauthorizPrompt")
         label.numberOfLines = 0
         return label
     }()
     
     let doneButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("取消", for: .normal)
+        btn.setTitle(NSLocalizedString("cancel"), for: .normal)
         btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(16)
         return btn
@@ -96,7 +96,7 @@ class XZTipView: UIView {
     
     let gameButton:UIButton = {
         let btn = UIButton()
-        btn.setTitle("继续", for: .normal)
+        btn.setTitle(NSLocalizedString("continue"), for: .normal)
         btn.setTitleColor(UIColor(named: "color_white"), for: .normal)
         btn.titleLabel?.font = fontWithSize(16)
         return btn

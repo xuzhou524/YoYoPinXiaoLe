@@ -32,7 +32,8 @@ class TopPromptView: UIView {
         self.addSubview(summeryLabel)
         summeryLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.titleLabel)
-            make.top.equalTo(self.snp.centerY).offset(3)
+            make.right.equalToSuperview().offset(-20)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(8)
         }
         
         panel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hide)))
@@ -53,7 +54,7 @@ class TopPromptView: UIView {
         let label = UILabel()
         label.font = fontWithSize(16)
         label.textColor = UIColor(named: "color_white")
-        label.text = "友情提示"
+        label.text = NSLocalizedString("helpfulHint")
         return label
     }()
     
@@ -61,7 +62,8 @@ class TopPromptView: UIView {
         let label = UILabel()
         label.font = fontWithSize(13)
         label.textColor = UIColor(named: "color_white")
-        label.text = "到达此处位置的路不通，无法抵达."
+        label.text = NSLocalizedString("pathwayPrompt")
+        label.numberOfLines = 0
         return label
     }()
 
