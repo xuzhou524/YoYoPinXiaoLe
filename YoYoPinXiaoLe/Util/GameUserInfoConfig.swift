@@ -16,9 +16,9 @@ class GameUserInfoConfig: NSObject {
     var gameName: String = "YoYo拼消乐"
     
     //数和 最高分
-    var gameShuHeHigheScore: Int = 0
-    
-    //我要吃瓜 最高分
-    var gameWatermelonHigheScore: Int = 0
+    var gameHigheScore: NSInteger = 0
+    @objc static func getGameHigheScore() -> NSInteger {
+        return GameUserInfoConfig.shared.gameHigheScore
+    }
 
 }

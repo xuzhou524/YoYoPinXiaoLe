@@ -339,7 +339,7 @@ extension HomeViewController {
                         let rank = score.rank
                         let gamePlayerID = score.player.gamePlayerID
                         if GameUserInfoConfig.shared.gameId == gamePlayerID && GameUserInfoConfig.shared.gameName == playerName {
-                            GameUserInfoConfig.shared.gameShuHeHigheScore = Int(scroeNumb)
+                            GameUserInfoConfig.shared.gameHigheScore = Int(scroeNumb)
                         }
                         print("排行榜 = \(gamecenterID),玩家id = \(gamePlayerID),玩家名字 = \(playerName),玩家分数 = \(scroeNumb),玩家排名 = \(rank)")
                     }

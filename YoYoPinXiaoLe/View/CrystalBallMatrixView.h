@@ -31,6 +31,7 @@ typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,
 //UI Controls
 @property(nonatomic,retain)UIButton *ReductionBtn;
 @property(nonatomic,retain)UILabel *ScoreBoard;
+@property(nonatomic,retain)UILabel *scoreBoardH;
 @property(nonatomic,strong)GameEntity *currentGame;
 
 //Status Variables

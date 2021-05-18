@@ -22,7 +22,7 @@ class PlayYoQiuGameViewController: UIViewController {
         let label = UILabel()
         label.font = chalkboardSESize(18)
         label.textColor = UIColor(named: "color_title_black")
-        label.text = "\(GameUserInfoConfig.shared.gameShuHeHigheScore)"
+        label.text = "\(GameUserInfoConfig.shared.gameHigheScore)"
         return label
     }()
     let crownImageView:UIImageView = {
@@ -150,6 +150,7 @@ class PlayYoQiuGameViewController: UIViewController {
 
         matrix.delegate = self
         matrix.scoreBoard = scoreBoardLabel
+        matrix.scoreBoardH = highScoreLabel
         
         let y = 0
         let xOffset = -15
@@ -334,13 +335,13 @@ extension PlayYoQiuGameViewController {
         //哪一个排行榜
         let identifier = "XZGame_YoYoPinXiaoLe"
         leaderboadRequest.identifier = identifier
-        //从那个排名到那个排名
+        //从哪个排名到哪个排名
         let location = 1
         let length = 100
         leaderboadRequest.range = NSRange(location: location, length: length)
 
         //请求数据
-        leaderboadRequest.loadScores { (scores, error) in
+        leaderboadRequest.loadScores {[weak self] (scores, error) in
             if scores?.count ?? 0 > 0 {
                 print("请求分数成功")
                 if let sss = scores as [GKScore]?  {
@@ -351,14 +352,12 @@ extension PlayYoQiuGameViewController {
                         let rank = score.rank
                         let gamePlayerID = score.player.gamePlayerID
                         if GameUserInfoConfig.shared.gameId == gamePlayerID && GameUserInfoConfig.shared.gameName == playerName {
-                            GameUserInfoConfig.shared.gameShuHeHigheScore = Int(scroeNumb)
+                            GameUserInfoConfig.shared.gameHigheScore = Int(scroeNumb)
+                            self?.highScoreLabel.text = "\(GameUserInfoConfig.shared.gameHigheScore)"
                         }
                         print("排行榜 = \(gamecenterID),玩家id = \(gamePlayerID),玩家名字 = \(playerName),玩家分数 = \(scroeNumb),玩家排名 = \(rank)")
                     }
                 }
-            }else{
-                print("请求分数失败")
-                print("error = \(error)")
             }
         }
     }

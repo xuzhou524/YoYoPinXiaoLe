@@ -248,6 +248,9 @@
 
 -(void)setScoreInScoreBoard:(NSInteger)score{
     _ScoreBoard.text = [NSString stringWithFormat:@"%ld",(long)score];
+    if ([GameUserInfoConfig getGameHigheScore] < score) {
+        _scoreBoardH.text = [NSString stringWithFormat:@"%ld",(long)score];
+    }
 }
 
 -(void)reportScoreToGameCenter{
