@@ -8,7 +8,6 @@
 import UIKit
 import GameKit
 import GameplayKit
-import StoreKit
 
 class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     
@@ -216,7 +215,8 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.navigationController?.pushViewController(webViewVC, animated: true)
     }
     @objc func praiseClick() {
-        SKStoreReviewController.requestReview()
+        let  urlString = "itms-apps://itunes.apple.com/app/id1566548746?action=write-review"
+        UIApplication.shared.open(URL.init(string: urlString)!, options: [:], completionHandler: nil)
     }
     @objc func shareClick() {
         let activityController = UIActivityViewController(activityItems: ["https://apps.apple.com/cn/app/id1566548746" + " (分享来自@YoYo拼消乐) " ], applicationActivities: nil)
