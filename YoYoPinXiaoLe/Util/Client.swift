@@ -32,6 +32,11 @@ func weightFontWithSize(_ size:CGFloat, weight:UIFont.Weight) -> UIFont{
     return UIFont.systemFont(ofSize: size, weight: weight)
 }
 
+func chalkboardSESize(_ size:CGFloat) -> UIFont{
+    return UIFont(name: "ChalkboardSE-Bold", size: size)!
+}
+
+
 let kHalfPixel = 1 / UIScreen.main.scale
 
 //屏幕宽高

@@ -12,7 +12,7 @@ class PlayYoQiuGameViewController: UIViewController {
     //分
     let scoreBoardLabel:UILabel = {
         let label = UILabel()
-        label.font = blodFontWithSize(35)
+        label.font = chalkboardSESize(35)
         label.textColor = UIColor(named: "color_title_black")
         label.text = "0"
         return label
