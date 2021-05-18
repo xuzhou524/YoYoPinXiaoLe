@@ -7,6 +7,7 @@
 
 #import "XZYoYoCellView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "YoYoPinXiaoLe-Swift.h"
 
 @interface XZYoYoCellView ()
 @property(nonatomic,strong)AVAudioPlayer * player;
@@ -82,7 +83,9 @@
 }
 
 -(void)handleTap:(UIGestureRecognizer*)sender{
-    [_player play];
+    if ([XZGameSettingConfig getGameSoundType] == 1) {
+        [_player play];
+    }
     if([_delegate respondsToSelector:@selector(xZYoYoCellViewTouched:)]){
         [_delegate xZYoYoCellViewTouched:self];
     }

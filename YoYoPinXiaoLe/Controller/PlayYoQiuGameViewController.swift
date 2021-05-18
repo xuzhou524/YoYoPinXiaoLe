@@ -41,7 +41,7 @@ class PlayYoQiuGameViewController: UIViewController {
         button.alpha = 0.3
         return button
     }()
-    let suspendImageView:UIView = {
+    let suspendImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "suspendImage")
         return imageView
@@ -55,9 +55,23 @@ class PlayYoQiuGameViewController: UIViewController {
         button.alpha = 0.3
         return button
     }()
-    let reductionImageView:UIView = {
+    let reductionImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "reductionImage")
+        return imageView
+    }()
+    
+    let soundView:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "color_title_black")
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let soundImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_sound")
         return imageView
     }()
     
@@ -96,7 +110,7 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(scoreBoardLabel)
         scoreBoardLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(60)
+            make.top.equalToSuperview().offset(55)
         }
         
         self.view.addSubview(gameContainerView)
@@ -134,8 +148,8 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(suspendImageView)
         suspendImageView.snp.makeConstraints { (make) in
             make.center.equalTo(self.suspendView)
-            make.height.equalTo(12)
-            make.width.equalTo(12)
+            make.height.equalTo(13)
+            make.width.equalTo(13)
         }
         
         self.view.addSubview(self.reductionView)
@@ -151,15 +165,31 @@ class PlayYoQiuGameViewController: UIViewController {
             make.height.equalTo(15)
             make.width.equalTo(15)
         }
+        
+        self.view.addSubview(soundView)
+        soundView.snp.makeConstraints { (make) in
+            make.right.equalTo(self.reductionView.snp.left).offset(-20)
+            make.bottom.equalTo(self.scoreBoardLabel)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+        }
+        self.view.addSubview(soundImageView)
+        soundImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.soundView)
+            make.height.equalTo(18)
+            make.width.equalTo(18)
+        }
+        updateSoundView()
 
         self.suspendView.addTarget(self, action: #selector(quit), for: .touchUpInside)
         self.reductionView.addTarget(self, action: #selector(reduction), for: .touchUpInside)
+        self.soundView.addTarget(self, action: #selector(sound), for: .touchUpInside)
         
         self.view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(60)
+            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(65)
             make.height.equalTo(15)
         }
         
@@ -227,5 +257,22 @@ extension PlayYoQiuGameViewController {
     
     @objc func reduction(){
         matrix.reductionLastMove()
+    }
+    
+    @objc func sound(){
+        if XZGameSettingConfig.shared.gameSoundType == 1 {
+            XZGameSettingConfig.shared.gameSoundType = 0
+        }else{
+            XZGameSettingConfig.shared.gameSoundType = 1
+        }
+        updateSoundView()
+    }
+    
+    func updateSoundView() {
+        if XZGameSettingConfig.shared.gameSoundType == 1 {
+            soundImageView.image = UIImage(named: "ic_sound")
+        }else{
+            soundImageView.image = UIImage(named: "ic_soundClose")
+        }
     }
 }
