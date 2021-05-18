@@ -36,7 +36,7 @@
         
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"PopSound.mp3" withExtension:nil];
         _player = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:Nil];
-        [_player prepareToPlay];
+        
     }
     return self;
 }
