@@ -50,6 +50,7 @@
 		535A4E542652511800B34433 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 535A4E562652511800B34433 /* Localizable.strings */; };
 		536CFC65264B760000BEEAF5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC64264B760000BEEAF5 /* HelpViewController.swift */; };
 		536CFC68264B761C00BEEAF5 /* WithoutAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */; };
+		53B5442E2653A60C0093967F /* PopSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 53B5442B2653A60C0093967F /* PopSound.mp3 */; };
 		53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D37AC326462A1600A4061E /* XZGameCenterService.swift */; };
 		53F5286C264BCE9500F63419 /* ReductionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5286B264BCE9500F63419 /* ReductionManager.m */; };
 		B46854EAE205DEE308500041 /* libPods-YoYoPinXiaoLe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */; };
@@ -121,6 +122,7 @@
 		535A4E572652511D00B34433 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		536CFC64264B760000BEEAF5 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithoutAuthorizationView.swift; sourceTree = "<group>"; };
+		53B5442B2653A60C0093967F /* PopSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PopSound.mp3; sourceTree = "<group>"; };
 		53D37AC326462A1600A4061E /* XZGameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZGameCenterService.swift; sourceTree = "<group>"; };
 		53F5286A264BCE9500F63419 /* ReductionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReductionManager.h; sourceTree = "<group>"; };
 		53F5286B264BCE9500F63419 /* ReductionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReductionManager.m; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		5335B26526356BD2006F9378 /* YoYoPinXiaoLe */ = {
 			isa = PBXGroup;
 			children = (
+				53B544292653A60C0093967F /* Resources */,
 				53332BD02644CC8A00535838 /* Util */,
 				5335B28326357136006F9378 /* Model */,
 				5335B28426357136006F9378 /* View */,
@@ -285,6 +288,14 @@
 				53409F32264BB5AE00E16DFF /* XZWebViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		53B544292653A60C0093967F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53B5442B2653A60C0093967F /* PopSound.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C80971A95841F700760C0130 /* Frameworks */ = {
@@ -369,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				535A4E542652511800B34433 /* Localizable.strings in Resources */,
+				53B5442E2653A60C0093967F /* PopSound.mp3 in Resources */,
 				5335B27326356BD5006F9378 /* LaunchScreen.storyboard in Resources */,
 				5314F5B7264A5BEE00F75D44 /* progressImage.gif in Resources */,
 				5335B27026356BD5006F9378 /* Assets.xcassets in Resources */,
