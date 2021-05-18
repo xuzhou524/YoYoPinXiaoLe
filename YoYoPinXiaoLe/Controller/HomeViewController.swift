@@ -277,13 +277,8 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
 //GameCenter
 extension HomeViewController {
     func authenticateLocalPlayer(){
-//        if isNoFirst {
-//            isNoFirst = false
-//            self.showloading()
-//        }
         let localPlayer = GKLocalPlayer.local
         localPlayer.authenticateHandler = {(viewController, error) -> Void in
-//            self.hideLoading()
             if (viewController != nil) {
                 let vc: UIViewController = self.view!.window!.rootViewController!
                 vc.present(viewController!, animated: true) {
@@ -300,14 +295,12 @@ extension HomeViewController {
             print("没有授权，无法获取更多信息")
             GameUserInfoConfig.shared.gameId = ""
             GameUserInfoConfig.shared.gameName = "YoYo拼消乐"
-//            sebWithoutAuthorizationViews()
         }else{
             //存储玩家信息 - id - name
             let localPlayer = GKLocalPlayer.local
             GameUserInfoConfig.shared.gameId = localPlayer.gamePlayerID
             GameUserInfoConfig.shared.gameName = localPlayer.displayName
-            
-//            sebViews()
+
             downLoadGameCenter()
         }
     }
@@ -336,26 +329,24 @@ extension HomeViewController {
 
         //请求数据
         leaderboadRequest.loadScores { (scores, error) in
-            if (error != nil) {
+            if scores?.count ?? 0 > 0 {
+                print("请求分数成功")
+                if let sss = scores as [GKScore]?  {
+                    for score in sss {
+                        let gamecenterID = score.leaderboardIdentifier
+                        let playerName = score.player.displayName
+                        let scroeNumb = score.value
+                        let rank = score.rank
+                        let gamePlayerID = score.player.gamePlayerID
+                        if GameUserInfoConfig.shared.gameId == gamePlayerID && GameUserInfoConfig.shared.gameName == playerName {
+                            GameUserInfoConfig.shared.gameShuHeHigheScore = Int(scroeNumb)
+                        }
+                        print("排行榜 = \(gamecenterID),玩家id = \(gamePlayerID),玩家名字 = \(playerName),玩家分数 = \(scroeNumb),玩家排名 = \(rank)")
+                    }
+                }
+            }else{
                 print("请求分数失败")
                 print("error = \(error)")
-            }else{
-                print("请求分数成功")
-//                self.scores = scores
-//                self.tableView.reloadData()
-//                if let sss = scores as [GKScore]?  {
-//                    for score in sss {
-//                        let gamecenterID = score.leaderboardIdentifier
-//                        let playerName = score.player.displayName
-//                        let scroeNumb = score.value
-//                        let rank = score.rank
-//                        let gamePlayerID = score.player.gamePlayerID
-//                        if GameUserInfoConfig.shared.gameId == gamePlayerID && GameUserInfoConfig.shared.gameName == playerName {
-//                            GameUserInfoConfig.shared.gameShuHeHigheScore = Int(scroeNumb)
-//                        }
-//                        print("排行榜 = \(gamecenterID),玩家id = \(gamePlayerID),玩家名字 = \(playerName),玩家分数 = \(scroeNumb),玩家排名 = \(rank)")
-//                    }
-//                }
             }
         }
     }

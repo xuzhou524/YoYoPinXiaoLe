@@ -17,6 +17,62 @@ class PlayYoQiuGameViewController: UIViewController {
         label.text = "0"
         return label
     }()
+    //最高分
+    let highScoreLabel:UILabel = {
+        let label = UILabel()
+        label.font = chalkboardSESize(18)
+        label.textColor = UIColor(named: "color_title_black")
+        label.text = "\(GameUserInfoConfig.shared.gameShuHeHigheScore)"
+        return label
+    }()
+    let crownImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_crown")
+        return imageView
+    }()
+    //暂停
+    let suspendView:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "color_title_black")
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let suspendImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "suspendImage")
+        return imageView
+    }()
+    //撤销
+    let reductionView:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "color_title_black")
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let reductionImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "reductionImage")
+        return imageView
+    }()
+    //音效开关
+    let soundView:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "color_title_black")
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let soundImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_sound")
+        return imageView
+    }()
+    
     //游戏操作区
     let gameContainerView:UIView = {
         let view = UIView()
@@ -32,56 +88,13 @@ class PlayYoQiuGameViewController: UIViewController {
         let button = UIButton()
         return button
     }()
-    
-    let suspendView:UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 15
-        button.layer.masksToBounds = true
-        button.alpha = 0.3
-        return button
-    }()
-    let suspendImageView:UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "suspendImage")
-        return imageView
-    }()
-    
-    let reductionView:UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 15
-        button.layer.masksToBounds = true
-        button.alpha = 0.3
-        return button
-    }()
-    let reductionImageView:UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "reductionImage")
-        return imageView
-    }()
-    
-    let soundView:UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 15
-        button.layer.masksToBounds = true
-        button.alpha = 0.3
-        return button
-    }()
-    let soundImageView:UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "ic_sound")
-        return imageView
-    }()
-    
+    //进度
     let progressView:GWProgressView = {
         let view = GWProgressView.init(frame: CGRect(x: 30, y: 0, width: kScreenWidth-60, height: 15))
         view.trackTintColor = UIColor.lightGray
         view.progressTintColor = UIColor(named: "color_red")
         return view
     }()
-    
     let LevelLbl:UILabel = {
         let label = UILabel()
         label.font = blodFontWithSize(16)
@@ -93,6 +106,7 @@ class PlayYoQiuGameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
+        checkLocalAuthenticated()
     }
     
     override func viewDidLoad() {
@@ -111,6 +125,19 @@ class PlayYoQiuGameViewController: UIViewController {
         scoreBoardLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(55)
+        }
+        
+        self.view.addSubview(highScoreLabel)
+        highScoreLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(scoreBoardLabel.snp.bottom)
+            make.centerX.equalToSuperview().offset(10)
+        }
+        
+        self.view.addSubview(crownImageView)
+        crownImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(highScoreLabel)
+            make.right.equalTo(highScoreLabel.snp.left).offset(-5)
+            make.width.height.equalTo(18)
         }
         
         self.view.addSubview(gameContainerView)
@@ -189,7 +216,7 @@ class PlayYoQiuGameViewController: UIViewController {
         progressView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
-            make.top.equalTo(self.scoreBoardLabel.snp.bottom).offset(65)
+            make.top.equalTo(self.highScoreLabel.snp.bottom).offset(65)
             make.height.equalTo(15)
         }
         
@@ -273,6 +300,66 @@ extension PlayYoQiuGameViewController {
             soundImageView.image = UIImage(named: "ic_sound")
         }else{
             soundImageView.image = UIImage(named: "ic_soundClose")
+        }
+    }
+}
+
+//GameCenter
+extension PlayYoQiuGameViewController {
+
+    func checkLocalAuthenticated() {
+        if GKLocalPlayer.local.isAuthenticated {
+            //存储玩家信息 - id - name
+            let localPlayer = GKLocalPlayer.local
+            GameUserInfoConfig.shared.gameId = localPlayer.gamePlayerID
+            GameUserInfoConfig.shared.gameName = localPlayer.displayName
+            downLoadGameCenter()
+        }
+    }
+    
+    func downLoadGameCenter() {
+        let leaderboadRequest = GKLeaderboard()
+        //设置好友的范围
+        leaderboadRequest.playerScope = .global
+
+        let type = "all"
+        if type == "today" {
+            leaderboadRequest.timeScope = .today
+        }else if type == "week" {
+            leaderboadRequest.timeScope = .week
+        }else if type == "all" {
+            leaderboadRequest.timeScope = .allTime
+        }
+
+        //哪一个排行榜
+        let identifier = "XZGame_YoYoPinXiaoLe"
+        leaderboadRequest.identifier = identifier
+        //从那个排名到那个排名
+        let location = 1
+        let length = 100
+        leaderboadRequest.range = NSRange(location: location, length: length)
+
+        //请求数据
+        leaderboadRequest.loadScores { (scores, error) in
+            if scores?.count ?? 0 > 0 {
+                print("请求分数成功")
+                if let sss = scores as [GKScore]?  {
+                    for score in sss {
+                        let gamecenterID = score.leaderboardIdentifier
+                        let playerName = score.player.displayName
+                        let scroeNumb = score.value
+                        let rank = score.rank
+                        let gamePlayerID = score.player.gamePlayerID
+                        if GameUserInfoConfig.shared.gameId == gamePlayerID && GameUserInfoConfig.shared.gameName == playerName {
+                            GameUserInfoConfig.shared.gameShuHeHigheScore = Int(scroeNumb)
+                        }
+                        print("排行榜 = \(gamecenterID),玩家id = \(gamePlayerID),玩家名字 = \(playerName),玩家分数 = \(scroeNumb),玩家排名 = \(rank)")
+                    }
+                }
+            }else{
+                print("请求分数失败")
+                print("error = \(error)")
+            }
         }
     }
 }
