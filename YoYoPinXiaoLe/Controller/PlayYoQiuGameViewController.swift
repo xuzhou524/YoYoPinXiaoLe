@@ -148,8 +148,8 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(reductionImageView)
         reductionImageView.snp.makeConstraints { (make) in
             make.center.equalTo(self.reductionView)
-            make.height.equalTo(18)
-            make.width.equalTo(18)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
         }
 
         self.suspendView.addTarget(self, action: #selector(quit), for: .touchUpInside)
