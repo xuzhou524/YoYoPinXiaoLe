@@ -140,7 +140,7 @@
     CGFloat AnimationDelay =0.0;
     int CurrentX = CELL_SIZE;
     CurrentX *= -1;
-    CurrentX += 5;
+    CurrentX += 3;
     int CurrentY = 5;
     for(int i =0 ;i<TotalCellsCount;i++){
         if((i/_currentGame.graph.size.height)*_currentGame.graph.size.height != i){
