@@ -56,7 +56,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     let privacyBtn:UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 18
         button.layer.masksToBounds = true
         button.alpha = 0.3
         return button
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     let praiseBtn:UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 18
         button.layer.masksToBounds = true
         button.alpha = 0.3
         return button
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
     let shareBtn:UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "color_title_black")
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 18
         button.layer.masksToBounds = true
         button.alpha = 0.3
         return button
@@ -95,11 +95,27 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         return imageView
     }()
     
+    let soundView:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "color_title_black")
+        button.layer.cornerRadius = 18
+        button.layer.masksToBounds = true
+        button.alpha = 0.3
+        return button
+    }()
+    let soundImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_sound")
+        return imageView
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
         
         authenticateLocalPlayer()
+        
+        updateSoundView()
     }
     
     override func viewDidLoad() {
@@ -142,11 +158,23 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         tipButton1.addTarget(self, action: #selector(rankListClick), for: .touchUpInside)
         tipButton2.addTarget(self, action: #selector(helpClick), for: .touchUpInside)
         
+        self.view.addSubview(shareBtn)
+        shareBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(self.tipButton2.snp.centerX).offset(-15)
+            make.top.equalTo(tipButton2.snp.bottom).offset(60)
+            make.width.height.equalTo(36)
+        }
+        self.view.addSubview(shareImageView)
+        shareImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(shareBtn)
+            make.width.height.equalTo(20)
+        }
+        
         self.view.addSubview(privacyBtn)
         privacyBtn.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.tipButton2.snp.right)
+            make.left.equalTo(self.tipButton2.snp.centerX).offset(15)
             make.top.equalTo(tipButton2.snp.bottom).offset(60)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(36)
         }
         self.view.addSubview(privacyImageView)
         privacyImageView.snp.makeConstraints { (make) in
@@ -154,11 +182,25 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.width.height.equalTo(25)
         }
         
+        self.view.addSubview(soundView)
+        soundView.snp.makeConstraints { (make) in
+            make.right.equalTo(self.shareBtn.snp.left).offset(-30)
+            make.top.equalTo(tipButton2.snp.bottom).offset(60)
+            make.width.height.equalTo(36)
+        }
+        self.view.addSubview(soundImageView)
+        soundImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.soundView)
+            make.height.equalTo(20)
+            make.width.equalTo(20)
+        }
+        updateSoundView()
+        
         self.view.addSubview(praiseBtn)
         praiseBtn.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.tipButton2)
+            make.left.equalTo(self.privacyBtn.snp.right).offset(30)
             make.top.equalTo(tipButton2.snp.bottom).offset(60)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(36)
         }
         self.view.addSubview(praiseImageView)
         praiseImageView.snp.makeConstraints { (make) in
@@ -166,22 +208,10 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.width.height.equalTo(22)
         }
         
-        self.view.addSubview(shareBtn)
-        shareBtn.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.tipButton2.snp.left)
-            make.top.equalTo(tipButton2.snp.bottom).offset(60)
-            make.width.height.equalTo(40)
-        }
-        self.view.addSubview(shareImageView)
-        shareImageView.snp.makeConstraints { (make) in
-            make.center.equalTo(shareBtn)
-            make.width.height.equalTo(22)
-        }
-        
         privacyBtn.addTarget(self, action: #selector(privacyClick), for: .touchUpInside)
         praiseBtn.addTarget(self, action: #selector(praiseClick), for: .touchUpInside)
         shareBtn.addTarget(self, action: #selector(shareClick), for: .touchUpInside)
- 
+        soundView.addTarget(self, action: #selector(sound), for: .touchUpInside)
     }
     
     @objc func newGameClick() {
@@ -214,13 +244,32 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         let webViewVC = XZWebViewController.init(url: "https://www.gezhipu.com/yoyoPinXiaoLe.pdf", titleStr: NSLocalizedString("privacyAgreement"))
         self.navigationController?.pushViewController(webViewVC, animated: true)
     }
+    
     @objc func praiseClick() {
         let  urlString = "itms-apps://itunes.apple.com/app/id1566548746?action=write-review"
         UIApplication.shared.open(URL.init(string: urlString)!, options: [:], completionHandler: nil)
     }
+    
     @objc func shareClick() {
         let activityController = UIActivityViewController(activityItems: ["https://apps.apple.com/cn/app/id1566548746" + " (分享来自@YoYo拼消乐) " ], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
+    }
+    
+    @objc func sound(){
+        if XZGameSettingConfig.shared.gameSoundType == 1 {
+            XZGameSettingConfig.shared.gameSoundType = 0
+        }else{
+            XZGameSettingConfig.shared.gameSoundType = 1
+        }
+        updateSoundView()
+    }
+    
+    func updateSoundView() {
+        if XZGameSettingConfig.shared.gameSoundType == 1 {
+            soundImageView.image = UIImage(named: "ic_sound")
+        }else{
+            soundImageView.image = UIImage(named: "ic_soundClose")
+        }
     }
     
 }

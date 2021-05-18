@@ -138,7 +138,7 @@ class PlayYoQiuGameViewController: UIViewController {
         matrix.reductionBtn = reductionBtn
         gameContainerView.addSubview(matrix)
         
-        self.view.addSubview(self.suspendView)
+        self.view.addSubview(suspendView)
         suspendView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.bottom.equalTo(self.scoreBoardLabel)
@@ -152,7 +152,7 @@ class PlayYoQiuGameViewController: UIViewController {
             make.width.equalTo(13)
         }
         
-        self.view.addSubview(self.reductionView)
+        self.view.addSubview(reductionView)
         reductionView.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(self.scoreBoardLabel)
