@@ -170,17 +170,19 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
             make.width.height.equalTo(20)
         }
         
-        self.view.addSubview(privacyBtn)
-        privacyBtn.snp.makeConstraints { (make) in
+        self.view.addSubview(praiseBtn)
+        praiseBtn.snp.makeConstraints { (make) in
             make.left.equalTo(self.tipButton2.snp.centerX).offset(15)
             make.top.equalTo(tipButton2.snp.bottom).offset(60)
             make.width.height.equalTo(36)
         }
-        self.view.addSubview(privacyImageView)
-        privacyImageView.snp.makeConstraints { (make) in
-            make.center.equalTo(privacyBtn)
-            make.width.height.equalTo(25)
+        self.view.addSubview(praiseImageView)
+        praiseImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(praiseBtn)
+            make.width.height.equalTo(22)
         }
+        
+
         
         self.view.addSubview(soundView)
         soundView.snp.makeConstraints { (make) in
@@ -196,16 +198,16 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         }
         updateSoundView()
         
-        self.view.addSubview(praiseBtn)
-        praiseBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(self.privacyBtn.snp.right).offset(30)
+        self.view.addSubview(privacyBtn)
+        privacyBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(self.praiseBtn.snp.right).offset(30)
             make.top.equalTo(tipButton2.snp.bottom).offset(60)
             make.width.height.equalTo(36)
         }
-        self.view.addSubview(praiseImageView)
-        praiseImageView.snp.makeConstraints { (make) in
-            make.center.equalTo(praiseBtn)
-            make.width.height.equalTo(22)
+        self.view.addSubview(privacyImageView)
+        privacyImageView.snp.makeConstraints { (make) in
+            make.center.equalTo(privacyBtn)
+            make.width.height.equalTo(25)
         }
         
         privacyBtn.addTarget(self, action: #selector(privacyClick), for: .touchUpInside)
