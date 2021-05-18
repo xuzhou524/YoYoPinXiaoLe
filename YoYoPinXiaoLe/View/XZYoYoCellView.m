@@ -6,6 +6,11 @@
 //
 
 #import "XZYoYoCellView.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface XZYoYoCellView ()
+@property(nonatomic,strong)AVAudioPlayer * player;
+@end
 
 @implementation XZYoYoCellView
 
@@ -27,6 +32,10 @@
         TapGesture.delegate = self;
         [self addGestureRecognizer:TapGesture];
         TapGesture = nil;
+        
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"PopSound.mp3" withExtension:nil];
+        _player = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:Nil];
+        [_player prepareToPlay];
     }
     return self;
 }
@@ -73,6 +82,7 @@
 }
 
 -(void)handleTap:(UIGestureRecognizer*)sender{
+    [_player play];
     if([_delegate respondsToSelector:@selector(xZYoYoCellViewTouched:)]){
         [_delegate xZYoYoCellViewTouched:self];
     }

@@ -13,24 +13,25 @@
 #define WRONG_IMAGE_NAME @"WRONG TOUCH.png"
 #define SQUARE_IMAGE @"SQUARE WHITE UNPRESSED.png"
 #define CELL_SIZE ((([[UIDevice currentDevice] userInterfaceIdiom]) == (UIUserInterfaceIdiomPhone)) ? (42.5) : (60))
+
 @protocol XZYoYoCellViewDelegate;
+
 typedef void (^CellAnimationCompletionBlock)(BOOL finished);
-typedef enum
-{
+
+typedef enum{
     CellAnimationTypeRemoval,
     CellAnimationTypeAdded,
     CellAnimationTypeNone
     
 }CellAnimationType;
-@interface XZYoYoCellView : UIView<UIGestureRecognizerDelegate>
-{
+
+@interface XZYoYoCellView : UIView<UIGestureRecognizerDelegate>{
     UIImageView *contentView;
-    //UIImageView *BackImgView;
 }
+
 @property(nonatomic,assign)id<XZYoYoCellViewDelegate> delegate;
 @property(nonatomic)BOOL IsOccupied;
 @property(nonatomic)BOOL SetTouchable;
-
 
 //Notify the Cell that it has been touched to glow
 -(void)cellTouchedWithStatus:(GraphCellStatus)status;
@@ -44,6 +45,7 @@ typedef enum
 -(void)removePathTraceImage;
 -(UIColor*)getColorWithStatus:(GraphCellStatus)status;
 @end
+
 @protocol XZYoYoCellViewDelegate <NSObject>
 -(void)xZYoYoCellViewTouched:(XZYoYoCellView*)cellView;
 @end
