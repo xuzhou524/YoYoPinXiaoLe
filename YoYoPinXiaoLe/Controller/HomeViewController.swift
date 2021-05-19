@@ -125,7 +125,7 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(nameImageView)
         nameImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(125)
+            make.top.equalToSuperview().offset(kIsFullScreen ? 125 : 80)
             make.width.equalTo(236)
             make.height.equalTo(59)
         }
@@ -133,25 +133,25 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         self.view.addSubview(tipButton1)
         tipButton1.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-30)
-            make.height.equalTo(45)
-            make.width.equalTo(200)
+            make.centerY.equalToSuperview().offset(0)
+            make.height.equalTo(44)
+            make.width.equalTo(180)
         }
 
         self.view.addSubview(tipButton)
         tipButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(tipButton1.snp.top).offset(-30)
-            make.height.equalTo(45)
-            make.width.equalTo(200)
+            make.height.equalTo(44)
+            make.width.equalTo(180)
         }
 
         self.view.addSubview(tipButton2)
         tipButton2.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(tipButton1.snp.bottom).offset(30)
-            make.height.equalTo(45)
-            make.width.equalTo(200)
+            make.height.equalTo(44)
+            make.width.equalTo(180)
         }
         
         tipButton.addTarget(self, action: #selector(newGameClick), for: .touchUpInside)
