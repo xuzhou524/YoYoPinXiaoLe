@@ -29,6 +29,9 @@ pathwayPrompt = "Arrive here the location of the road impassability, unable to r
 sorry     = "Sorry";
 exit     = "Exit";
 
+helpCenterRule ="(一) The game is introduced: \ n initial random three crystal ball, at the same time in the future area shows the upcoming three crystal ball, the player can according to all of the crystal ball, move the dial in a ball to the current or the location of the empty.When a certain color of the crystal ball in the same row or same column or on a diagonal line with four or more consecutive automatically eliminated;Please note: in the process of the mobile location has access to the starting position to the finish.";
+
+helpCenterTil = "(二) Open game center steps";
 
 helpCenterSum1 = "1、 Open the iPhone system Settings, find the Game Center functions.";
 helpCenterSum2 = "2、 Click on the Game Center, open the authorized switch and log in Apple Id account.";
