@@ -90,7 +90,7 @@ class PlayYoQiuGameViewController: UIViewController {
     }()
     //进度
     let progressView:GWProgressView = {
-        let view = GWProgressView.init(frame: CGRect(x: 30, y: 0, width: kScreenWidth-60, height: 15))
+        let view = GWProgressView.init(frame: CGRect(x: 40, y: 0, width: kScreenWidth-80, height: 15))
         view.trackTintColor = UIColor.lightGray
         view.progressTintColor = UIColor(named: "color_red")
         return view
