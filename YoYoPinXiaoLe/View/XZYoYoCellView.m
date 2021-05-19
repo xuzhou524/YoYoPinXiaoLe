@@ -16,7 +16,6 @@
 @implementation XZYoYoCellView
 
 - (id)initWithFrame:(CGRect)frame{
-    //frame = CGRectMake(frame.origin.x, frame.origin.y, CELL_SIZE-0.5, CELL_SIZE-0.5);
     self = [super initWithFrame:frame];
     if (self) {
         contentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];

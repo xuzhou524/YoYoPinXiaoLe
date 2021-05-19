@@ -80,7 +80,7 @@ class PlayYoQiuGameViewController: UIViewController {
     }()
     
     let matrix:CrystalBallMatrixView = {
-        let view = CrystalBallMatrixView.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
+        let view = CrystalBallMatrixView.init(frame: CGRect(x: 0, y: 0, width: kIsFullScreen ? 320 : 256, height: kIsFullScreen ? 320 : 256))
         return view
     }()
     
@@ -124,7 +124,7 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(scoreBoardLabel)
         scoreBoardLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(55)
+            make.top.equalToSuperview().offset(kIsFullScreen ? 35 : 25)
         }
         
         self.view.addSubview(highScoreLabel)
@@ -143,9 +143,9 @@ class PlayYoQiuGameViewController: UIViewController {
         self.view.addSubview(gameContainerView)
         gameContainerView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(kIsFullScreen ? 0 : 20)
-            make.width.equalTo(320)
-            make.height.equalTo(350)
+            make.centerY.equalToSuperview().offset(kIsFullScreen ? 10 : 20)
+            make.width.equalTo(kIsFullScreen ? 320 : 256)
+            make.height.equalTo(kIsFullScreen ? 350 : 290)
         }
 
         matrix.delegate = self
@@ -215,8 +215,8 @@ class PlayYoQiuGameViewController: UIViewController {
         
         self.view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-30)
+            make.left.equalToSuperview().offset(40)
+            make.right.equalToSuperview().offset(-40)
             make.top.equalTo(self.highScoreLabel.snp.bottom).offset(65)
             make.height.equalTo(15)
         }

@@ -23,6 +23,8 @@
         self.layer.borderWidth = 3;
         self.layer.cornerRadius = 10.0;
         
+        _cellWidth = (frame.size.width - 20) / 7.00;
+        
         IsGameResumed = resumed;
         if(Game){
             _currentGame = Game;
@@ -126,19 +128,15 @@
         if(subview.tag>=1000)
             [subview removeFromSuperview];
     }
-    self.frame = CGRectMake(0, 0, (CELL_SIZE*size.width)+20, (CELL_SIZE*size.height)+20);
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
-        self.center = CGPointMake(160, 210);
-    }else{
-        self.center = CGPointMake(350, 250);
-    }
+    self.frame = CGRectMake(0, 0, (_cellWidth*size.width)+20, (_cellWidth*size.height)+20);
+    self.center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0 + _cellWidth + 10);
     [self loadWithCellsGameResumed:resumed];
 }
 
 -(void)loadWithCellsGameResumed:(BOOL)Resumed{
     int TotalCellsCount = _currentGame.graph.size.width*_currentGame.graph.size.height;
     CGFloat AnimationDelay =0.0;
-    int CurrentX = CELL_SIZE;
+    int CurrentX = _cellWidth;
     CurrentX *= -1;
     CurrentX += 3;
     int CurrentY = 5;
@@ -146,14 +144,14 @@
         if((i/_currentGame.graph.size.height)*_currentGame.graph.size.height != i){
             //if did not reach full height
             //increase Y
-            CurrentY+=CELL_SIZE+2;
+            CurrentY+=_cellWidth+2;
         }else{
             //if reached full height
             //Reset Y and increase X
             CurrentY = 5;
-            CurrentX+=CELL_SIZE+2;
+            CurrentX+=_cellWidth+2;
         }
-        XZYoYoCellView *cell = [[XZYoYoCellView alloc] initWithFrame:CGRectMake(CurrentX, CurrentY, CELL_SIZE, CELL_SIZE)];
+        XZYoYoCellView *cell = [[XZYoYoCellView alloc] initWithFrame:CGRectMake(CurrentX, CurrentY, _cellWidth, _cellWidth)];
         cell.tag = i+1000;
         cell.delegate = self;
         

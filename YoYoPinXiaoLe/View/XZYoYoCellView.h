@@ -12,7 +12,7 @@
 #define RIGHT_IMAGE_NAME @"SQUARE2.png"
 #define WRONG_IMAGE_NAME @"WRONG TOUCH.png"
 #define SQUARE_IMAGE @"SQUARE WHITE UNPRESSED.png"
-#define CELL_SIZE ((([[UIDevice currentDevice] userInterfaceIdiom]) == (UIUserInterfaceIdiomPhone)) ? (42.5) : (60))
+#define CELL_SIZE 42.5
 
 @protocol XZYoYoCellViewDelegate;
 

@@ -29,6 +29,9 @@ typedef void(^ReductionBlock)(NSArray* lastAddedCells,NSArray *lastRemovedCells,
     ReductionManager *_ReductionManager;
 }
 //UI Controls
+
+@property(nonatomic,assign)CGFloat cellWidth;
+
 @property(nonatomic,retain)UIButton *ReductionBtn;
 @property(nonatomic,retain)UILabel *ScoreBoard;
 @property(nonatomic,retain)UILabel *scoreBoardH;

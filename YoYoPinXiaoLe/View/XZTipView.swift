@@ -42,16 +42,16 @@ class XZTipView: UIView {
         self.addSubview(gameButton)
         gameButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(-10)
-            make.right.equalToSuperview().offset(-20)
-            make.width.equalTo(55)
+            make.right.equalToSuperview().offset(-15)
+            make.width.equalTo(75)
             make.height.equalTo(45)
         }
         
         self.addSubview(doneButton)
         doneButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(-10)
-            make.right.equalTo(self.gameButton.snp.left).offset(-30)
-            make.width.equalTo(55)
+            make.right.equalTo(self.gameButton.snp.left).offset(-20)
+            make.width.equalTo(75)
             make.height.equalTo(45)
         }
         
