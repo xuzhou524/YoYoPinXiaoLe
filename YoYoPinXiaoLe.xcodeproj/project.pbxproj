@@ -621,7 +621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = YoYoPinXiaoLe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -629,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.YoYoPinXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YoYoPinXiaoLe/YoYoPinXiaoLe-Bridging-Header.h";
@@ -647,7 +647,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = YoYoPinXiaoLe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -655,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.YoYoPinXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YoYoPinXiaoLe/YoYoPinXiaoLe-Bridging-Header.h";
