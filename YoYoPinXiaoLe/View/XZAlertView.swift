@@ -33,23 +33,24 @@ class XZAlertView: UIView {
             make.top.equalTo(self.iconImageView.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
         }
+        
+        self.addSubview(doneButton)
+        doneButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-30)
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.height.equalTo(45)
+            
+        }
 
         self.addSubview(gameButton)
         gameButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-30)
+            make.bottom.equalTo(self.doneButton.snp.top).offset(-20)
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
             make.height.equalTo(45)
         }
         
-        self.addSubview(doneButton)
-        doneButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.gameButton.snp.top).offset(-20)
-            make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-30)
-            make.height.equalTo(45)
-        }
-
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
         gameButton.addTarget(self, action: #selector(game), for: .touchUpInside)
     }
