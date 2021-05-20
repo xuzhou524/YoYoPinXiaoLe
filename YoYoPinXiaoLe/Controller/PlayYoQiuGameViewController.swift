@@ -288,16 +288,16 @@ extension PlayYoQiuGameViewController {
     }
     
     @objc func sound(){
-        if XZGameSettingConfig.shared.gameSoundType == 1 {
-            XZGameSettingConfig.shared.gameSoundType = 0
+        if XZSettings.shared[.kSoundSwitch] == 1 {
+            XZSettings.shared[.kSoundSwitch] = 0
         }else{
-            XZGameSettingConfig.shared.gameSoundType = 1
+            XZSettings.shared[.kSoundSwitch] = 1
         }
         updateSoundView()
     }
     
     func updateSoundView() {
-        if XZGameSettingConfig.shared.gameSoundType == 1 {
+        if XZSettings.shared[.kSoundSwitch] == 1 {
             soundImageView.image = UIImage(named: "ic_sound")
         }else{
             soundImageView.image = UIImage(named: "ic_soundClose")

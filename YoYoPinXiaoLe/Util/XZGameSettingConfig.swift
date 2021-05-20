@@ -11,10 +11,8 @@ class XZGameSettingConfig: NSObject {
     
     static let shared = XZGameSettingConfig()
 
-    //音效开关 0 关 1 开
-    var gameSoundType: Int = 1
     @objc static func getGameSoundType() -> Int {
-        return XZGameSettingConfig.shared.gameSoundType
+        return Int(XZSettings.shared[.kSoundSwitch] ?? 1)
     }
 
 }

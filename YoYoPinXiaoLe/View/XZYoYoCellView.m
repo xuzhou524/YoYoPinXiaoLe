@@ -82,6 +82,7 @@
 }
 
 -(void)handleTap:(UIGestureRecognizer*)sender{
+
     if ([XZGameSettingConfig getGameSoundType] == 1) {
         [_player play];
     }
