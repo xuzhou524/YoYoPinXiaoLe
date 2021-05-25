@@ -122,6 +122,12 @@ class HomeViewController: UIViewController,GKGameCenterControllerDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "color_theme")
         
+//        if XZSettings.shared[.kHelpPop] != 1 {
+            self.present(HelpsViewController(), animated: true) {
+                XZSettings.shared[.kHelpPop] = 1
+            }
+//        }
+        
         self.view.addSubview(nameImageView)
         nameImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

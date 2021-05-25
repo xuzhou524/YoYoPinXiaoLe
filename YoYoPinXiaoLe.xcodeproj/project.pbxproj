@@ -53,6 +53,8 @@
 		53B5442E2653A60C0093967F /* PopSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 53B5442B2653A60C0093967F /* PopSound.mp3 */; };
 		53B544312653BBD80093967F /* XZGameSettingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B544302653BBD80093967F /* XZGameSettingConfig.swift */; };
 		53B544352655FBC10093967F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B544342655FBC10093967F /* Settings.swift */; };
+		53B914D6265C80A400F6EDB6 /* HelpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B914D5265C80A400F6EDB6 /* HelpsViewController.swift */; };
+		53B914D8265C857C00F6EDB6 /* WithoutAuthorizationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B914D7265C857C00F6EDB6 /* WithoutAuthorizationsView.swift */; };
 		53D37AC426462A1600A4061E /* XZGameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D37AC326462A1600A4061E /* XZGameCenterService.swift */; };
 		53F5286C264BCE9500F63419 /* ReductionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F5286B264BCE9500F63419 /* ReductionManager.m */; };
 		B46854EAE205DEE308500041 /* libPods-YoYoPinXiaoLe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6BF1E6CA0F274EF75E150 /* libPods-YoYoPinXiaoLe.a */; };
@@ -127,6 +129,8 @@
 		53B5442B2653A60C0093967F /* PopSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PopSound.mp3; sourceTree = "<group>"; };
 		53B544302653BBD80093967F /* XZGameSettingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZGameSettingConfig.swift; sourceTree = "<group>"; };
 		53B544342655FBC10093967F /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		53B914D5265C80A400F6EDB6 /* HelpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpsViewController.swift; sourceTree = "<group>"; };
+		53B914D7265C857C00F6EDB6 /* WithoutAuthorizationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAuthorizationsView.swift; sourceTree = "<group>"; };
 		53D37AC326462A1600A4061E /* XZGameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZGameCenterService.swift; sourceTree = "<group>"; };
 		53F5286A264BCE9500F63419 /* ReductionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReductionManager.h; sourceTree = "<group>"; };
 		53F5286B264BCE9500F63419 /* ReductionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReductionManager.m; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				5314F5F3264A889300F75D44 /* XZAlertView.swift */,
 				53250A97264BC2B300F00AE8 /* SuspendView.swift */,
 				536CFC67264B761C00BEEAF5 /* WithoutAuthorizationView.swift */,
+				53B914D7265C857C00F6EDB6 /* WithoutAuthorizationsView.swift */,
 				5335B2EF26357320006F9378 /* UIView+Glow.h */,
 				5335B2F026357320006F9378 /* UIView+Glow.m */,
 				5335B2F326357330006F9378 /* XZYoYoCellView.h */,
@@ -291,6 +296,7 @@
 				53332BC62644CB0400535838 /* HomeViewController.swift */,
 				53567BA72644DAA100687883 /* PlayYoQiuGameViewController.swift */,
 				536CFC64264B760000BEEAF5 /* HelpViewController.swift */,
+				53B914D5265C80A400F6EDB6 /* HelpsViewController.swift */,
 				53409F32264BB5AE00E16DFF /* XZWebViewController.swift */,
 			);
 			path = Controller;
@@ -439,6 +445,7 @@
 				53332BCB2644CBBD00535838 /* XZNavigationController.swift in Sources */,
 				5335B2F126357321006F9378 /* UIView+Glow.m in Sources */,
 				531953E0264CFB0700A09585 /* XZTipView.swift in Sources */,
+				53B914D8265C857C00F6EDB6 /* WithoutAuthorizationsView.swift in Sources */,
 				53332BE62644CC8A00535838 /* GameUserInfoConfig.swift in Sources */,
 				5314F5B8264A5BEE00F75D44 /* GWProgressView.m in Sources */,
 				53332C2A2644D63D00535838 /* MJDijkstra.m in Sources */,
@@ -450,6 +457,7 @@
 				53332BF82644CE2500535838 /* LevelManager.m in Sources */,
 				5335B297263571A5006F9378 /* GraphCell.m in Sources */,
 				5335B29026357195006F9378 /* GameEntity.m in Sources */,
+				53B914D6265C80A400F6EDB6 /* HelpsViewController.swift in Sources */,
 				53332C212644CE9500535838 /* ConnectCellRowsManager.m in Sources */,
 				53332C172644CE7A00535838 /* MJPriorityQueue.mm in Sources */,
 				53332BE82644CC8A00535838 /* Client.swift in Sources */,
@@ -625,7 +633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = YoYoPinXiaoLe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -633,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.5;
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.YoYoPinXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YoYoPinXiaoLe/YoYoPinXiaoLe-Bridging-Header.h";
@@ -651,7 +659,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = YoYoPinXiaoLe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -659,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.5;
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.YoYoPinXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YoYoPinXiaoLe/YoYoPinXiaoLe-Bridging-Header.h";

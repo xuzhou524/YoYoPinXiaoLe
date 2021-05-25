@@ -9,8 +9,10 @@ import UIKit
 import DefaultsKit
 
 enum XZSettingKey:String {
-   ///存放是否开启音效开关
+    ///是否开启音效开关
     case kSoundSwitch = "YoYoPinXiaoLe.soundSwitch"
+    ///是否显示过帮助中心
+    case kHelpPop = "YoYoPinXiaoLe.helpPop"
     
 }
 
